@@ -1,0 +1,14 @@
+.Navbar {
+  display: flex;
+  flex-direction: row;
+}
+.Logo {
+  flex: 2;
+}
+
+.NavList {
+  flex-direction: row;
+  list-style: none;
+  flex: 10;
+  font-size: 0;
+}
