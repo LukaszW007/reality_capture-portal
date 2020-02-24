@@ -2,8 +2,8 @@
 import React from 'react';
 
 // local dependencies
+import logoPicture from 'assets/images/Reality_Capture_white_logo_365x110_transparent_background.png';
 import styles from './Logo.module.scss';
-import logoPicture from '../../assets/images/Reality_Capture_white_logo_365x110_transparent_background.png';
 
 const Logo = () => {
   return (

@@ -1,20 +1,20 @@
-//global dependencies
+// global dependencies
 import React from 'react';
 
-//local dependencies
+// local dependencies
 import styles from './NavbarListElement.module.scss';
 
 interface Props {
-    listElementName: string;
+  listElementName: string;
 }
 
 const NavbarListElement = (props: Props) => {
-    const { listElementName } = props;
-    return(
-        <React.Fragment>
-            <li className={styles.NavbarListElement}>{listElementName}</li>
-        </React.Fragment>
-    )
+  const { listElementName } = props;
+  return (
+    <>
+      <li className={styles.NavbarListElement}>{listElementName}</li>
+    </>
+  );
 };
 
 export default NavbarListElement;

@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Reality Capture portal`,
+    description: `Reality Capture portal is a website describing methods of creating 3D content based on laser scanning and photogrammetry.`,
+    author: `@LukaszW007`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,6 +15,26 @@ module.exports = {
         isTSX: true, // defaults to false
         jsxPragma: `React`, // defaults to "React"
         allExtensions: true, // defaults to false
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        assets: path.join(__dirname, 'src/assets'),
+        components: path.join(__dirname, 'src/components'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-eslint`,
+      options: {
+        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
+        exclude: /(node_modules|cache|public)/,
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
       },
     },
     {
@@ -40,4 +62,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
