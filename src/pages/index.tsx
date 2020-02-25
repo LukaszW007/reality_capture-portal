@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // import Layout from "../components/layout"
-import Image from '../components/image';
+// import Image from '../components/image';
 import SEO from '../components/seo';
 import Navbar from '../components/Navbar';
+import Jumbotron from '../components/Jumbotron';
 import styles from './App.module.scss';
 
 const IndexPage = () => (
@@ -12,12 +13,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className={styles.App}>
       <Navbar />
-    </div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+      <Jumbotron />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </>

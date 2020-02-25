@@ -1,12 +1,21 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
 .Navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   flex-direction: row;
+  background: $darkgreyish70;
+  align-items: center;
 }
+
 .Logo {
-  flex: 2;
+  flex: 3;
 }
 
 .NavList {
+  margin: 0;
   flex-direction: row;
   list-style: none;
   flex: 10;

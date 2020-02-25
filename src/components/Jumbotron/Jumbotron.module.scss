@@ -1,0 +1,48 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+$background-picture: '../../assets/images/top-view-desk-wood-and-coffee.png';
+
+.Jumbotron {
+  box-sizing: border-box;
+  display: flex;
+  height: 1068px;
+  margin: 0 auto;
+  background: url($background-picture) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.Headers {
+  flex: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.YoutubeSide {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+h1 {
+  margin: 0 0 0 15%;
+  text-align: left;
+  color: $yellowish;
+  font: $font-family-sans-serif;
+  font-size: $font-size-xxxxl;
+  text-transform: capitalize;
+}
+
+h3 {
+  margin: 0 0 0 15%;
+  text-align: left;
+  color: $white;
+  font: $font-family-sans-serif;
+  font-size: $font-size-xl;
+}

@@ -1,6 +1,8 @@
+@import "../utils/sass-core/colors.scss";
+@import "../utils/sass-core/fonts.scss";
+
 .App {
   box-sizing: border-box;
   text-align: center;
-  background-color: #282c34;
-  font-family: "Helvetica Neue", serif;
+  font-family: $font-family-sans-serif;
 }

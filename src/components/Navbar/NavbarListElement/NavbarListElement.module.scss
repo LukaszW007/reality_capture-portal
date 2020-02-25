@@ -1,5 +1,9 @@
+@import "../../../utils/sass-core/colors.scss";
+@import "../../../utils/sass-core/fonts.scss";
+
 .NavbarListElement {
-  color: #ffffff;
+  margin: 1rem 0;
+  color: $white;
   padding: 1rem;
   font-size: 1.4rem;
   display: inline-block;
