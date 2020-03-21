@@ -1,0 +1,16 @@
+.Carousel {
+  flex: 7;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  border: 2px solid yellow;
+}
+
+.CarouselSlides {
+  border: 1px solid green;
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  flex: 10;
+}

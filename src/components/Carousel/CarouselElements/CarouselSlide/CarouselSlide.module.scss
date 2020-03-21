@@ -1,0 +1,13 @@
+@import "../../../../utils/sass-core/colors";
+@import "../../../../utils/sass-core/fonts";
+
+.carousel__slide {
+  flex: 10;
+  color: $white;
+  border: red solid 1px;
+  height: 300px;
+}
+
+.styles.carousel__slide_active {
+
+}

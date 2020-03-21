@@ -1,8 +1,17 @@
 @import "../utils/sass-core/colors.scss";
 @import "../utils/sass-core/fonts.scss";
 
+$background-vectors: '../assets/SVG/background_lines.svg';
+
 .App {
   box-sizing: border-box;
   text-align: center;
   font-family: $font-family-sans-serif;
+}
+
+.section2 {
+  height: 500px;
+  display: flex;
+  background: $almostBlack;
+  border: 1px solid red;
 }

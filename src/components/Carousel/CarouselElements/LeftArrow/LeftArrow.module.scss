@@ -1,0 +1,40 @@
+$background-carousel-arrow-left: '{{../..}}/../../assets/SVG/carousel_arrow.svg';
+
+.CarouselArrow {
+  flex: 1;
+  border: 3px solid orange;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--left {
+    left: 32px;
+  }
+
+  &--right {
+    right: 32px;
+  }
+}
+
+.ArrowSvgLeft {
+  display: block;
+  position: relative;
+  top: 52%;
+  background: url($background-carousel-arrow-left) no-repeat;
+  height: 75px;
+  width: 75px;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
