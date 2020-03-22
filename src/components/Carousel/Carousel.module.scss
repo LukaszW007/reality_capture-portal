@@ -8,9 +8,10 @@
 }
 
 .CarouselSlides {
+  display: flex;
+  flex-direction: row;
   border: 1px solid green;
   list-style-type: none;
-  display: block;
   margin: 0;
   flex: 10;
 }

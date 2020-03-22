@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import Navbar from '../components/Navbar';
 import Jumbotron from '../components/Jumbotron';
 import Carousel from '../components/Carousel';
-import CarouselDescriptionRCTypes from '../components/CarouselDescription';
+import CarouselDescriptionRCTypes from '../components/Carousel/CarouselElements/CarouselDescription';
 import styles from './App.module.scss';
 
 const IndexPage = () => (

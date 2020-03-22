@@ -15,9 +15,10 @@ interface CarouselSlideProps {
 }
 
 const CarouselSlide: React.FC<CarouselSlideProps> = props => {
-  const { activeIndex, slide, index } = props; //TODO: change classnames in last <p>
+  const { activeIndex, slide, index } = props; // TODO: change classnames in last <p>
+  const { picture } = slide;
 
-  console.log('this is slide.image '+ `${slide.picture}`);
+  console.log(`this is slide.image ${picture} w dolarze ` + `${picture}`);
   return (
     <li
       className={
@@ -25,12 +26,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
       }
     >
       <p className={styles.carousel__slide}>
-        <img src={require(`${slide.picture}`)} alt="HDS" />
-      </p>
-
-      <p>
-        <strong className="carousel-slide__author">{slide.title}</strong>
-        <small className="carousel-slide__source">{slide.content}</small>
+        <img src={require('../../../../assets/images/RTC360.png')} alt="HDS" />
       </p>
     </li>
   );

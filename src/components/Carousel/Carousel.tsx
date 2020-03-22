@@ -7,17 +7,18 @@ import styles from './Carousel.module.scss';
 import LeftArrow from './CarouselElements/LeftArrow';
 import RightArrow from './CarouselElements/RightArrow';
 import CarouselSlide from './CarouselElements/CarouselSlide';
+import CarouselDescriptionRCTypes from './CarouselElements/CarouselDescription';
 
 const carouselItems = [
   {
     title: 'Laser scanning',
-    picture: "'../../../../assets/images/RTC360.png'",
+    picture: '../../../../assets/images/RTC360.png',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad deserunt, enim est exercitationem facilis illum ipsum iure, mollitia placeat quia temporibus voluptatem. Asperiores assumenda id nesciunt totam. Eligendi, neque.',
   },
   {
     title: 'Mobile mapping',
-    picture: '',
+    picture: '../../../../assets/images/RTC360.png',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad deserunt, enim est exercitationem facilis illum ipsum iure, mollitia placeat quia temporibus voluptatem. Asperiores assumenda id nesciunt totam. Eligendi, neque.',
   },
@@ -85,6 +86,17 @@ class Carousel extends React.Component<any, CarouselState> {
   render() {
     return (
       <div className={styles.Carousel}>
+        <ul className={styles.CarouselSlides}>
+          {carouselItems.map((slideDescription, index) => (
+            <CarouselDescriptionRCTypes
+              key={index}
+              index={index}
+              activeIndex={this.state.activeIndex}
+              slide={slideDescription}
+            />
+          ))}
+        </ul>
+
         <LeftArrow onClick={e => this.goToPrevSlide(e)} />
 
         <ul className={styles.CarouselSlides}>
