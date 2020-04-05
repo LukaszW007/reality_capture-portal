@@ -28,7 +28,10 @@ $background-carousel-arrow-left: '../../../../assets/SVG/carousel_arrow.svg';
   display: block;
   position: relative;
   top: 50%;
+  left: calc(50% - 45px);
+  left: -webkit-calc(50% - 45px);
+  left: -moz-calc(50% - 45px);
   background: url($background-carousel-arrow-left) no-repeat;
-  height: 75px;
-  width: 75px;
+  height: 90px;
+  width: 90px;
 }

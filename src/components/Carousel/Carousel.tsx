@@ -8,21 +8,7 @@ import LeftArrow from './CarouselElements/LeftArrow';
 import RightArrow from './CarouselElements/RightArrow';
 import CarouselSlide from './CarouselElements/CarouselSlide';
 import CarouselDescriptionRCTypes from './CarouselElements/CarouselDescription';
-
-const carouselItems = [
-  {
-    title: 'Laser scanning',
-    picture: '../../../../assets/images/RTC360.png',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad deserunt, enim est exercitationem facilis illum ipsum iure, mollitia placeat quia temporibus voluptatem. Asperiores assumenda id nesciunt totam. Eligendi, neque.',
-  },
-  {
-    title: 'Mobile mapping',
-    picture: '../../../../assets/images/RTC360.png',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad deserunt, enim est exercitationem facilis illum ipsum iure, mollitia placeat quia temporibus voluptatem. Asperiores assumenda id nesciunt totam. Eligendi, neque.',
-  },
-];
+import carouselItems from './carouselItems';
 
 /* interface CarouselProps {
 
@@ -36,21 +22,23 @@ class Carousel extends React.Component<any, CarouselState> {
   constructor(props: any) {
     super(props);
 
+    this.goToSlide = this.goToSlide.bind(this);
+    this.goToPrevSlide = this.goToPrevSlide.bind(this);
+    this.goToNextSlide = this.goToNextSlide.bind(this);
+
     this.state = {
       activeIndex: 0,
     };
   }
 
-  // goToSlide(index) {
-  //   this.setState({ activeIndex: index });
-  // }
+  goToSlide(index) {
+    this.setState({ activeIndex: index });
+  }
 
   goToPrevSlide(e) {
     e.preventDefault();
 
     let index = this.state.activeIndex;
-    // let { slides } = this.props;
-    // let slidesLength = slides.length;
     const slidesLength = carouselItems.length;
 
     if (index < 1) {
@@ -68,8 +56,6 @@ class Carousel extends React.Component<any, CarouselState> {
     e.preventDefault();
 
     let index = this.state.activeIndex;
-    // let { slides } = this.props;
-    // let slidesLength = slides.length - 1;
     const slidesLength = carouselItems.length - 1;
 
     if (index === slidesLength) {
@@ -86,7 +72,7 @@ class Carousel extends React.Component<any, CarouselState> {
   render() {
     return (
       <div className={styles.Carousel}>
-        <ul className={styles.CarouselSlides}>
+        <ul className={styles.CarouselDescriptionRCTypes}>
           {carouselItems.map((slideDescription, index) => (
             <CarouselDescriptionRCTypes
               key={index}
@@ -97,7 +83,9 @@ class Carousel extends React.Component<any, CarouselState> {
           ))}
         </ul>
 
-        <LeftArrow onClick={e => this.goToPrevSlide(e)} />
+        <LeftArrow
+          onClick={e => this.goToPrevSlide(e)}
+        />
 
         <ul className={styles.CarouselSlides}>
           {carouselItems.map((slide, index) => (
@@ -111,7 +99,6 @@ class Carousel extends React.Component<any, CarouselState> {
         </ul>
 
         <RightArrow
-          className={styles.RightArrow}
           onClick={e => this.goToNextSlide(e)}
         />
       </div>

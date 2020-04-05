@@ -1,6 +1,25 @@
-.CarouselDescriptionRCTypes {
-  flex: 3;
-  display: flex;
-  position: relative;
-  justify-content: center;
+@import "../../../../utils/sass-core/colors";
+@import "../../../../utils/sass-core/fonts";
+
+.carouselDescriptionRCTypes {
+  color: white;
+}
+
+.carousel__slide {
+  border: red solid 1px;
+  margin-right: auto;
+  margin-left: auto;
+  display: none;
+  max-width: 900px;
+  list-style-type: none;
+  text-align: center;
+
+  @media (max-width: 991px) {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  &--active {
+    display: block;
+  }
 }

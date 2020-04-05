@@ -1,4 +1,4 @@
-$background-carousel-arrow-left: '{{../..}}/../../assets/SVG/carousel_arrow.svg';
+$background-carousel-arrow-left: '../../../../assets/SVG/carousel_arrow.svg';
 
 .CarouselArrow {
   flex: 1;
@@ -27,10 +27,13 @@ $background-carousel-arrow-left: '{{../..}}/../../assets/SVG/carousel_arrow.svg'
 .ArrowSvgLeft {
   display: block;
   position: relative;
-  top: 52%;
+  top: 50%;
+  left: calc(50% - 45px);
+  left: -webkit-calc(50% - 45px);
+  left: -moz-calc(50% - 45px);
   background: url($background-carousel-arrow-left) no-repeat;
-  height: 75px;
-  width: 75px;
+  height: 90px;
+  width: 90px;
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);

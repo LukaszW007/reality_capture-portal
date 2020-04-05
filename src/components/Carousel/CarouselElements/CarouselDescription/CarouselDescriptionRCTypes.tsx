@@ -5,23 +5,7 @@ import React from 'react';
 // import arrow from '../../assets/SVG/carousel_arrow.svg';
 import styles from './CarouselDescriptionRCTypes.module.scss';
 
-/*const CarouselDescriptionRCTypes = (props: any) => {
-  return (
-    <div className={styles.CarouselDescriptionRCTypes}>
-      <p
-        className={
-          props.index === props.activeIndex
-            ? styles.carousel__slide
-            : styles.carousel__slide
-        }
-      >
-        <strong className="carousel-slide__author">{props.slide.title}</strong>
-        <small className="carousel-slide__source">{props.slide.content}</small>
-      </p>
-    </div>
-  );
-};*/
- interface CarouselDescriptionProps {
+interface CarouselDescriptionProps {
   index: number;
   activeIndex: number;
   slide: {
@@ -32,39 +16,26 @@ import styles from './CarouselDescriptionRCTypes.module.scss';
 }
 
 const CarouselDescriptionRCTypes: React.FC<CarouselDescriptionProps> = props => {
-  // console.log('PROPS from DESC '+ props.slide.title);
+  const { index, activeIndex, slide } = props;
 
-  // console.log('slide po rozbiciu '+ slide.title);
-  // console.log('title!!!!!!!! '+title);
-
-  if (!props) {
+  if (slide === undefined || index === undefined || activeIndex === undefined) {
     return null;
   }
-  // const { activeIndex, slide, index } = props;
-  // const { title, content } = slide;
-  if (props) {
-    console.log(`props${JSON.stringify(props)}`);
-    console.log(`props.slide.title${props.slide.title}`);
 
-    return (
-      <div className={styles.CarouselDescriptionRCTypes}>
-        <p
-          className={
-            props.index === props.activeIndex
-              ? styles.carousel__slide
-              : styles.carousel__slide
-          }
-        >
-          <strong className="carousel-slide__author">
-            {props.slide.title}
-          </strong>
-          <small className="carousel-slide__source">
-            {props.slide.content}
-          </small>
-        </p>
-      </div>
-    );
-  }
+  return (
+    <li
+      className={
+        index === activeIndex
+          ? styles.carousel__slide_active
+          : styles.carousel__slide
+      }
+    >
+      <p className={styles.carouselDescriptionRCTypes}>
+        <strong className="carousel-slide__author">{slide.title}</strong>
+        <small className="carousel-slide__source">{slide.content}</small>
+      </p>
+    </li>
+  );
 };
 
 export default CarouselDescriptionRCTypes;

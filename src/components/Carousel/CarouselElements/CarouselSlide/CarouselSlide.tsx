@@ -16,17 +16,21 @@ interface CarouselSlideProps {
 
 const CarouselSlide: React.FC<CarouselSlideProps> = props => {
   const { activeIndex, slide, index } = props; // TODO: change classnames in last <p>
+  if (slide === undefined || index === undefined || activeIndex === undefined) {
+    return null;
+  }
   const { picture } = slide;
-
-  console.log(`this is slide.image ${picture} w dolarze ` + `${picture}`);
+  console.log(`this is index ${index} activeindex= ${activeIndex}`);
   return (
     <li
       className={
-        index === activeIndex ? styles.carousel__slide : styles.carousel__slide
+        index === activeIndex
+          ? styles.CarouselSlide_active
+          : styles.CarouselSlide
       }
     >
-      <p className={styles.carousel__slide}>
-        <img src={require('../../../../assets/images/RTC360.png')} alt="HDS" />
+      <p>
+        <img src={picture} alt="HDS" className={styles.ImageInCarouselSlide} />
       </p>
     </li>
   );

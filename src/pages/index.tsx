@@ -19,7 +19,6 @@ const IndexPage = () => (
         <Jumbotron />
       </div>
       <div className={styles.section2}>
-        <CarouselDescriptionRCTypes />
         <Carousel />
       </div>
     </div>
