@@ -12,6 +12,8 @@ import styles from './Index.module.scss';
 import RealityCaptureTypesGallery from '../components/Gallery';
 import ScanToBim from './sections/scan-to-BIM';
 import Tutorials from './sections/tutorials';
+import realityCaptureCarouselItems from '../assets/data/carouselItems';
+import tutorialsCarouselItems from '../assets/data/carouselItems';
 
 const IndexPage = () => (
   <>

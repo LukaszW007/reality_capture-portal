@@ -7,6 +7,27 @@
   font-size: $font-size-lg;
 }
 
+.CarouselDotIndicator {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  cursor: pointer;
+  opacity: 0.15;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &--active {
+    &,
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
 .CarouselIndicator {
   position: relative;
   margin: 0 1rem;

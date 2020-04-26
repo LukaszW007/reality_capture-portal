@@ -11,17 +11,21 @@
 
 }
 
-.CarouselIndicatorsBox {
+.CarouselTextIndicatorsBox {
   display: flex;
   flex-direction: row;
   margin: 1% 0;
+
+  &_off {
+    display: none;
+  }
 }
 
-.CarouselIndicatorsExtraSpace {
+.CarouselTextIndicatorsExtraSpace {
   flex: 4;
 }
 
-.CarouselIndicators {
+.CarouseTextIndicators {
   flex: 10;
   margin: 0;
   color: $yellowish;
@@ -34,6 +38,26 @@
     &:nth-of-type(n + 2) {
       margin-left: 9px;
     }
+  }
+}
+
+.CarouselDotIndicators {
+  flex: 10;
+  margin: 0;
+  color: $yellowish;
+  list-style-type: none;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+
+  li {
+    &:nth-of-type(n + 2) {
+      margin-left: 9px;
+    }
+  }
+
+  &_off {
+    display: none;
   }
 }
 
@@ -62,4 +86,8 @@
   flex-direction: row;
   list-style-type: none;
   margin: 0;
+
+  &_off {
+    display: none;
+  }
 }

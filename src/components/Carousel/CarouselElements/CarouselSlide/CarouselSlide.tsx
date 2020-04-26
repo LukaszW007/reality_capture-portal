@@ -1,5 +1,6 @@
 // global dependencies
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 // local dependencies
 import styles from './CarouselSlide.module.scss';

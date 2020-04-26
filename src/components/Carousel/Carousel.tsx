@@ -8,7 +8,7 @@ import RightArrow from './CarouselElements/RightArrow';
 import CarouselSlide from './CarouselElements/CarouselSlide';
 import CarouselDescriptionRCTypes from './CarouselElements/CarouselDescription';
 import CarouselIndicator from './CarouselElements/CarouselIndicator';
-import carouselItems from './carouselItems';
+import realityCaptureCarouselItems from '../../assets/data/realityCaptureCarouselItems';
 
 /* interface CarouselProps {
 
@@ -39,7 +39,7 @@ class Carousel extends React.Component<any, CarouselState> {
     e.preventDefault();
 
     let index = this.state.activeIndex;
-    const slidesLength = carouselItems.length;
+    const slidesLength = realityCaptureCarouselItems.items.length;
 
     if (index < 1) {
       index = slidesLength;
@@ -56,7 +56,7 @@ class Carousel extends React.Component<any, CarouselState> {
     e.preventDefault();
 
     let index = this.state.activeIndex;
-    const slidesLength = carouselItems.length - 1;
+    const slidesLength = realityCaptureCarouselItems.items.length - 1;
 
     if (index === slidesLength) {
       index = -1;
@@ -73,23 +73,36 @@ class Carousel extends React.Component<any, CarouselState> {
     const { activeIndex } = this.state;
     return (
       <div className={styles.Carousel}>
-        <div className={styles.CarouselIndicatorsBox}>
-          <div className={styles.CarouselIndicatorsExtraSpace} />
-          <ul className={styles.CarouselIndicators}>
-            {carouselItems.map((slide, index) => (
+        <div
+          className={
+            realityCaptureCarouselItems.enableTextIndicators
+              ? styles.CarouselTextIndicatorsBox
+              : styles.CarouselTextIndicatorsBox_off
+          }
+        >
+          <div className={styles.CarouselTextIndicatorsExtraSpace} />
+          <ul className={styles.CarouseTextIndicators}>
+            {realityCaptureCarouselItems.items.map((slide, index) => (
               <CarouselIndicator
                 key={slide.id}
                 index={index}
                 activeIndex={activeIndex}
                 name={slide.title}
+                isDotIndicator={realityCaptureCarouselItems.enableDotIndicators}
                 onClick={() => this.goToSlide(index)}
               />
             ))}
           </ul>
         </div>
         <div className={styles.CarouselSlideGroup}>
-          <ul className={styles.CarouselDescriptionRCTypes}>
-            {carouselItems.map((slide, index) => (
+          <ul
+            className={
+              realityCaptureCarouselItems.enableTextIndicators
+                ? styles.CarouselDescriptionRCTypes
+                : styles.CarouselDescriptionRCTypes_off
+            }
+          >
+            {realityCaptureCarouselItems.items.map((slide, index) => (
               <CarouselDescriptionRCTypes
                 key={slide.id}
                 index={index}
@@ -106,7 +119,7 @@ class Carousel extends React.Component<any, CarouselState> {
           />
 
           <ul className={styles.CarouselSlides}>
-            {carouselItems.map((slide, index) => (
+            {realityCaptureCarouselItems.items.map((slide, index) => (
               <CarouselSlide
                 key={slide.id}
                 index={index}
@@ -115,6 +128,29 @@ class Carousel extends React.Component<any, CarouselState> {
               />
             ))}
           </ul>
+
+          <div
+            className={
+              realityCaptureCarouselItems.enableDotIndicators
+                ? styles.CarouselDotIndicators
+                : styles.CarouselDotIndicators_off
+            }
+          >
+            <ul className={styles.CarouseDotIndicators}>
+              {realityCaptureCarouselItems.items.map((slide, index) => (
+                <CarouselIndicator
+                  key={slide.id}
+                  index={index}
+                  activeIndex={activeIndex}
+                  name=""
+                  isDotIndicator={
+                    realityCaptureCarouselItems.enableDotIndicators
+                  }
+                  onClick={() => this.goToSlide(index)}
+                />
+              ))}
+            </ul>
+          </div>
 
           <RightArrow
             onClick={(e: React.MouseEvent<HTMLElement>) =>

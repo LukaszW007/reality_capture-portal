@@ -1,0 +1,54 @@
+[33mcommit 8974831df76a595c12908fe1f6631e69f762015b[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Sun Apr 5 17:48:48 2020 +0200
+
+    Content data transfered to separate file and fixed some CSS mismatches in carousel component
+
+[33mcommit 6ed268e02a4bcc366f0d86fc84a5008f6a3a25b8[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Sun Mar 22 18:02:17 2020 +0100
+
+    Fixing Carousel in progress
+
+[33mcommit 782d43a5f4f546fddc5620ff734c15ac3e72f51a[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Sat Mar 21 14:33:12 2020 +0100
+
+    Add carousel about reality capture
+
+[33mcommit 1afe938b5d6adf30b583b2826828e0bf35617d1f[m
+Merge: 1d48f70 5b02c42
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Tue Feb 25 17:20:39 2020 +0100
+
+    Add minor configuration changes
+
+[33mcommit 1d48f7049dc9fc481a9b2d6404df33108c765101[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Tue Feb 25 16:53:21 2020 +0100
+
+    Add jumbotron section
+
+[33mcommit 5b02c421c606678c1635bdb1ee707e5be04fee2e[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Mon Feb 24 17:32:07 2020 +0100
+
+    Added plugin-root-import with configuration
+
+[33mcommit 219ca9d0db31709a5e3ef893fc294ca405ca4907[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Sun Feb 23 19:50:01 2020 +0100
+
+    Add libraries and configuration files to eslint, prettier, stylelint, husky, lint-staged
+
+[33mcommit e28da68d02f2f186e22e7151d44256505b0bb2c4[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Sun Feb 2 17:45:50 2020 +0100
+
+    Update gitignore and installed Typescript package for Gatsby
+
+[33mcommit 395250a2239c34065d2b499126ed47da4ff32614[m
+Author: LukaszW007 <boss@AsusROG.localdomain>
+Date:   Sun Feb 2 17:04:15 2020 +0100
+
+    Initial commit from gatsby: (https://github.com/gatsbyjs/gatsby-starter-default.git)
