@@ -2,13 +2,13 @@
 import React from 'react';
 
 // local dependencies
-// import arrow from '../../assets/SVG/carousel_arrow.svg';
 import styles from './CarouselDescriptionRCTypes.module.scss';
 
 interface CarouselDescriptionProps {
   index: number;
   activeIndex: number;
   slide: {
+    id: string;
     title: string;
     picture: string;
     content: string;
@@ -26,13 +26,13 @@ const CarouselDescriptionRCTypes: React.FC<CarouselDescriptionProps> = props => 
     <li
       className={
         index === activeIndex
-          ? styles.carousel__slide_active
-          : styles.carousel__slide
+          ? styles.CarouselSlide_active
+          : styles.CarouselSlide
       }
     >
       <p className={styles.carouselDescriptionRCTypes}>
-        <strong className="carousel-slide__author">{slide.title}</strong>
-        <small className="carousel-slide__source">{slide.content}</small>
+        <a className={styles.carouselSlide_title}>{slide.title}</a>
+        <a className={styles.carouselSlide_source}>{slide.content}</a>
       </p>
     </li>
   );

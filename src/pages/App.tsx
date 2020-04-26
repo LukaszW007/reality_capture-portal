@@ -3,7 +3,7 @@ import React from 'react';
 
 // local dependencies
 import Navbar from 'components/Navbar';
-import styles from './App.module.scss';
+import styles from './Index.module.scss';
 
 const App: React.FC = () => {
   return (

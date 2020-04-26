@@ -1,0 +1,92 @@
+@import "../../../utils/sass-core/colors";
+@import "../../../utils/sass-core/fonts";
+
+$background-tutorials-section: "../../../assets/images/church.png";
+$video-roll: "../../../assets/SVG/video_roll.svg";
+
+.sectionsBackground {
+  height: 1080px;
+  background: url($background-tutorials-section) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  margin: 50px 0 35px 0;
+  text-transform: uppercase;
+  color: $yellowish;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+
+  &::before {
+    background: $yellowish;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 26%;
+    margin: 0 auto;
+    position: relative;
+    left: -20%;
+    top: calc((1.75rem / 2) - 1px);
+  }
+
+  &::after {
+    background: $yellowish;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 26%;
+    margin: 0 auto;
+    position: relative;
+    left: 20%;
+    top: calc((-1.75rem / 2) + 2px);
+  }
+}
+
+.sectionIcon {
+  margin-bottom: 25px;
+  color: $yellowish;
+
+  &::before {
+    background: $yellowish;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 4%;
+    margin: 0 auto;
+    position: relative;
+    left: -3%;
+    top: calc((1.75rem / 2) - 1px);
+  }
+
+  &::after {
+    background: $yellowish;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 4%;
+    margin: 0 auto;
+    position: relative;
+    left: 3%;
+    top: calc((-5.8rem / 2) + 1px);
+  }
+}
+
+.content {
+  padding: 100px 0;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.underConstruction {
+  display: block;
+  height: 250px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}

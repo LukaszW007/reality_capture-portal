@@ -1,0 +1,91 @@
+@import "../../../utils/sass-core/colors";
+@import "../../../utils/sass-core/fonts";
+
+.GalleryElementContainer {
+  background: $midgreyish60;
+  border-radius: 5px;
+  flex: 1;
+  display: flex;
+  transition: opacity 0.5s;
+  height: 600px;
+  width: auto;
+  margin: 0 35px;
+
+  &:hover {
+    opacity: 0.8;
+    scale: 1.05;
+  }
+}
+
+.galleryElementContainerForImageAndTitle {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-self: stretch;
+
+  &_hovered {
+    display: none;
+  }
+}
+
+.galleryElementImage {
+  margin-top: 30px;
+  width: 150px;
+  align-self: center;
+}
+
+.galleryElementTitle {
+  display: flex;
+  margin: 0 auto;
+  flex-basis: 20%;
+  align-items: center;
+  line-height: $font-size-xxl;
+  font-size: $font-size-xxxl;
+  font-weight: $font-weight-bold;
+  color: $redish;
+}
+
+.galleryElementListOfDeviceTypes {
+  flex-basis: 40%;
+  margin: 2rem 2rem 2rem 3rem;
+  list-style: disclosure-closed;
+  color: $white;
+  font-size: $font-size-xl;
+  text-align: left;
+}
+
+.galleryElementListTypesItem {
+
+}
+
+.galleryElementListOfDeviceBrands {
+  display: none;
+
+  &_hovered {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto 3rem;
+    list-style: disc;
+    font-size: $font-size-lg;
+    line-height: $font-size-lg;
+    text-align: left;
+    color: $white;
+    animation: fade ease 1.5s;
+    -webkit-animation: fade ease-in 0.5s;
+
+    @keyframes fade {
+      0% {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.galleryElementListBrandItem {
+
+}

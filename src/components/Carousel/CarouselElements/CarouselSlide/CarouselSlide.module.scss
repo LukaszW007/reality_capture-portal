@@ -3,28 +3,34 @@
 
 .ImageInCarouselSlide {
   max-height: 800px;
-  max-width: 100%;
+  animation: fade ease 1.5s;
+  -webkit-animation: fade ease 1.5s;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 .CarouselSlide {
   flex: 10;
-  color: $white;
-  border: 5px solid red;
-  margin-right: auto;
-  margin-left: auto;
   display: none;
   max-width: 900px;
   max-height: 800px;
-  position: center;
   list-style-type: none;
   text-align: center;
+  -o-transition: 0.5s;
 
   @media (max-width: 991px) {
     padding-right: 60px;
     padding-left: 60px;
   }
 
-  &--active {
+  &_active {
     display: block;
   }
 }

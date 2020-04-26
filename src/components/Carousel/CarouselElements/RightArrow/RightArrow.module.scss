@@ -2,10 +2,9 @@ $background-carousel-arrow-left: '../../../../assets/SVG/carousel_arrow.svg';
 
 .CarouselArrow {
   flex: 1;
-  border: 1px solid orangered;
-  display: block;
-  cursor: pointer;
-  transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+  display: flex;
+  align-self: center;
+  transition: opacity 0.5s;
 
   &:focus {
     outline: 0;
@@ -13,14 +12,7 @@ $background-carousel-arrow-left: '../../../../assets/SVG/carousel_arrow.svg';
 
   &:hover {
     opacity: 0.8;
-  }
-
-  &--left {
-    left: 32px;
-  }
-
-  &--right {
-    right: 32px;
+    scale: 1.1;
   }
 }
 

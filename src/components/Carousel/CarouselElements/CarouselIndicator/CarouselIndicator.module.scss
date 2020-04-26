@@ -1,0 +1,47 @@
+@import "../../../../utils/sass-core/colors";
+@import "../../../../utils/sass-core/fonts";
+
+.CarouselIndicatorListElement {
+  width: 200px;
+  position: relative;
+  font-size: $font-size-lg;
+}
+
+.CarouselIndicator {
+  position: relative;
+  margin: 0 1rem;
+  width: auto;
+  height: 2em;
+  cursor: pointer;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &_active {
+    &:hover {
+      &::after {
+        left: 0;
+        width: 200px;
+      }
+    }
+  }
+
+  &_active {
+    &::after {
+      -o-transition:0.5s;
+      -ms-transition:0.5s;
+      -moz-transition:0.5s;
+      -webkit-transition:0.5s;
+      transition:0.5s;
+      content: "";
+      left: 25px;
+      display: block;
+      width: 150px;
+      height: 2px;
+      position: absolute;
+      background: $yellowish;
+    }
+  }
+}

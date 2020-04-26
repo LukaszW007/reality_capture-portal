@@ -8,6 +8,7 @@ interface CarouselSlideProps {
   index: number;
   activeIndex: number;
   slide: {
+    id: string;
     title: string;
     picture: any;
     content: string;

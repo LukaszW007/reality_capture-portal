@@ -6,7 +6,7 @@ $background-picture: '../../assets/images/top-view-desk-wood-and-coffee.png';
 .Jumbotron {
   box-sizing: border-box;
   display: flex;
-  height: 1068px;
+  height: 1080px;
   margin: 0 auto;
   background: url($background-picture) no-repeat;
   -webkit-background-size: cover;
@@ -35,8 +35,9 @@ h1 {
   text-align: left;
   color: $yellowish;
   font: $font-family-sans-serif;
-  font-size: $font-size-xxxxl;
+  font-size: $font-size-xxxxxl;
   text-transform: capitalize;
+  text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
 }
 
 h3 {
@@ -44,5 +45,7 @@ h3 {
   text-align: left;
   color: $white;
   font: $font-family-sans-serif;
-  font-size: $font-size-xl;
+  font-size: $font-size-xxl;
+  text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
+
 }

@@ -6,8 +6,9 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  background: $darkgreyish70;
+  background: $darkgreyish90;
   align-items: center;
+  z-index: 1;
 }
 
 .Logo {

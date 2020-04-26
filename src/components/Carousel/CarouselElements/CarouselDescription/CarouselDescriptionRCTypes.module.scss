@@ -1,12 +1,7 @@
 @import "../../../../utils/sass-core/colors";
 @import "../../../../utils/sass-core/fonts";
 
-.carouselDescriptionRCTypes {
-  color: white;
-}
-
-.carousel__slide {
-  border: red solid 1px;
+.CarouselSlide {
   margin-right: auto;
   margin-left: auto;
   display: none;
@@ -19,7 +14,62 @@
     padding-left: 60px;
   }
 
-  &--active {
-    display: block;
+  &_active {
+    display: flex;
+  }
+}
+
+.carouselDescriptionRCTypes {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin: 0 20px;
+}
+
+.carouselSlide_title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: $yellowish;
+  font-size: $font-size-xxxl;
+  line-height: $font-size-xxxl;
+  font-weight: $font-weight-bold;
+  animation: fade ease-in 1.5s;
+  -webkit-animation: fade ease-in 1.5s;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.carouselSlide_title::after {
+  content: '';
+  height: 5px;
+  width: 100px;
+  background: $yellowish;
+  position: absolute;
+  left: 21vw;
+}
+
+.carouselSlide_source {
+  flex: 4;
+  color: $white;
+  margin: 5px;
+  font-size: $font-size-md;
+  animation: fade ease-in 1.5s;
+  -webkit-animation: fade ease-in 1.5s;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
