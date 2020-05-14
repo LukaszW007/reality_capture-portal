@@ -10,6 +10,7 @@
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -33,4 +34,10 @@
   &_active {
     display: block;
   }
+}
+
+.reactPlayer {
+  position: relative;
+  height: 40vh !important;
+  width: 40vw !important;
 }

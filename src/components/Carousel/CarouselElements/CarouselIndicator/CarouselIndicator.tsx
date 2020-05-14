@@ -19,10 +19,10 @@ const CarouselIndicator: React.FC<IndicatorsProps> = props => {
 
   if (index === undefined || activeIndex === undefined || name === undefined) {
     return null;
-  }
+  } //TODO ikona rolki filmu i yt sie nachodza
   if (isDotIndicator) {
     return (
-      <li className={styles.CarouselIndicatorListElement}>
+      <li className={styles.CarouselIndicatorListElement_dot}>
         <a
           className={
             index === activeIndex

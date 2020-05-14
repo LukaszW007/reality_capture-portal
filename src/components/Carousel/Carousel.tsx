@@ -10,15 +10,18 @@ import CarouselDescriptionRCTypes from './CarouselElements/CarouselDescription';
 import CarouselIndicator from './CarouselElements/CarouselIndicator';
 import realityCaptureCarouselItems from '../../assets/data/realityCaptureCarouselItems';
 
-/* interface CarouselProps {
-
-} */
+interface CarouselProps {
+  enableDescription: boolean;
+  enableTextIndicators: boolean;
+  enableDotIndicators: boolean;
+  items: object;
+}
 
 interface CarouselState {
   activeIndex: number;
 }
 
-class Carousel extends React.Component<any, CarouselState> {
+class Carousel extends React.Component<CarouselProps, CarouselState> {
   constructor(props: any) {
     super(props);
 
@@ -71,6 +74,23 @@ class Carousel extends React.Component<any, CarouselState> {
 
   render() {
     const { activeIndex } = this.state;
+    const {
+      enableDescription,
+      enableTextIndicators,
+      enableDotIndicators,
+      items,
+    } = this.props;
+
+    if (
+      enableDescription === undefined ||
+      enableTextIndicators === undefined ||
+      enableDotIndicators === undefined ||
+      items === undefined
+    ) {
+      return null;
+    }
+
+    console.log(`active index-number ${activeIndex}`);
     return (
       <div className={styles.Carousel}>
         <div
@@ -82,13 +102,13 @@ class Carousel extends React.Component<any, CarouselState> {
         >
           <div className={styles.CarouselTextIndicatorsExtraSpace} />
           <ul className={styles.CarouseTextIndicators}>
-            {realityCaptureCarouselItems.items.map((slide, index) => (
+            {items.map((slide, index) => (
               <CarouselIndicator
                 key={slide.id}
                 index={index}
                 activeIndex={activeIndex}
                 name={slide.title}
-                isDotIndicator={realityCaptureCarouselItems.enableDotIndicators}
+                isDotIndicator={enableDotIndicators}
                 onClick={() => this.goToSlide(index)}
               />
             ))}
@@ -97,12 +117,12 @@ class Carousel extends React.Component<any, CarouselState> {
         <div className={styles.CarouselSlideGroup}>
           <ul
             className={
-              realityCaptureCarouselItems.enableTextIndicators
+              enableTextIndicators
                 ? styles.CarouselDescriptionRCTypes
                 : styles.CarouselDescriptionRCTypes_off
             }
           >
-            {realityCaptureCarouselItems.items.map((slide, index) => (
+            {items.map((slide, index) => (
               <CarouselDescriptionRCTypes
                 key={slide.id}
                 index={index}
@@ -118,38 +138,38 @@ class Carousel extends React.Component<any, CarouselState> {
             }
           />
 
-          <ul className={styles.CarouselSlides}>
-            {realityCaptureCarouselItems.items.map((slide, index) => (
-              <CarouselSlide
-                key={slide.id}
-                index={index}
-                activeIndex={activeIndex}
-                slide={slide}
-              />
-            ))}
-          </ul>
-
-          <div
-            className={
-              realityCaptureCarouselItems.enableDotIndicators
-                ? styles.CarouselDotIndicators
-                : styles.CarouselDotIndicators_off
-            }
-          >
-            <ul className={styles.CarouseDotIndicators}>
-              {realityCaptureCarouselItems.items.map((slide, index) => (
-                <CarouselIndicator
+          <div className={styles.SlidesWithDots}>
+            <ul className={styles.CarouselSlides}>
+              {items.map((slide, index) => (
+                <CarouselSlide
                   key={slide.id}
                   index={index}
                   activeIndex={activeIndex}
-                  name=""
-                  isDotIndicator={
-                    realityCaptureCarouselItems.enableDotIndicators
-                  }
-                  onClick={() => this.goToSlide(index)}
+                  slide={slide}
                 />
               ))}
             </ul>
+
+            <div
+              className={
+                enableDotIndicators
+                  ? styles.CarouselDotIndicators
+                  : styles.CarouselDotIndicators_off
+              }
+            >
+              <ul className={styles.CarouseDotIndicators}>
+                {items.map((slide, index) => (
+                  <CarouselIndicator
+                    key={slide.id}
+                    index={index}
+                    activeIndex={activeIndex}
+                    name=""
+                    isDotIndicator={enableDotIndicators}
+                    onClick={() => this.goToSlide(index)}
+                  />
+                ))}
+              </ul>
+            </div>
           </div>
 
           <RightArrow

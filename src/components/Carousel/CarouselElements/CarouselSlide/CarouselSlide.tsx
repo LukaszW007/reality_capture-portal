@@ -10,9 +10,10 @@ interface CarouselSlideProps {
   activeIndex: number;
   slide: {
     id: string;
-    title: string;
-    picture: any;
-    content: string;
+    title?: string;
+    picture?: any;
+    content?: string;
+    webAddress?: string;
   };
 }
 
@@ -21,8 +22,28 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
   if (slide === undefined || index === undefined || activeIndex === undefined) {
     return null;
   }
-  const { picture } = slide;
+  const { picture, webAddress } = slide;
   console.log(`this is index ${index} activeindex= ${activeIndex}`);
+
+  if (webAddress) {
+    return (
+      <li
+        className={
+          index === activeIndex
+            ? styles.CarouselSlide_active
+            : styles.CarouselSlide
+        }
+      >
+        <div>
+          <ReactPlayer
+            className={styles.reactPlayer}
+            url={webAddress}
+            width="50%"
+          />
+        </div>
+      </li>
+    );
+  }
   return (
     <li
       className={

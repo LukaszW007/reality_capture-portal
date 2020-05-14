@@ -12,8 +12,8 @@ import styles from './Index.module.scss';
 import RealityCaptureTypesGallery from '../components/Gallery';
 import ScanToBim from './sections/scan-to-BIM';
 import Tutorials from './sections/tutorials';
-import realityCaptureCarouselItems from '../assets/data/carouselItems';
-import tutorialsCarouselItems from '../assets/data/carouselItems';
+import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
+import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 
 const IndexPage = () => (
   <>
@@ -25,7 +25,16 @@ const IndexPage = () => (
       </div>
       <div className={styles.section2_3_4}>
         <div className={styles.section2}>
-          <Carousel />
+          <Carousel
+            enableDescription={realityCaptureCarouselItems.enableDescription}
+            enableTextIndicators={
+              realityCaptureCarouselItems.enableTextIndicators
+            }
+            enableDotIndicators={
+              realityCaptureCarouselItems.enableDotIndicators
+            }
+            items={realityCaptureCarouselItems.items}
+          />
         </div>
         <div className={styles.section3}>
           <RealityCaptureTypesGallery />
@@ -42,11 +51,9 @@ const IndexPage = () => (
         <ScanToBim />
       </div>
       <div className={styles.section6_tutorials}>
-        <Tutorials />
+        <Tutorials dataFromJson={tutorialsCarouselItems} />
       </div>
-      <div className={styles.section7_aboutMe}>
-
-      </div>
+      <div className={styles.section7_aboutMe} />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </>
