@@ -90,7 +90,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       return null;
     }
 
-    console.log(`active index-number ${activeIndex}`);
+    console.log(`active index-number ${activeIndex}`); //TODO check hight of the bottom margin in top carousel
     return (
       <div className={styles.Carousel}>
         <div
@@ -101,7 +101,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
           }
         >
           <div className={styles.CarouselTextIndicatorsExtraSpace} />
-          <ul className={styles.CarouseTextIndicators}>
+          <ul className={styles.CarouselTextIndicators}>
             {items.map((slide, index) => (
               <CarouselIndicator
                 key={slide.id}
@@ -157,7 +157,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
                   : styles.CarouselDotIndicators_off
               }
             >
-              <ul className={styles.CarouseDotIndicators}>
+              <ul className={styles.CarouselDotIndicators}>
                 {items.map((slide, index) => (
                   <CarouselIndicator
                     key={slide.id}

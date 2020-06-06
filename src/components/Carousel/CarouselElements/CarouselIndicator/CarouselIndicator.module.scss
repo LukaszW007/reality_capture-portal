@@ -26,8 +26,9 @@
     opacity: 0.5;
   }
 
-  &--active {
-    &,
+  &_active {
+    background: $yellowish;
+    width: 25px;
     &:hover {
       opacity: 0.75;
     }
