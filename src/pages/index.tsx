@@ -12,6 +12,8 @@ import styles from './Index.module.scss';
 import RealityCaptureTypesGallery from '../components/Gallery';
 import ScanToBim from './sections/scan-to-BIM';
 import Tutorials from './sections/tutorials';
+import AboutMe from './sections/about-me';
+import Footer from './sections/footer';
 import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 
@@ -44,6 +46,7 @@ const IndexPage = () => (
             className={styles.reactPlayer}
             url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
             width="50%"
+            controls="true"
           />
         </div>
       </div>
@@ -53,9 +56,12 @@ const IndexPage = () => (
       <div className={styles.section6_tutorials}>
         <Tutorials dataFromJson={tutorialsCarouselItems} />
       </div>
-      <div className={styles.section7_aboutMe} />
+      <div className={styles.section7_aboutMe}>
+        <AboutMe />
+      </div>
     </div>
     <Link to="/page-2/">Go to page 2</Link>
+    <Footer />
   </>
 );
 

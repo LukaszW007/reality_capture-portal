@@ -34,11 +34,11 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
             : styles.CarouselSlide
         }
       >
-        <div>
+        <div className={styles.playerWrapper}>
           <ReactPlayer
             className={styles.reactPlayer}
             url={webAddress}
-            width="50%"
+            controls= "true"
           />
         </div>
       </li>

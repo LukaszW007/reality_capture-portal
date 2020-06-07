@@ -1,0 +1,52 @@
+@import "../../../utils/sass-core/colors";
+@import "../../../utils/sass-core/fonts";
+
+$underConstruction-picture: "../../../assets/SVG/under_construction.svg";
+
+.sectionHeader {
+  text-transform: uppercase;
+  color: $yellowish;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+
+  &::before {
+    background: $yellowish;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 26%;
+    margin: 0 auto;
+    position: relative;
+    left: -20%;
+    top: calc((1.75rem / 2) - 1px);
+  }
+
+  &::after {
+    background: $yellowish;
+    display: block;
+    content: '';
+    height: 2px;
+    width: 26%;
+    margin: 0 auto;
+    position: relative;
+    left: 20%;
+    top: calc((-1.75rem / 2) + 2px);
+  }
+}
+
+.content {
+  padding: 100px 0;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.underConstruction {
+  display: block;
+  height: 250px;
+  background: url($underConstruction_picture) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
