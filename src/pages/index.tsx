@@ -17,52 +17,78 @@ import Footer from './sections/footer';
 import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 
-const IndexPage = () => (
-  <>
-    <SEO title="Home" />
-    <div className={styles.App}>
-      <div className={styles.section1}>
-        <Navbar />
-        <Jumbotron />
-      </div>
-      <div className={styles.section2_3_4}>
-        <div className={styles.section2}>
-          <Carousel
-            enableDescription={realityCaptureCarouselItems.enableDescription}
-            enableTextIndicators={
-              realityCaptureCarouselItems.enableTextIndicators
-            }
-            enableDotIndicators={
-              realityCaptureCarouselItems.enableDotIndicators
-            }
-            items={realityCaptureCarouselItems.items}
-          />
+interface IndexPageState {
+  isDesktop: boolean;
+}
+
+const checkIsDesktop = () => window.innerWidth >= 768;
+
+class IndexPage extends React.Component<any, IndexPageState> {
+  constructor(props: any) {
+    super(props);
+
+    this.isDesktopVersion = this.isDesktopVersion.bind(this);
+    this.state = {
+      isDesktop: checkIsDesktop(),
+    };
+  }
+
+  isDesktopVersion() {
+    console.log(`innerWidth is : ${window.innerWidth}`);
+    if (window.innerWidth >= 768) this.setState({ isDesktop: true });
+  }
+
+  render() {
+    const { isDesktop } = this.state;
+    return (
+      <>
+        <SEO title="Home" />
+        <div className={styles.App}>
+          <div className={styles.section1}>
+            <Navbar desktopScreenVersion={isDesktop} />
+            <Jumbotron />
+          </div>
+          <div className={styles.section2_3_4}>
+            <div className={styles.section2}>
+              <Carousel
+                enableDescription={
+                  realityCaptureCarouselItems.enableDescription
+                }
+                enableTextIndicators={
+                  realityCaptureCarouselItems.enableTextIndicators
+                }
+                enableDotIndicators={
+                  realityCaptureCarouselItems.enableDotIndicators
+                }
+                items={realityCaptureCarouselItems.items}
+              />
+            </div>
+            <div className={styles.section3}>
+              <RealityCaptureTypesGallery />
+            </div>
+            <div className={styles.section4_youtubeMovie}>
+              <ReactPlayer
+                className={styles.reactPlayer}
+                url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                width="50%"
+                controls="true"
+              />
+            </div>
+          </div>
+          <div className={styles.section5_scanToBim}>
+            <ScanToBim />
+          </div>
+          <div className={styles.section6_tutorials}>
+            <Tutorials dataFromJson={tutorialsCarouselItems} />
+          </div>
+          <div className={styles.section7_aboutMe}>
+            <AboutMe />
+          </div>
         </div>
-        <div className={styles.section3}>
-          <RealityCaptureTypesGallery />
-        </div>
-        <div className={styles.section4_youtubeMovie}>
-          <ReactPlayer
-            className={styles.reactPlayer}
-            url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-            width="50%"
-            controls="true"
-          />
-        </div>
-      </div>
-      <div className={styles.section5_scanToBim}>
-        <ScanToBim />
-      </div>
-      <div className={styles.section6_tutorials}>
-        <Tutorials dataFromJson={tutorialsCarouselItems} />
-      </div>
-      <div className={styles.section7_aboutMe}>
-        <AboutMe />
-      </div>
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <Footer />
-  </>
-);
+        <Footer />
+      </>
+    );
+  }
+}
 
 export default IndexPage;

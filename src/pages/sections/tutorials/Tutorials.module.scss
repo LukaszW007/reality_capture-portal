@@ -73,19 +73,3 @@ $video-roll: "../../../assets/SVG/video_roll.svg";
     top: calc((-5.8rem / 2) + 1px);
   }
 }
-
-.content {
-  padding: 100px 0;
-  width: 350px;
-  margin: 0 auto;
-}
-
-.underConstruction {
-  display: block;
-  height: 250px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden;
-}
