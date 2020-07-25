@@ -34,7 +34,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
   }
 
   isDesktopVersion = () => {
-    if (window.innerWidth >= 768) this.setState({ isDesktop: true });
+    if (window.innerWidth >= 769) this.setState({ isDesktop: true });
   };
 
   render() {
