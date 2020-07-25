@@ -1,6 +1,7 @@
 @import "../../utils/sass-core/colors";
 @import "../../utils/sass-core/fonts";
 
+//desktop
 .Carousel {
   margin: 1% 0 10vh 0;
   display: flex;
@@ -93,5 +94,30 @@
 
   &_off {
     display: none;
+  }
+}
+
+//
+//mobile
+//
+
+.CarouselMobile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: stretch;
+  max-height: 850px;
+}
+
+.CarouselSlideGroupMobile {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .Arrow {
+    width: 35px;
   }
 }

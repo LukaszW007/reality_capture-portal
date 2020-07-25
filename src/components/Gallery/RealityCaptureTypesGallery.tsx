@@ -14,7 +14,7 @@ interface GalleryItems {
   listOfDeviceBrands: ReadonlyArray<string>;
 }
 
-const RealityCaptureTypesGallery: React.FC<any> = () => {
+const RealityCaptureTypesGallery: React.FC<GalleryItems> = () => {
   return (
     <div className={styles.GalleryContainer}>
       {galleryItems.map((item: GalleryItems) => (

@@ -17,11 +17,11 @@ import Footer from './sections/footer';
 import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 
+const checkIsDesktop = () => window.innerWidth >= 769;
+
 interface IndexPageState {
   isDesktop: boolean;
 }
-
-const checkIsDesktop = () => window.innerWidth >= 768;
 
 class IndexPage extends React.Component<any, IndexPageState> {
   constructor(props: any) {
@@ -33,10 +33,9 @@ class IndexPage extends React.Component<any, IndexPageState> {
     };
   }
 
-  isDesktopVersion() {
-    console.log(`innerWidth is : ${window.innerWidth}`);
+  isDesktopVersion = () => {
     if (window.innerWidth >= 768) this.setState({ isDesktop: true });
-  }
+  };
 
   render() {
     const { isDesktop } = this.state;
@@ -49,7 +48,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
             <Jumbotron />
           </div>
           <div className={styles.section2_3_4}>
-            <div className={styles.section2}>
+            <div className={isDesktop ? styles.section2 : styles.section2Mobile}>
               <Carousel
                 enableDescription={
                   realityCaptureCarouselItems.enableDescription
@@ -61,9 +60,10 @@ class IndexPage extends React.Component<any, IndexPageState> {
                   realityCaptureCarouselItems.enableDotIndicators
                 }
                 items={realityCaptureCarouselItems.items}
+                desktopScreenVersion={isDesktop}
               />
             </div>
-            <div className={styles.section3}>
+            <div className={isDesktop ? styles.section3 : styles.section3Mobile}>
               <RealityCaptureTypesGallery />
             </div>
             <div className={styles.section4_youtubeMovie}>

@@ -47,14 +47,14 @@
   }
 }
 
-.carouselSlide_title::after {
-  content: '';
-  height: 5px;
-  width: 100px;
-  background: $yellowish;
-  position: absolute;
-  left: 21vw;
-}
+//.carouselSlide_title::after {
+//  content: '';
+//  height: 5px;
+//  width: 100px;
+//  background: $yellowish;
+//  position: absolute;
+//  left: 21vw;
+//}
 
 .carouselSlide_source {
   flex: 4;
@@ -71,5 +71,15 @@
     100% {
       opacity: 1;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselSlide_title {
+    font-size: $font-size-xxl;
+  }
+
+  .carouselDescriptionRCTypes {
+    margin: 0 10px;
   }
 }

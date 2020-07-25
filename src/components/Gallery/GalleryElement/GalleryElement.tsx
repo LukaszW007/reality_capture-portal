@@ -5,6 +5,8 @@ import React from 'react';
 import styles from './GalleryElement.module.scss';
 // import galleryItems from '../galleryItems';
 
+const checkIsDesktop = () => window.innerWidth >= 769;
+
 interface GalleryItemsProps {
   id: string;
   picture: string;
@@ -25,6 +27,12 @@ class GalleryElement extends React.Component<
     super(props);
 
     this.state = { hover: false };
+  }
+
+  onClickTriggerMobileVersion() {
+    if (!checkIsDesktop()) {
+      this.setState({ hover: !this.state.hover });
+    }
   }
 
   hoverOn(e: any) {
@@ -54,6 +62,7 @@ class GalleryElement extends React.Component<
       <div
         onMouseEnter={e => this.hoverOn(e)}
         onMouseLeave={e => this.hoverOff(e)}
+        onClick={() => this.onClickTriggerMobileVersion()}
         className={styles.GalleryElementContainer}
       >
         <div

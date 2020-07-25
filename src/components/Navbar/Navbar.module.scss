@@ -1,9 +1,12 @@
 @import "../../utils/sass-core/colors.scss";
 @import "../../utils/sass-core/fonts.scss";
 
+$ecllipsis-icon: "../../assets/SVG/ellipsis-v-solid.svg";
+$times-solid: "../../assets/SVG/times-solid.svg";
+
 .Navbar {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   background: $darkgreyish90;
@@ -11,8 +14,23 @@
   z-index: 1;
 }
 
+.NavbarMobile {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.MenuBurgerContainer {
+  display: flex;
+  flex: 1;
+  height: 15%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .Logo {
   flex: 3;
+  min-width: 100px;
 }
 
 .NavList {
@@ -23,58 +41,42 @@
   font-size: 0;
 }
 
-.menu-btn {
+.NavListMobileClosed {
+  visibility: hidden;
+  height: 0;
+}
+
+.NavListMobileOpen {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  list-style: none;
+  height: 100vh;
+}
+
+.ellipsis {
+  position: relative;
+  width: 2rem;
+  height: 2.5rem;
+  background: url($ecllipsis-icon) no-repeat;
+  transition: all 0.5s ease-in-out;
+}
+
+.ellipsis_open {
+  position: relative;
+  width: 2rem;
+  height: 2.5rem;
+  background: url($times-solid) no-repeat;
+}
+
+.MenuBurger {
   position: relative;
   display: flex;
-  justify-content: center;
+  margin-right: 20px;
+  justify-content: right;
   align-items: center;
-  width: 80px;
   height: 80px;
   cursor: pointer;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   /* border: 3px solid #fff; */
-}
-
-.menu-btn__burger {
-  width: 50px;
-  height: 6px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  transition: all .5s ease-in-out;
-}
-
-.menu-btn__burger::before,
-.menu-btn__burger::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 6px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  transition: all .5s ease-in-out;
-}
-
-.menu-btn__burger::before {
-  transform: translateY(-16px);
-}
-
-.menu-btn__burger::after {
-  transform: translateY(16px);
-}
-
-/* ANIMATION */
-.menu-btn.open .menu-btn__burger {
-  transform: translateX(-50px);
-  background: transparent;
-  box-shadow: none;
-}
-
-.menu-btn.open .menu-btn__burger::before {
-  transform: rotate(45deg) translate(35px, -35px);
-}
-
-.menu-btn.open .menu-btn__burger::after {
-  transform: rotate(-45deg) translate(35px, 35px);
 }

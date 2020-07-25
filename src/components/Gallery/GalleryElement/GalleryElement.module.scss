@@ -89,3 +89,19 @@
 .galleryElementListBrandItem {
 
 }
+
+@media (max-width: 768px) {
+  .GalleryElementContainer {
+    margin: 20px 0;
+    min-height: 470px;
+    max-height: 470px;
+  }
+
+  .galleryElementListOfDeviceBrands_hovered {
+    margin: auto;
+  }
+
+  .galleryElementTitle {
+    font-size: $font-size-xxl;
+  }
+}

@@ -1,4 +1,5 @@
 $background-carousel-arrow-left: '../../../../assets/SVG/carousel_arrow.svg';
+$background-carousel-arrow-left_mobile: '../../../../assets/SVG/carousel_arrow_mobile.svg';
 
 .CarouselArrow {
   flex: 1;
@@ -34,4 +35,19 @@ $background-carousel-arrow-left: '../../../../assets/SVG/carousel_arrow.svg';
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+@media (max-width: 768px) {
+  .CarouselArrow {
+    align-self: normal;
+  }
+
+  .ArrowSvgLeft {
+    left: calc(50% - 17.5px);
+    left: -webkit-calc(50% - 17.5px);
+    left: -moz-calc(50% - 17.5px);
+    height: 35px;
+    width: 35px;
+    background: url($background-carousel-arrow-left_mobile) no-repeat;
+  }
 }
