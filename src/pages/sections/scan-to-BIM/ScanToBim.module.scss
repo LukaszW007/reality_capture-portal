@@ -9,29 +9,6 @@ $underConstruction-picture: "../../../assets/SVG/under_construction.svg";
   font-size: $font-size-xxl;
   font-weight: $font-weight-semibold;
 
-  &::before {
-    background: $yellowish;
-    display: block;
-    content: '';
-    height: 2px;
-    width: 26%;
-    margin: 0 auto;
-    position: relative;
-    left: -20%;
-    top: calc((1.75rem / 2) - 1px);
-  }
-
-  &::after {
-    background: $yellowish;
-    display: block;
-    content: '';
-    height: 2px;
-    width: 26%;
-    margin: 0 auto;
-    position: relative;
-    left: 20%;
-    top: calc((-1.75rem / 2) + 2px);
-  }
 }
 
 .content {
@@ -49,4 +26,32 @@ $underConstruction-picture: "../../../assets/SVG/under_construction.svg";
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
+}
+
+@media (min-width: 1182px) {
+  .sectionHeader {
+    &::before {
+      background: $yellowish;
+      display: block;
+      content: '';
+      height: 2px;
+      width: calc(18% + 1vh);
+      margin: 0 auto;
+      position: relative;
+      left: -20%;
+      top: calc((1.75rem / 2) - 1px);
+    }
+
+    &::after {
+      background: $yellowish;
+      display: block;
+      content: '';
+      height: 2px;
+      width: calc(18% + 1vh);
+      margin: 0 auto;
+      position: relative;
+      left: 20%;
+      top: calc((-1.75rem / 2) + 2px);
+    }
+  }
 }

@@ -11,8 +11,6 @@ import CarouselDescriptionRCTypes from './CarouselElements/CarouselDescription';
 import CarouselIndicator from './CarouselElements/CarouselIndicator';
 import realityCaptureCarouselItems from '../../assets/data/realityCaptureCarouselItems';
 
-const checkIsDesktop = () => window.innerWidth >= 769;
-
 interface CarouselProps {
   enableDescription: boolean;
   enableTextIndicators: boolean;
@@ -24,6 +22,7 @@ interface CarouselProps {
 interface CarouselState {
   activeIndex: number;
   isDesktop: boolean;
+  windowWidth: number;
 }
 
 class Carousel extends React.Component<CarouselProps, CarouselState> {
@@ -36,11 +35,13 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
 
     this.state = {
       activeIndex: 0,
-      isDesktop: true,
+      isDesktop: this.props.desktopScreenVersion,
+      windowWidth: 0,
     };
   }
 
   componentDidMount = () => {
+    this.setState({ windowWidth: window.innerWidth });
     window.addEventListener('resize', this.onResize);
   };
 
@@ -49,14 +50,13 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   };
 
   onResize = () => {
-    if (!checkIsDesktop()) {
+    this.setState({ windowWidth: window.innerWidth });
+    if (!(this.state.windowWidth >= 769)) {
       this.setState({ isDesktop: false });
     } else {
       this.setState({ isDesktop: true });
     }
   };
-
-  onResize = throttle(this.onResize, 100, { leading: false });
 
   goToSlide(index: number) {
     this.setState({ activeIndex: index });
@@ -97,8 +97,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   render() {
-    this.onResize();
-
     const { activeIndex, isDesktop } = this.state;
     const {
       enableDescription,
@@ -107,15 +105,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       items,
       desktopScreenVersion,
     } = this.props;
-
-    if (
-      enableDescription === undefined ||
-      enableTextIndicators === undefined ||
-      enableDotIndicators === undefined ||
-      items === undefined
-    ) {
-      return null;
-    }
 
     console.log(`active index-number ${activeIndex}`); // TODO check hight of the bottom margin in top carousel
     if (isDesktop) {

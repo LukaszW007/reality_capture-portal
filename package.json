@@ -52,7 +52,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "develop-lan": "gatsby develop -H $HOSTNAME -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
@@ -61,7 +61,8 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby,.dev/unit-testing\" && exit 1",
     "lint": "tsc --noEmit && eslint '**/*.{js,jsx,ts,tsx}' .gitignore --quiet --fix",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy:github": "npm run build && node ./scripts/deploy-github"
   },
   "repository": {
     "type": "git",

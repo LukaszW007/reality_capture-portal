@@ -90,13 +90,25 @@
 
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1680px) {
+  .galleryElementTitle {
+    font-size: $font-size-xxl;
+  }
+
+  .galleryElementListOfDeviceTypes {
+    font-size: $font-size-lg;
+  }
+}
+
+@media (max-width: 1182px) {
   .GalleryElementContainer {
     margin: 20px 0;
     min-height: 470px;
     max-height: 470px;
   }
+}
 
+@media (max-width: 768px) {
   .galleryElementListOfDeviceBrands_hovered {
     margin: auto;
   }

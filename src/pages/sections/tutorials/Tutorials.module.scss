@@ -25,10 +25,10 @@ $video-roll: "../../../assets/SVG/video_roll.svg";
     display: block;
     content: '';
     height: 2px;
-    width: 26%;
+    width: calc(18% + 1vh);
     margin: 0 auto;
     position: relative;
-    left: -20%;
+    left: calc(-18% - 2vh);
     top: calc((1.75rem / 2) - 1px);
   }
 
@@ -37,10 +37,10 @@ $video-roll: "../../../assets/SVG/video_roll.svg";
     display: block;
     content: '';
     height: 2px;
-    width: 26%;
+    width: calc(18% + 1vh);
     margin: 0 auto;
     position: relative;
-    left: 20%;
+    left: calc(18% + 2vh);
     top: calc((-1.75rem / 2) + 2px);
   }
 }
@@ -54,10 +54,10 @@ $video-roll: "../../../assets/SVG/video_roll.svg";
     display: block;
     content: '';
     height: 2px;
-    width: 4%;
+    width: calc(3% + 1vh);
     margin: 0 auto;
     position: relative;
-    left: -3%;
+    left: calc(-3% - 1vh);
     top: calc((1.75rem / 2) - 1px);
   }
 
@@ -66,10 +66,10 @@ $video-roll: "../../../assets/SVG/video_roll.svg";
     display: block;
     content: '';
     height: 2px;
-    width: 4%;
+    width: calc(3% + 1vh);
     margin: 0 auto;
     position: relative;
-    left: 3%;
+    left: calc(3% + 1vh);
     top: calc((-5.8rem / 2) + 1px);
   }
 }

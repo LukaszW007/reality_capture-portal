@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import ReactPlayer from 'react-player';
 
 // local dependencies
+import throttle from 'lodash.throttle';
 import SEO from '../components/seo';
 import Navbar from '../components/Navbar';
 import Jumbotron from '../components/Jumbotron';
@@ -17,28 +18,54 @@ import Footer from './sections/footer';
 import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 
-const checkIsDesktop = () => window.innerWidth >= 769;
-
 interface IndexPageState {
   isDesktop: boolean;
+  windowWidth: number;
 }
 
 class IndexPage extends React.Component<any, IndexPageState> {
   constructor(props: any) {
     super(props);
 
-    this.isDesktopVersion = this.isDesktopVersion.bind(this);
     this.state = {
-      isDesktop: checkIsDesktop(),
+      windowWidth: 0,
+      isDesktop: true,
     };
   }
 
-  isDesktopVersion = () => {
-    if (window.innerWidth >= 769) this.setState({ isDesktop: true });
+  UNSAFE_componentWillMount(): void {
+    this.setState({ windowWidth: window.innerWidth });
+    //this.onResize();
+    console.log("componentWillMount window.innerWidth: "+ this.state.windowWidth)
+    console.log("componentWillMount STATE windowWidth: "+ this.state.windowWidth)
+    console.log("componentWillMount STATE isDesktop: "+ this.state.isDesktop)
+  }
+
+  componentDidMount = () => {
+    this.setState({ windowWidth: window.innerWidth });
+    this.onResize();
+    console.log("componentDidMount windowWidth: "+ this.state.windowWidth)
+
+    window.addEventListener('resize', this.onResize);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.onResize);
+  };
+
+  onResize = () => {
+    if (!(this.state.windowWidth >= 769)) {
+      this.setState({ isDesktop: false });
+    } else {
+      this.setState({ isDesktop: true });
+    }
   };
 
   render() {
-    const { isDesktop } = this.state;
+    const { isDesktop, windowWidth } = this.state;
+
+    console.log("render windowWidth: "+ windowWidth);
+    console.log("render isDekstop: "+ isDesktop);
     return (
       <>
         <SEO title="Home" />
@@ -48,7 +75,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
             <Jumbotron />
           </div>
           <div className={styles.section2_3_4}>
-            <div className={isDesktop ? styles.section2 : styles.section2Mobile}>
+            <div className={styles.section2}>
               <Carousel
                 enableDescription={
                   realityCaptureCarouselItems.enableDescription
@@ -63,14 +90,16 @@ class IndexPage extends React.Component<any, IndexPageState> {
                 desktopScreenVersion={isDesktop}
               />
             </div>
-            <div className={isDesktop ? styles.section3 : styles.section3Mobile}>
+            <div
+              className={isDesktop ? styles.section3 : styles.section3Mobile}
+            >
               <RealityCaptureTypesGallery />
             </div>
             <div className={styles.section4_youtubeMovie}>
               <ReactPlayer
                 className={styles.reactPlayer}
                 url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-                width="50%"
+                width={windowWidth >= 1183 ? '50%' : '100%'}
                 controls="true"
               />
             </div>
@@ -79,7 +108,10 @@ class IndexPage extends React.Component<any, IndexPageState> {
             <ScanToBim />
           </div>
           <div className={styles.section6_tutorials}>
-            <Tutorials dataFromJson={tutorialsCarouselItems} />
+            <Tutorials
+              dataFromJson={tutorialsCarouselItems}
+              desktopScreenVersion={isDesktop}
+            />
           </div>
           <div className={styles.section7_aboutMe}>
             <AboutMe />
