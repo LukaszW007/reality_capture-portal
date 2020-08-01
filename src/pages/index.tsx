@@ -66,6 +66,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
           <div className={styles.section2_3_4}>
             <div className={styles.section2}>
               <Carousel
+                windowWidth={windowWidth}
                 enableDescription={
                   realityCaptureCarouselItems.enableDescription
                 }

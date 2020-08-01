@@ -12,6 +12,7 @@ import CarouselIndicator from './CarouselElements/CarouselIndicator';
 import realityCaptureCarouselItems from '../../assets/data/realityCaptureCarouselItems';
 
 interface CarouselProps {
+  windowWidth: number;
   enableDescription: boolean;
   enableTextIndicators: boolean;
   enableDotIndicators: boolean;
@@ -40,23 +41,23 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     };
   }
 
-  componentDidMount = () => {
-    this.setState({ windowWidth: window.innerWidth });
-    window.addEventListener('resize', this.onResize);
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener('resize', this.onResize);
-  };
-
-  onResize = () => {
-    this.setState({ windowWidth: window.innerWidth });
-    if (!(this.state.windowWidth >= 769)) {
-      this.setState({ isDesktop: false });
-    } else {
-      this.setState({ isDesktop: true });
-    }
-  };
+  // componentDidMount = () => {
+  //   this.setState({ windowWidth: window.innerWidth });
+  //   //window.addEventListener('resize', this.onResize);
+  // };
+  //
+  // componentWillUnmount = () => {
+  //   window.removeEventListener('resize', this.onResize);
+  // };
+  //
+  // onResize = () => {
+  //   this.setState({ windowWidth: window.innerWidth });
+  //   if (!(this.state.windowWidth >= 769)) {
+  //     this.setState({ isDesktop: false });
+  //   } else {
+  //     this.setState({ isDesktop: true });
+  //   }
+  // };
 
   goToSlide(index: number) {
     this.setState({ activeIndex: index });
@@ -99,6 +100,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   render() {
     const { activeIndex, isDesktop } = this.state;
     const {
+      windowWidth,
       enableDescription,
       enableTextIndicators,
       enableDotIndicators,
@@ -107,7 +109,8 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     } = this.props;
 
     console.log(`active index-number ${activeIndex}`); // TODO check hight of the bottom margin in top carousel
-    if (isDesktop) {
+    console.log('Carousel isDesktop: '+ isDesktop);
+    if (desktopScreenVersion) {
       return (
         <div className={styles.Carousel}>
           <div
@@ -159,6 +162,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
               <ul className={styles.CarouselSlides}>
                 {items.map((slide, index) => (
                   <CarouselSlide
+                    windowWidth={windowWidth}
                     key={slide.id}
                     index={index}
                     activeIndex={activeIndex}
@@ -212,6 +216,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
             <ul className={styles.CarouselSlides}>
               {items.map((slide, index) => (
                 <CarouselSlide
+                  windowWidth={windowWidth}
                   key={slide.id}
                   index={index}
                   activeIndex={activeIndex}

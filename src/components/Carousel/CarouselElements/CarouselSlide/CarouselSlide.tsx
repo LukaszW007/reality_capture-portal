@@ -6,6 +6,7 @@ import ReactPlayer from 'react-player';
 import styles from './CarouselSlide.module.scss';
 
 interface CarouselSlideProps {
+  windowWidth: number;
   index: number;
   activeIndex: number;
   slide: {
@@ -18,7 +19,7 @@ interface CarouselSlideProps {
 }
 
 const CarouselSlide: React.FC<CarouselSlideProps> = props => {
-  const { activeIndex, slide, index } = props; // TODO: change classnames in last <p>
+  const { windowWidth, activeIndex, slide, index } = props; // TODO: change classnames in last <p>
   if (slide === undefined || index === undefined || activeIndex === undefined) {
     return null;
   }
@@ -38,7 +39,8 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
           <ReactPlayer
             className={styles.reactPlayer}
             url={webAddress}
-            controls= "true"
+            width={windowWidth >= 769 ? '50%' : '80%'}
+            controls="true"
           />
         </div>
       </li>

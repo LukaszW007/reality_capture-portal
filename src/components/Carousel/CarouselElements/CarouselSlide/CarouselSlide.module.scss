@@ -46,3 +46,9 @@
   height: 40vh !important;
   width: 40vw !important;
 }
+
+@media (max-width: 768px) {
+  .reactPlayer {
+    width: 80vw !important;
+  }
+}

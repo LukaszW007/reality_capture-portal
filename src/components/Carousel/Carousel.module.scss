@@ -121,3 +121,13 @@
     width: 35px;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1182px) {
+  .CarouselTextIndicators {
+    li {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
