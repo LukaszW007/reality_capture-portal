@@ -33,19 +33,9 @@ class IndexPage extends React.Component<any, IndexPageState> {
     };
   }
 
-  UNSAFE_componentWillMount(): void {
-    this.setState({ windowWidth: window.innerWidth });
-    //this.onResize();
-    console.log("componentWillMount window.innerWidth: "+ this.state.windowWidth)
-    console.log("componentWillMount STATE windowWidth: "+ this.state.windowWidth)
-    console.log("componentWillMount STATE isDesktop: "+ this.state.isDesktop)
-  }
-
   componentDidMount = () => {
     this.setState({ windowWidth: window.innerWidth });
     this.onResize();
-    console.log("componentDidMount windowWidth: "+ this.state.windowWidth)
-
     window.addEventListener('resize', this.onResize);
   };
 
@@ -54,7 +44,8 @@ class IndexPage extends React.Component<any, IndexPageState> {
   };
 
   onResize = () => {
-    if (!(this.state.windowWidth >= 769)) {
+    console.log('this.onResize was in index.js was triggered');
+    if (!(window.innerWidth >= 769)) {
       this.setState({ isDesktop: false });
     } else {
       this.setState({ isDesktop: true });
@@ -64,8 +55,6 @@ class IndexPage extends React.Component<any, IndexPageState> {
   render() {
     const { isDesktop, windowWidth } = this.state;
 
-    console.log("render windowWidth: "+ windowWidth);
-    console.log("render isDekstop: "+ isDesktop);
     return (
       <>
         <SEO title="Home" />

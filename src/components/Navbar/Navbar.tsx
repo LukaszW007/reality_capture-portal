@@ -13,8 +13,6 @@ interface NavbarProps {
 
 interface NavbarState {
   openMenu: boolean;
-  isDesktop: boolean;
-  windowWidth: number;
 }
 
 class Navbar extends React.Component<NavbarProps, NavbarState> {
@@ -23,38 +21,8 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
 
     this.state = {
       openMenu: false,
-      isDesktop: true,
-      windowWidth: 0,
     };
   }
-
-  UNSAFE_componentWillMount(): void {
-    this.setState({ isDesktop: this.props.desktopScreenVersion });
-  }
-
-  componentDidMount = () => {
-    console.log("BEGINING componentDidMount state.windowWidth in NAVBAR "+ this.state.windowWidth);
-    this.setState({ windowWidth: window.innerWidth });
-    this.onResize();
-    window.addEventListener('resize', this.onResize);
-
-    console.log("componentDidMount window.innerWidth in NAVBAR "+ window.innerWidth);
-    console.log("componentDidMount state.isDekstop in NAVBAR "+ this.state.isDesktop);
-    console.log("componentDidMount state.windowWidth in NAVBAR "+ this.state.windowWidth);
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener('resize', this.onResize);
-  };
-
-  onResize = () => {
-    //this.setState({ windowWidth: window.innerWidth });
-    if (!(this.state.windowWidth >= 769)) {
-      this.setState({ isDesktop: false });
-    } else {
-      this.setState({ isDesktop: true });
-    }
-  };
 
   toggleOpen = e => {
     e.preventDefault();
@@ -62,12 +30,8 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
   };
 
   render() {
-    const { openMenu, isDesktop, windowWidth } = this.state;
+    const { openMenu } = this.state;
     const { desktopScreenVersion } = this.props;
-
-    console.log("desktopScreenVersion from index.js in render NAVBAR "+ this.props.desktopScreenVersion);
-    console.log("state.windowWidth in render NAVBAR "+ windowWidth);
-    console.log("isDekstop in render NAVBAR "+ isDesktop);
 
     if (desktopScreenVersion) {
       return (
