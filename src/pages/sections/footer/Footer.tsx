@@ -3,7 +3,7 @@ import React from 'react';
 
 // local dependencies
 import styles from './Footer.module.scss';
-import Logo from "../../../components/Logo"
+import Logo from '../../../components/Logo';
 
 const Footer: React.FC<any> = props => {
   return (

@@ -1,0 +1,17 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+.layoutContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.childrenContainer {
+  padding-top: 35vh;
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}

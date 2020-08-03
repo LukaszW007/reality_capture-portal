@@ -73,3 +73,11 @@
     }
   }
 }
+
+@media (min-width: 769px) and (max-width: 1182px) {
+  .CarouselIndicator {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

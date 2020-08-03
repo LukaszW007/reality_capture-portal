@@ -1,0 +1,12 @@
+@import "../utils/sass-core/colors";
+@import "../utils/sass-core/fonts";
+
+.header {
+  font-size: $font-size-xxxxxl;
+  font-weight: $font-weight-bold;
+  color: $redish;
+}
+
+.textDescription {
+  margin-left: 15%;
+}

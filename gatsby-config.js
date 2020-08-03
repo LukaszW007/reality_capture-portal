@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  pathPrefix: '/reality_capture-portal',
+  pathPrefix: '/',
   siteMetadata: {
     title: `Reality Capture portal`,
     description: `Reality Capture portal is a website describing methods of creating 3D content based on laser scanning and photogrammetry.`,
