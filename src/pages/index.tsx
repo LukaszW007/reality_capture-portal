@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import ReactPlayer from 'react-player';
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 // local dependencies
 import throttle from 'lodash.throttle';
@@ -37,6 +38,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
     this.setState({ windowWidth: window.innerWidth });
     this.onResize();
     window.addEventListener('resize', this.onResize);
+    configureAnchors({ offset: -100, scrollDuration: 400 });
   };
 
   componentWillUnmount = () => {
@@ -59,53 +61,64 @@ class IndexPage extends React.Component<any, IndexPageState> {
       <>
         <SEO title="Home" />
         <div className={styles.App}>
-          <div className={styles.section1}>
-            <Navbar desktopScreenVersion={isDesktop} />
-            <Jumbotron />
-          </div>
-          <div className={styles.section2_3_4}>
-            <div className={styles.section2}>
-              <Carousel
-                windowWidth={windowWidth}
-                enableDescription={
-                  realityCaptureCarouselItems.enableDescription
-                }
-                enableTextIndicators={
-                  realityCaptureCarouselItems.enableTextIndicators
-                }
-                enableDotIndicators={
-                  realityCaptureCarouselItems.enableDotIndicators
-                }
-                items={realityCaptureCarouselItems.items}
+          <ScrollableAnchor id="home">
+            <div className={styles.section1}>
+              <Navbar desktopScreenVersion={isDesktop} />
+              <Jumbotron />
+            </div>
+          </ScrollableAnchor>
+          <ScrollableAnchor id="reality_capture">
+            <div className={styles.section2_3_4}>
+              {/* <div className={styles.section2_3_4} id="reality_capture"> */}
+              <div className={styles.section2}>
+                <Carousel
+                  windowWidth={windowWidth}
+                  enableDescription={
+                    realityCaptureCarouselItems.enableDescription
+                  }
+                  enableTextIndicators={
+                    realityCaptureCarouselItems.enableTextIndicators
+                  }
+                  enableDotIndicators={
+                    realityCaptureCarouselItems.enableDotIndicators
+                  }
+                  items={realityCaptureCarouselItems.items}
+                  desktopScreenVersion={isDesktop}
+                />
+              </div>
+              <div
+                className={isDesktop ? styles.section3 : styles.section3Mobile}
+              >
+                <RealityCaptureTypesGallery />
+              </div>
+              <div className={styles.section4_youtubeMovie}>
+                <ReactPlayer
+                  className={styles.reactPlayer}
+                  url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                  width={windowWidth >= 1183 ? '50%' : '100%'}
+                  controls="true"
+                />
+              </div>
+            </div>
+          </ScrollableAnchor>
+          <ScrollableAnchor id="scan_to_bim">
+            <div className={styles.section5_scanToBim}>
+              <ScanToBim />
+            </div>
+          </ScrollableAnchor>
+          <ScrollableAnchor id="tutorials">
+            <div className={styles.section6_tutorials}>
+              <Tutorials
+                dataFromJson={tutorialsCarouselItems}
                 desktopScreenVersion={isDesktop}
               />
             </div>
-            <div
-              className={isDesktop ? styles.section3 : styles.section3Mobile}
-            >
-              <RealityCaptureTypesGallery />
+          </ScrollableAnchor>
+          <ScrollableAnchor id="about_me">
+            <div className={styles.section7_aboutMe}>
+              <AboutMe />
             </div>
-            <div className={styles.section4_youtubeMovie}>
-              <ReactPlayer
-                className={styles.reactPlayer}
-                url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-                width={windowWidth >= 1183 ? '50%' : '100%'}
-                controls="true"
-              />
-            </div>
-          </div>
-          <div className={styles.section5_scanToBim}>
-            <ScanToBim />
-          </div>
-          <div className={styles.section6_tutorials}>
-            <Tutorials
-              dataFromJson={tutorialsCarouselItems}
-              desktopScreenVersion={isDesktop}
-            />
-          </div>
-          <div className={styles.section7_aboutMe}>
-            <AboutMe />
-          </div>
+          </ScrollableAnchor>
         </div>
         <Footer />
       </>

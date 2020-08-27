@@ -1,6 +1,9 @@
 // global dependencies
 import React from 'react';
 import throttle from 'lodash.throttle';
+import { Link } from 'gatsby';
+import { removeHash } from 'react-scrollable-anchor';
+// import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 // local dependencies
 import Logo from '../Logo';
@@ -38,15 +41,34 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
         // desktop
         <div className={styles.Navbar}>
           <div className={styles.Logo}>
-            <Logo />
+            <a href="#home">
+              <Logo />
+            </a>
           </div>
           <ul className={styles.NavList}>
-            <NavbarListElement listElementName="Home" />
-            <NavbarListElement listElementName="Reality Capture" />
-            <NavbarListElement listElementName="Scan-to-BIM" />
-            <NavbarListElement listElementName="Blog" />
-            <NavbarListElement listElementName="Tutorials" />
-            <NavbarListElement listElementName="About me" />
+            <NavbarListElement listElementName="Home" reference="#home" />
+            {/* <AnchorLink to="#reality_capture"> */}
+            {/*  <NavbarListElement listElementName="Reality Capture" /> */}
+            {/* </AnchorLink> */}
+            <NavbarListElement
+              listElementName="Reality Capture"
+              reference="#reality_capture"
+            />
+            <NavbarListElement
+              listElementName="Scan-to-BIM"
+              reference="#scan_to_bim"
+            />
+            <NavbarListElement
+              listElementName="Tutorials"
+              reference="#tutorials"
+            />
+            <NavbarListElement
+              listElementName="About me"
+              reference="#about_me"
+            />
+            <Link to="/blog">
+              <NavbarListElement listElementName="Blog" />
+            </Link>
           </ul>
         </div>
       );
@@ -74,12 +96,29 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
               openMenu ? styles.NavListMobileOpen : styles.NavListMobileClosed
             }
           >
-            <NavbarListElement listElementName="Home" />
-            <NavbarListElement listElementName="Reality Capture" />
-            <NavbarListElement listElementName="Scan-to-BIM" />
-            <NavbarListElement listElementName="Blog" />
-            <NavbarListElement listElementName="Tutorials" />
-            <NavbarListElement listElementName="About me" />
+            <NavbarListElement listElementName="Home" reference="#home" />
+            {/* <AnchorLink to="#reality_capture"> */}
+            {/*  <NavbarListElement listElementName="Reality Capture" /> */}
+            {/* </AnchorLink> */}
+            <NavbarListElement
+              listElementName="Reality Capture"
+              reference="#reality_capture"
+            />
+            <NavbarListElement
+              listElementName="Scan-to-BIM"
+              reference="#scan_to_bim"
+            />
+            <NavbarListElement
+              listElementName="Tutorials"
+              reference="#tutorials"
+            />
+            <NavbarListElement
+              listElementName="About me"
+              reference="#about_me"
+            />
+            <Link to="/blog">
+              <NavbarListElement listElementName="Blog" />
+            </Link>
           </ul>
         </div>
       </div>

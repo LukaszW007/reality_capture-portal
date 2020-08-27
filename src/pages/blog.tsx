@@ -1,13 +1,14 @@
-import react from 'react';
+import React from 'react';
 
 import Layout from '../components/gatsby_elements/layout';
 import SEO from '../components/seo';
 import styles from './blog.module.scss';
 
 class Blog extends React.Component<any, any> {
-  constructor(props){
-    super(props)
+  constructor(props: any) {
+    super(props);
   }
+
   render() {
     return (
       <>
@@ -16,6 +17,8 @@ class Blog extends React.Component<any, any> {
           <h1> empty blog</h1>
         </Layout>
       </>
-    )
+    );
   }
 }
+
+export default Blog;

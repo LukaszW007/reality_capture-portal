@@ -59,10 +59,11 @@ module.exports = {
         icon: `src/assets/images/logo_icon 750x750.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-transition-link`,
     {
-      resolve: "gatsby-plugin-anchor-links",
+      resolve: 'gatsby-plugin-anchor-links',
       options: {
-        offset: -100,
+        offset: -200,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

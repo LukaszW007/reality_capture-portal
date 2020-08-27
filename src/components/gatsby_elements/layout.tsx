@@ -20,7 +20,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <div className={styles.layoutContainer}>
-        <Navbar desktopScreenVersion={false} />
+        <Navbar desktopScreenVersion={true} />
         <main className={styles.childrenContainer}>{children}</main>
         <div className={styles.footer}>
           <Footer />

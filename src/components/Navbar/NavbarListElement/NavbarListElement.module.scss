@@ -3,8 +3,12 @@
 
 .NavbarListElement {
   margin: 1rem 0;
-  color: $white;
   padding: 1rem;
   font-size: $font-size-xxl;
   display: inline-block;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
 }
