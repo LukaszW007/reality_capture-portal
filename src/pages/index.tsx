@@ -63,7 +63,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
         <div className={styles.App}>
           <ScrollableAnchor id="home">
             <div className={styles.section1}>
-              <Navbar desktopScreenVersion={isDesktop} />
+              <Navbar.Navbar desktopScreenVersion={isDesktop} />
               <Jumbotron />
             </div>
           </ScrollableAnchor>

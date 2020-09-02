@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import './layout.css';
 import styles from './Layout.module.scss';
-import Navbar from '../Navbar';
+import NavbarBlog from '../Navbar/NavbarBlog';
 import Footer from '../../pages/sections/footer';
 
 const Layout: React.FC = ({ children }) => {
@@ -20,7 +20,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <div className={styles.layoutContainer}>
-        <Navbar desktopScreenVersion={true} />
+        <NavbarBlog desktopScreenVersion={true} />
         <main className={styles.childrenContainer}>{children}</main>
         <div className={styles.footer}>
           <Footer />

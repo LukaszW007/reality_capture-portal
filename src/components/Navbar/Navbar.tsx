@@ -1,9 +1,6 @@
 // global dependencies
 import React from 'react';
-import throttle from 'lodash.throttle';
 import { Link } from 'gatsby';
-import { removeHash } from 'react-scrollable-anchor';
-// import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 // local dependencies
 import Logo from '../Logo';
