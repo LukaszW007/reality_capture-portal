@@ -11,7 +11,7 @@ const realityCaptureCarouselItems = {
       title: 'Laser scanning',
       picture: require('../../assets/images/RTC360.jpg'),
       content:
-        'The fastest and most effective method for digitalizing geometry of existing facilities like buildings, roads, terrain, railroads and many more.  As a final product, it delivers cloud of million or even billion points positioned with millimeter accuracy. It is the best way to create digital twin of the construction and thereby transform into sustainable facility. Laser scanning is the very first step to produce 3D digital documentation in BIM (Building Information System) technology which leads to sustainable and robust architecture’s maintenance with the use of IoT (Internet of Things).',
+        'The fastest and the most effective method for digitalizing geometry of existing facilities like buildings, roads, terrain, railroads and many more.  As a final product, it delivers cloud of million or even billion points positioned with millimeter accuracy. It is the best way to create digital twin of the construction and thereby transform into sustainable facility. Laser scanning is the very first step to produce 3D digital documentation in BIM (Building Information System) technology which leads to sustainable and robust architecture’s maintenance with the use of IoT (Internet of Things).',
     },
     {
       id: uuidv4(),
