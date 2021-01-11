@@ -1,5 +1,9 @@
 const path = require('path');
 
+require(`dotenv`).config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -47,6 +51,22 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-image`,
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: '3d-points',
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        // shouldNormalizeImage: ({ node, key, value }) => {
+        //   return true;
+        // },
+        schemas: {
+          page: require('./src/schemas/page.json'),
+          blog_post: require('./src/schemas/blog_post.json'),
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

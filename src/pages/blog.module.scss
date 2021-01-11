@@ -1,3 +1,71 @@
-@import "../../utils/sass-core/colors.scss";
-@import "../../utils/sass-core/fonts.scss";
+@import "../utils/sass-core/colors.scss";
+@import "../utils/sass-core/fonts.scss";
 
+.sectionContainer {
+  margin: 3% 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blogHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.headerTitle {
+  width: 10rem;
+  height: 5rem;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.headerImage {
+  height: 200px;
+}
+
+.underHeading {
+  height: 70vh;
+}
+
+.listOfPosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style: none;
+  height: auto;
+}
+
+.oneOfPosts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 300px;
+  width: auto;
+  color: $darkgreyish90;
+  margin: 15px 30px;
+}
+
+.descriptionOfPost {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-content: center;
+  margin: 0 1rem;
+}
+
+.titleName {
+  flex: 1;
+  font-size: $font-size-xxl;
+}
+
+.postFirstPublicationDate {
+  flex: 1;
+}
+
+.postThumbnail {
+  flex: 1;
+  height: 250px;
+}

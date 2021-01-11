@@ -1,0 +1,53 @@
+{
+  "Main" : {
+    "main_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "main_image"
+      }
+    },
+    "blogs_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "blogs_title"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : { },
+        "choices" : {
+          "list_of_articles" : {
+            "type" : "Slice",
+            "fieldset" : "List of Articles",
+            "description" : "Section title and article list",
+            "icon" : "photo_filter",
+            "non-repeat" : {
+              "title_of_section" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "heading2",
+                  "label" : "Title of Section",
+                  "placeholder" : "Featured"
+                }
+              }
+            },
+            "repeat" : {
+              "articles_to_link" : {
+                "type" : "Link",
+                "config" : {
+                  "label" : "Articles to link",
+                  "placeholder" : "Select your article"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

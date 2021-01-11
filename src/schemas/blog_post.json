@@ -1,0 +1,183 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "uid"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "title",
+        "placeholder": "Type in the title here"
+      }
+    },
+    "subtitle": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading4",
+        "label": "subtitle",
+        "placeholder": "Here is the sub-title"
+      }
+    },
+    "date_of_posting": {
+      "type": "Date",
+      "config": {
+        "label": "date of posting",
+        "placeholder": "date"
+      }
+    },
+    "hashtags": {
+      "type": "Text",
+      "config": {
+        "label": "hashtags"
+      }
+    },
+    "main_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "main image"
+      }
+    },
+    "text_of_the_post": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+        "label": "text of the post",
+        "placeholder": "Type in the blog-post"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "quote": [],
+          "banner_with_caption": [],
+          "left_side_picture": []
+        },
+        "choices": {
+          "quote": {
+            "type": "Slice",
+            "fieldset": "simple-quote",
+            "description": "A short quote",
+            "icon": "add_alert",
+            "non-repeat": {
+              "quote": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "em",
+                  "label": "Quote",
+                  "placeholder": "Your quote"
+                }
+              }
+            },
+            "repeat": {},
+            "display": "list"
+          },
+          "text": {
+            "type": "Slice",
+            "fieldset": "Text",
+            "description": "Rich Text Section",
+            "icon": "text_fields",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "text",
+                  "placeholder": "Your content here"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "banner_with_caption": {
+            "type": "Slice",
+            "fieldset": "Banner with caption",
+            "description": "Banner with caption",
+            "icon": "add_a_photo",
+            "non-repeat": {
+              "image_banner": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": null,
+                    "height": null
+                  },
+                  "thumbnails": [],
+                  "label": "Image Banner"
+                }
+              },
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Caption",
+                  "placeholder": "Image caption"
+                }
+              }
+            },
+            "repeat": {},
+            "display": "list"
+          },
+          "left_side_picture": {
+            "type": "Slice",
+            "fieldset": "sketchfab",
+            "description": "sketchfab",
+            "icon": "3d_rotation",
+            "display": "list",
+            "non-repeat": {
+              "sketchfab_model": {
+                "type": "Embed",
+                "config": {
+                  "label": "sketchfab model",
+                  "placeholder": "<div class=\"sketchfab-embed-wrapper\">     <iframe title=\"A 3D model\" width=\"640\" height=\"480\" src=\"https://sketchfab.com/models/b1e04fd34a6d4f21a5928b9a6ecfe899/embed?autostart=0&camera=0&ui_controls=1&ui_infos=1&ui_inspector=1&ui_stop=1&ui_watermark=1&ui_watermark_link=1\" frameborder=\"0\" allow=\"autoplay; fullscreen; vr\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>     <p style=\"font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;\">         <a href=\"https://sketchfab.com/3d-models/wooden-house-b1e04fd34a6d4f21a5928b9a6ecfe899?utm_medium=embed&utm_source=website&utm_campaign=share-popup\" target=\"_blank\" style=\"font-weight: bold; color: #1CAAD9;\">Wooden house</a>         by <a href=\"https://sketchfab.com/johanpindeville?utm_medium=embed&utm_source=website&utm_campaign=share-popup\" target=\"_blank\" style=\"font-weight: bold; color: #1CAAD9;\">johanpindeville</a>         on <a href=\"https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup\" target=\"_blank\" style=\"font-weight: bold; color: #1CAAD9;\">Sketchfab</a>     </p> </div>"
+                }
+              },
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading6",
+                  "label": "caption",
+                  "placeholder": "Caption"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "list_of_articles": {
+            "type": "Slice",
+            "fieldset": "List of Articles",
+            "description": "Section title and article list",
+            "icon": "photo_filter",
+            "non-repeat": {
+              "list_of_articles": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "heading2, heading3, heading4, heading5",
+                  "label": "List of articles",
+                  "placeholder": "Featured"
+                }
+              }
+            },
+            "repeat": {
+              "articles_to_link": {
+                "type": "Link",
+                "config": {
+                  "label": "Articles to link",
+                  "placeholder": "Select your article"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,29 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions; // Fetch all the posts
+  const posts = await graphql(`
+    {
+      allPrismicBlogPosts {
+        edges {
+          node {
+            uid
+          }
+        }
+      }
+    }
+  `).catch(error => {
+    console.error(error);
+  });
+  // Load the post template
+  const template = path.resolve('src/pages/blogPost.tsx');
+  posts.data.allPrismicBlogPosts.edges.forEach(edge => {
+    // TODO cos z ta data.allPrismic jest nie tak
+    // Create a page for every post
+    createPage({
+      path: `/posts/${edge.node.uid}`,
+      component: template,
+      context: { uid: edge.node.uid },
+    });
+  });
+};
