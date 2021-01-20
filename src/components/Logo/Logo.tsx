@@ -8,7 +8,7 @@ import styles from './Logo.module.scss';
 const Logo = () => {
   return (
     <>
-      <img src={logoPicture} alt="Logo" className={styles.Logo} />
+      <img src={logoPicture} alt="SimpleQuote" className={styles.Logo} />
     </>
   );
 };

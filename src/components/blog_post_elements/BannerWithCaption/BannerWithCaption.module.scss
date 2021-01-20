@@ -1,0 +1,15 @@
+@import "../../../utils/sass-core/colors.scss";
+@import "../../../utils/sass-core/fonts.scss";
+
+.bannerImage {
+  margin-bottom: 0.5rem;
+  width: 55%;
+}
+
+.figcaption {
+  margin-bottom: 3rem;
+  color: $almostBlack;
+  width: 55%;
+  text-align: justify;
+  font-size: $font-size-sm;
+}

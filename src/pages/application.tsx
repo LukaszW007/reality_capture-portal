@@ -4,11 +4,11 @@ import React from 'react';
 // local dependencies
 import styles from './Index.module.scss';
 
-const Aplication: React.FC = () => {
+const Application: React.FC = () => {
   return (
     <div>
     </div>
   );
 };
 
-export default Aplication;
+export default Application;

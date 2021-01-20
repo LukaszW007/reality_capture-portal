@@ -1,2 +1,80 @@
 @import "../utils/sass-core/colors.scss";
 @import "../utils/sass-core/fonts.scss";
+
+.sectionContainer {
+  padding: 100px 1% 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionContainer2 {
+  padding-top: 0;
+
+  @extend .sectionContainer;
+}
+
+.mainImage {
+  margin-bottom: 0.5rem;
+  width: 55%;
+}
+
+.figcaption {
+  margin-bottom: 3rem;
+  color: $almostBlack;
+  width: 55%;
+  text-align: justify;
+  font-size: $font-size-sm;
+}
+
+.postContentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  color: $almostBlack;
+  text-align: justify;
+}
+
+.firstPublicationDate {
+  margin-bottom: 1rem;
+  color: $midgreyish60;
+  font-size: $font-size-md;
+}
+
+.hashtags {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+.singleHashtag {
+  color: $almostBlack;
+  margin: 3px 10px;
+  padding: 3px 15px;
+  border-radius: 5px;
+  background: linear-gradient(330deg, $redish, $yellowish);
+}
+
+.firstParagraph {
+  font-size: $font-size-lg;
+  color: $almostBlack;
+  align-items: flex-start;
+  text-align: justify;
+  width: 45%;
+}
+
+@media (max-width: 768px) {
+  .mainImage {
+    width: 95%;
+  }
+
+  .postContentContainer {
+    width: 95%;
+  }
+
+  .firstParagraph {
+    width: 95%;
+  }
+}
