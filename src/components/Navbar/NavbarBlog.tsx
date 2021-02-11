@@ -25,9 +25,10 @@ class NavbarBlog extends React.Component<NavbarBlogProps, NavbarBlogState> {
     };
   }
 
-  toggleOpen = e => {
+  toggleOpen = (e: any) => {
     e.preventDefault();
-    this.setState({ openMenu: !this.state.openMenu });
+    const { openMenu } = this.state;
+    this.setState({ openMenu: !openMenu });
   };
 
   render() {

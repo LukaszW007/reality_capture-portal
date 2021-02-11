@@ -1,15 +1,37 @@
 @import "../../../utils/sass-core/colors.scss";
 @import "../../../utils/sass-core/fonts.scss";
 
+$widthDesktop: 55%;
+$widthMobile: 95%;
+
+.bannerContainer {
+  display: flex;
+  flex-direction: column;
+  width: $widthDesktop;
+}
+
 .bannerImage {
   margin-bottom: 0.5rem;
-  width: 55%;
 }
 
 .figcaption {
   margin-bottom: 3rem;
   color: $almostBlack;
-  width: 55%;
+  width: $widthDesktop;
   text-align: justify;
   font-size: $font-size-sm;
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    width: $widthMobile;
+  }
+
+  .bannerImage {
+    width: $widthMobile;
+  }
+
+  .figcaption {
+    width: 90%;
+  }
 }

@@ -1,6 +1,7 @@
+// global dependencies
 import React from 'react';
-import { RichText } from 'prismic-reactjs';
 
+// local dependencies
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/gatsby_elements/layout';
 import SEO from '../components/seo';
@@ -39,8 +40,8 @@ const BlogPostsList: React.FC<any> = ({ data: queryData }) => {
               const imageAlt = postData.main_image.alt;
               const url = `/posts/${uid}`;
               return (
-                <Link to={url}>
-                  <li className={styles.oneOfPosts} key={index}>
+                <Link to={url} key={url}>
+                  <li className={styles.oneOfPosts} key={url}>
                     <div className={styles.descriptionOfPost}>
                       <p className={styles.titleName}>{postTitle}</p>
                       <span className={styles.postFirstPublicationDate}>
@@ -65,7 +66,7 @@ const BlogPostsList: React.FC<any> = ({ data: queryData }) => {
 
 export default BlogPostsList;
 
-export const listofblogsQuery = graphql`
+export const listOfBlogsQuery = graphql`
   query listofblogsQuery {
     prismicListofblogs {
       data {
@@ -107,7 +108,7 @@ export const listofblogsQuery = graphql`
               ... on PrismicBlogPostBodyText {
                 id
                 primary {
-                  text {
+                  rich_text_in_post {
                     text
                     raw
                     html

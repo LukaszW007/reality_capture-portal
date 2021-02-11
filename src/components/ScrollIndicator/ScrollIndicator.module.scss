@@ -1,0 +1,24 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+.progressContainerStyle {
+  background: $white-30;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  height: 5px;
+  position: fixed;
+  margin-top: 84.54px;
+  left: 0;
+  width: 100vw;
+  z-index: 99;
+}
+
+.progressBarStyle {
+  height: 5px;
+  background: $redish;
+}
+
+@media (max-width: 768px) {
+  .progressContainerStyle {
+    margin-top: 74.87px;
+  }
+}

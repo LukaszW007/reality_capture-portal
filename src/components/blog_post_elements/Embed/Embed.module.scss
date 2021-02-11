@@ -2,3 +2,14 @@
   margin-bottom: 0.5rem;
   width: 55%;
 }
+
+@media (max-width: 768px) {
+  .embeddedLink {
+    margin: 5px;
+    width: 95%;
+
+    iframe {
+      width: 300px;
+    }
+  }
+}

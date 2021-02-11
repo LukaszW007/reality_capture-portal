@@ -1,5 +1,29 @@
-.SimpleQuote {
-  box-sizing: border-box;
-  margin: 0;
-  width: max(18rem);
+@import "../../../utils/sass-core/colors.scss";
+@import "../../../utils/sass-core/fonts.scss";
+
+.prcContainer {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.paragraph {
+  margin-right: 10px;
+  padding-right: 10px;
+  text-align: justify;
+
+  ul {
+    list-style: circle;
+  }
+}
+
+@media (max-width: 768px) {
+  .prcContainer {
+    width: 95%;
+  }
+
+  .paragraph {
+    width: 65vw;
+  }
 }

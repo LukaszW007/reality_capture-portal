@@ -1,5 +1,66 @@
-.SimpleQuote {
-  box-sizing: border-box;
+@import "../../../utils/sass-core/colors.scss";
+@import "../../../utils/sass-core/fonts.scss";
+
+$widthDesktop: 55%;
+$widthMobile: 95%;
+
+.listArticlesContainer {
+  border-top: $almostBlack 3px solid;
+  width: $widthDesktop;
+  margin-top: 5%;
+}
+
+.header {
+  font-size: $font-size-xxl;
+  margin: 2rem;
+  text-align: left;
+}
+
+.listOfArticles {
+  margin-left: 2.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.singleArticleOnTheList {
+  color: $almostBlack;
+}
+
+.linkInList {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background: $greyish;
+  border-radius: 10px;
+}
+
+.articleImage {
+  flex: 1;
+  height: 10rem;
+  width: 100%;
+  padding-right: 1rem;
   margin: 0;
-  width: max(18rem);
+}
+
+.linkToArticle {
+  text-align: left;
+  flex: 2;
+  color: $almostBlack;
+}
+
+@media (max-width: 768px) {
+  .listArticlesContainer {
+    width: $widthMobile;
+  }
+
+  .listOfArticles {
+    margin-left: 0;
+  }
+
+  .articleImage {
+    height: 6rem;
+  }
 }

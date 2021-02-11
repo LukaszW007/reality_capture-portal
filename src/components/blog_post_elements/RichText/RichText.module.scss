@@ -1,3 +1,18 @@
 @import "../../../utils/sass-core/colors.scss";
 @import "../../../utils/sass-core/fonts.scss";
 
+.richText {
+  margin: 0;
+  width: 55%;
+  text-align: justify;
+
+  ul {
+    list-style: circle;
+  }
+}
+
+@media (max-width: 768px) {
+  .richText {
+    width: 95%;
+  }
+}

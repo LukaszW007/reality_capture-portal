@@ -1,6 +1,13 @@
 @import "../utils/sass-core/colors.scss";
 @import "../utils/sass-core/fonts.scss";
 
+$widthDesktop: 55%;
+$widthDesktop: 95%;
+
+.scrollIndicator {
+  margin-top: 84.54px;
+}
+
 .sectionContainer {
   padding: 100px 1% 50px;
   display: flex;
@@ -16,13 +23,13 @@
 
 .mainImage {
   margin-bottom: 0.5rem;
-  width: 55%;
+  width: $widthDesktop;
 }
 
 .figcaption {
   margin-bottom: 3rem;
   color: $almostBlack;
-  width: 55%;
+  width: $widthDesktop;
   text-align: justify;
   font-size: $font-size-sm;
 }
@@ -43,6 +50,7 @@
 
 .hashtags {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   margin-left: 0;
   list-style: none;
@@ -67,14 +75,14 @@
 
 @media (max-width: 768px) {
   .mainImage {
-    width: 95%;
+    width: $widthDesktop;
   }
 
   .postContentContainer {
-    width: 95%;
+    width: $widthDesktop;
   }
 
   .firstParagraph {
-    width: 95%;
+    width: $widthDesktop;
   }
 }
