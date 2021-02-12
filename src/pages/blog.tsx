@@ -1,11 +1,16 @@
 // global dependencies
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 
 // local dependencies
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/gatsby_elements/layout';
 import SEO from '../components/seo';
 import styles from './blog.module.scss';
+import LoadingDots from "../components/LoadingDots"
+
+const SinglePostOnPostsList = lazy(() =>
+  import('../components/SinglePostOnPostsList')
+);
 
 const BlogPostsList: React.FC<any> = ({ data: queryData }) => {
   const posts = queryData.allPrismicBlogPosts.edges;
@@ -40,21 +45,17 @@ const BlogPostsList: React.FC<any> = ({ data: queryData }) => {
               const imageAlt = postData.main_image.alt;
               const url = `/posts/${uid}`;
               return (
-                <Link to={url} key={url}>
-                  <li className={styles.oneOfPosts} key={url}>
-                    <div className={styles.descriptionOfPost}>
-                      <p className={styles.titleName}>{postTitle}</p>
-                      <span className={styles.postFirstPublicationDate}>
-                        {date}
-                      </span>
-                    </div>
-                    <img
-                      className={styles.postThumbnail}
-                      src={imageURL}
-                      alt={imageAlt}
-                    />
-                  </li>
-                </Link>
+                <Suspense fallback={LoadingDots} key={url}>
+                  <SinglePostOnPostsList
+                    singlePostData={{
+                      postTitle,
+                      imageAlt,
+                      imageURL,
+                      url,
+                      date,
+                    }}
+                  />
+                </Suspense>
               );
             })}
           </ul>

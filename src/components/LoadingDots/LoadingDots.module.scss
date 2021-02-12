@@ -1,0 +1,53 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+.loaderContainer {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loaderDot {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient($redish, $yellowish);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: linear-gradient($redish, $yellowish);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: loading 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.loaderDot:nth-child(2)::before {
+  animation-delay: 0.3s;
+}
+
+.loaderDot:nth-child(3)::before {
+  animation-delay: 0.6s;
+}
+
+.loaderDot:nth-child(4)::before {
+  animation-delay: 0.9s;
+}
+
+.loaderDot:nth-child(5)::before {
+  animation-delay: 1.2s;
+}

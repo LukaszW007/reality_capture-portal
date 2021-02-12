@@ -33,7 +33,8 @@ $widthMobile: 95%;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  background: $greyish;
+  background-image: linear-gradient(335deg, $white 50%, $greyish 100%);
+  border: $greyish 1px solid;
   border-radius: 10px;
 }
 

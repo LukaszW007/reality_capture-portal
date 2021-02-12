@@ -1,0 +1,71 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+.oneOfPosts {
+  display: flex;
+  background: $midgreyish60;
+  border-radius: 5px;
+  flex-direction: row;
+  align-items: center;
+  height: 300px;
+  color: $white;
+  margin: 15px 30px;
+}
+
+.descriptionOfPost {
+  flex: 1.5;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  align-content: center;
+  margin: 0 1rem;
+  padding-top: 25px;
+}
+
+.titleName {
+  flex: 1;
+  font-size: $font-size-xxl;
+  text-align: end;
+}
+
+.postFirstPublicationDate {
+  flex: 1;
+  color: $greyish;
+}
+
+.postThumbnail {
+  flex: 1;
+  margin: 0 1rem;
+  height: 250px;
+  width: 300px;
+  border-radius: 15px;
+}
+
+@media (max-width: 1182px) {
+  .oneOfPosts {
+    width: 80vw;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .oneOfPosts {
+    flex-direction: column;
+  }
+
+  .titleName {
+    text-align: center;
+    width: 100%;
+  }
+
+  .descriptionOfPost {
+    flex: 1;
+    width: 90%;
+  }
+
+  .postFirstPublicationDate {
+    flex: 0;
+  }
+}

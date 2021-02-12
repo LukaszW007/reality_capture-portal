@@ -18,6 +18,7 @@ import AboutMe from './sections/about-me';
 import Footer from './sections/footer';
 import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
+import Cursor from '../components/Cursor';
 
 interface IndexPageState {
   isDesktop: boolean;
@@ -59,6 +60,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
 
     return (
       <>
+        <Cursor />
         <SEO title="Home" />
         <div className={styles.App}>
           <ScrollableAnchor id="home">

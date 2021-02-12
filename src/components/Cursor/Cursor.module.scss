@@ -1,0 +1,69 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+.cursor {
+  width: 15px;
+  height: 15px;
+  border: 8px solid $redish;
+  background-color: $redish;
+  border-radius: 50%;
+  position: fixed;
+  opacity: 0.9;
+  z-index: 9999;
+  pointer-events: none;
+
+  &::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    position: absolute;
+    top: -15.15px;
+    left: -15.15px;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnimation 0.5s infinite alternate;
+    pointer-events: none;
+  }
+}
+
+@keyframes cursorAnimation {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes cursorAnimation2 {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes cursorAnimation3 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(3);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.expand {
+  animation: cursorAnimation3 0.5s forwards;
+  border: 1px solid $yellowish;
+}
