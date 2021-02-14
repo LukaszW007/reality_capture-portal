@@ -27,10 +27,10 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-221d26bedd849daf0c69.js"
+    "url": "webpack-runtime-dd3c4bd37214e6b9cf82.js"
   },
   {
-    "url": "styles.760665d949efb038371d.css"
+    "url": "styles.50a913309a790c91d2be.css"
   },
   {
     "url": "styles-407fe62976dc5310c43e.js"
@@ -43,7 +43,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ead4f95e6f2a89b7d4473474cf5c3cea"
+    "revision": "fa98134586f69428ebcc5769e8d68f1f"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
@@ -55,10 +55,10 @@ self.__precacheManifest = [
     "url": "1927ad572998c6502ac338a3e0808655a6f40640-1cf446f9cd4b21bcebdf.js"
   },
   {
-    "url": "component---src-pages-sections-tutorials-tutorials-tsx-ad82ffa6448ff3247045.js"
+    "url": "component---src-pages-sections-tutorials-tutorials-tsx-f1c6e8634d568d22f4aa.js"
   },
   {
-    "url": "component---src-pages-index-tsx-5b388d7828bfbca6f103.js"
+    "url": "component---src-pages-index-tsx-3da8ec0419c165f28dbd.js"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -70,7 +70,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "b48ce439e9cb8643675142fa7439fdc3"
+    "revision": "fd3f20146ba1c1acb984242800a2969f"
   },
   {
     "url": "component---src-pages-blog-tsx-cdbb5d748b259cade433.js"
