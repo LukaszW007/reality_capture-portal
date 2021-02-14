@@ -30,10 +30,10 @@ const CarouselDescriptionRCTypes: React.FC<CarouselDescriptionProps> = props => 
           : styles.CarouselSlide
       }
     >
-      <p className={styles.carouselDescriptionRCTypes}>
-        <a className={styles.carouselSlide_title}>{slide.title}</a>
-        <a className={styles.carouselSlide_source}>{slide.content}</a>
-      </p>
+      <div className={styles.carouselDescriptionRCTypes}>
+        <p className={styles.carouselSlide_title}>{slide.title}</p>
+        <p className={styles.carouselSlide_source}>{slide.content}</p>
+      </div>
     </li>
   );
 };

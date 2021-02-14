@@ -63,9 +63,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
               listElementName="About me"
               reference="#about_me"
             />
-            <Link to="/blog">
-              <NavbarListElement listElementName="Blog" />
-            </Link>
+            <NavbarListElement listElementName="Blog" reference="/blog" />
           </ul>
         </div>
       );

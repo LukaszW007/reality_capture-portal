@@ -1,16 +1,11 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+import logoImage from '../assets/images/Reality Capture logo 110x460_transparent_background.png';
+
+function SEO({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +14,8 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            keywords
+            siteUrl
           }
         }
       }
@@ -26,14 +23,28 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaTitle = title || site.siteMetadata.title;
+  const canonical = pathname
+    ? `${site.siteMetadata.siteUrl}${pathname}`
+    : `https://3d-points.com/`;
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={metaTitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: 'canonical',
+                href: canonical,
+              },
+            ]
+          : []
+      }
       meta={[
         {
           name: `description`,
@@ -41,7 +52,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -52,20 +63,28 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:url`,
+          content: `https://3d-points.com/`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          property: `og:image`,
+          content: { logoImage },
         },
         {
-          name: `twitter:title`,
-          content: title,
+          property: `og:imageAlt`,
+          content: `3D-points.com`,
         },
         {
-          name: `twitter:description`,
-          content: metaDescription,
+          property: 'og:image:width',
+          content: `600px`,
+        },
+        {
+          property: 'og:image:height',
+          content: `314px`,
+        },
+        {
+          name: 'keywords',
+          content: site.siteMetadata.keywords.join(','),
         },
       ].concat(meta)}
     />

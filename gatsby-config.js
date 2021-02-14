@@ -8,12 +8,51 @@ module.exports = {
   pathPrefix: '/',
   siteMetadata: {
     title: `Reality Capture portal`,
-    description: `Reality Capture portal is a website describing methods of creating 3D content based on laser scanning and photogrammetry.`,
-    author: `@LukaszW007`,
+    description: `Need to create digital twin of a building? Get to know reality capture and scan-to-BIM technics like a laser scanning to create 3D BIM model. Free video tutorials`,
+    author: `Lukasz W`,
+    siteUrl: `https://3d-points.com`,
+    keywords: [
+      `reality capture`,
+      `3D scanning`,
+      `laser scanning`,
+      `photgrammetry`,
+      `scan to BIM`,
+      `BIM modeling`,
+      `digital twin`,
+      `3D model`,
+      `UAV`,
+      `LIDAR`,
+      `drone`,
+      `mobile scanning`,
+      `mobile mapping`,
+      `AEC`,
+    ],
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://3d-points.com',
+        sitemap: 'https://3d-points.com/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
+      },
+    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`, `/blog/*`],
+      },
+    },
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -49,9 +88,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-image`,
     {
       resolve: 'gatsby-source-prismic',
       options: {
@@ -86,8 +122,5 @@ module.exports = {
         offset: -200,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };

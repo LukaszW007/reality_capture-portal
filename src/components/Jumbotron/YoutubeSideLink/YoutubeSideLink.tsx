@@ -9,7 +9,11 @@ const YoutubeSideLink = () => {
   return (
     <>
       <span className={styles.SideLink}>
-        <a className={styles.YoutubeSideLink} href="www.youtube.pl">
+        <a
+          className={styles.YoutubeSideLink}
+          href="https://www.youtube.com/channel/UCdggRvOCAmmarbeDny-bDRA"
+          target="_blank"
+        >
           Youtube
         </a>
       </span>

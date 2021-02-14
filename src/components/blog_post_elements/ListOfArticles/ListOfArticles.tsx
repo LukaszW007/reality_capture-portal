@@ -16,6 +16,8 @@ const ListOfArticles: React.FC<PropsArticlesList> = props => {
 
   const singleLink = (uidPost: string) => {
     const articlesDataByUid = articlesData.map((edge: any) => {
+      console.log(`edge.node.uid ${edge.node.uid}`);
+      console.log(`uidPost ${uidPost}`);
       if (uidPost === edge.node.uid) {
         const { text } = edge.node.data.title[0];
         const mainImage = edge.node.data.main_image;
@@ -23,21 +25,32 @@ const ListOfArticles: React.FC<PropsArticlesList> = props => {
       }
       return null;
     });
+    console.log(`articlesDataByUid ${JSON.stringify(articlesDataByUid)}`);
     const filteredArticlesDataByUid = articlesDataByUid.filter(Boolean);
-    const { mainImage, text } = filteredArticlesDataByUid[0];
-
-    return (
-      <li className={styles.singleArticleOnTheList} key={uidPost}>
-        <Link to={`/posts/${uidPost}`} className={styles.linkInList}>
-          <img
-            className={styles.articleImage}
-            src={mainImage.url}
-            alt={mainImage.alt}
-          />
-          <p className={styles.linkToArticle}>{text}</p>
-        </Link>
-      </li>
+    console.log(
+      `filteredArticlesDataByUid ${JSON.stringify(filteredArticlesDataByUid)}`
     );
+
+    if (
+      filteredArticlesDataByUid[0] !== null &&
+      filteredArticlesDataByUid[0] !== undefined
+    ) {
+      const { mainImage, text } = filteredArticlesDataByUid[0];
+
+      return (
+        <li className={styles.singleArticleOnTheList} key={uidPost}>
+          <Link to={`/posts/${uidPost}`} className={styles.linkInList}>
+            <img
+              className={styles.articleImage}
+              src={mainImage.url}
+              alt={mainImage.alt}
+            />
+            <p className={styles.linkToArticle}>{text}</p>
+          </Link>
+        </li>
+      );
+    }
+    return null;
   };
 
   return (

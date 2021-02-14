@@ -7,6 +7,20 @@
   color: $redish;
 }
 
+.container404 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2%;
+}
+
+.graphic404 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 2;
+}
+
 .textDescription {
   margin-left: 15%;
 }

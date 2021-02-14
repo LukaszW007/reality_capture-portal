@@ -5,7 +5,7 @@ import GatsbyImage from 'gatsby-image';
 
 // local dependencies
 import styles from './AboutMe.module.scss';
-import authorPicture from '../../../assets/images/left_dots_fix-min.png';
+import authorPicture from '../../../assets/images/author-dots-opt.webp';
 
 const AboutMe: React.FC<any> = props => {
   return (
@@ -40,7 +40,7 @@ const AboutMe: React.FC<any> = props => {
           </Link>
         </div>
         <div className={styles.picture}>
-          <img src={authorPicture} alt="Author picture" />
+          <img src={authorPicture} alt="Author" />
         </div>
       </div>
     </div>

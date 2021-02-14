@@ -1,14 +1,11 @@
 // global dependencies
 import React from 'react';
-import { Link } from 'gatsby';
 import ReactPlayer from 'react-player';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 // local dependencies
-import throttle from 'lodash.throttle';
 import SEO from '../components/seo';
 import Navbar from '../components/Navbar';
-import Jumbotron from '../components/Jumbotron';
 import Carousel from '../components/Carousel';
 import styles from './Index.module.scss';
 import RealityCaptureTypesGallery from '../components/Gallery';
@@ -19,6 +16,7 @@ import Footer from './sections/footer';
 import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselItems';
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 import Cursor from '../components/Cursor';
+import Jumbotron from '../components/Jumbotron';
 
 interface IndexPageState {
   isDesktop: boolean;
@@ -61,8 +59,8 @@ class IndexPage extends React.Component<any, IndexPageState> {
     return (
       <>
         <Cursor />
-        <SEO title="Home" />
-        <div className={styles.App}>
+        <SEO title="Homepage· 3d-points.com" />
+        <div className={styles.App} onContextMenu={e => e.preventDefault()}>
           <ScrollableAnchor id="home">
             <div className={styles.section1}>
               <Navbar.Navbar desktopScreenVersion={isDesktop} />

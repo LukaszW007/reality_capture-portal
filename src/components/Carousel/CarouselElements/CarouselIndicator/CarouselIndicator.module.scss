@@ -2,7 +2,7 @@
 @import "../../../../utils/sass-core/fonts";
 
 .CarouselIndicatorListElement {
-  width: 200px;
+  min-width: 200px;
   position: relative;
   font-size: $font-size-lg;
 
