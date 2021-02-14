@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12,13],{"+Rve":function(e,a,t){"use strict";t.r(a);var n=t("h0VT");a.default=n.default},h0VT:function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),c=t.n(n),r=t("bUfU"),s=t.n(r);a.default=function(e){return c.a.createElement(c.a.Fragment,null,c.a.createElement("div",{className:s.a.sectionHeader},"scan-to-bim"),c.a.createElement("div",{className:s.a.content},c.a.createElement("div",{className:s.a.underConstruction})))}}}]);
-//# sourceMappingURL=component---src-pages-sections-scan-to-bim-index-ts-4e68103cb7b135e84684.js.map

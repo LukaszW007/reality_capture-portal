@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/sections/tutorials/index.ts"],"names":["tutorials"],"mappings":"4FAAA,uBAEeA,YAAf","file":"component---src-pages-sections-tutorials-index-ts-33e6e9902f0e76e8baff.js","sourcesContent":["import tutorials from './Tutorials';\n\nexport default tutorials;\n"],"sourceRoot":""}
