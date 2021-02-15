@@ -27,10 +27,10 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-9403e9503b079f87e47e.js"
+    "url": "webpack-runtime-6f57ccd8382375e06c40.js"
   },
   {
-    "url": "styles.27cdc24a3826c93a0cb4.css"
+    "url": "styles.0a67e5e93004d2184122.css"
   },
   {
     "url": "styles-407fe62976dc5310c43e.js"
@@ -43,7 +43,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "f412a51000b216301e73e12e9120096f"
+    "revision": "2635949a44ca46865fb9f7eae1967fc1"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
@@ -70,7 +70,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "1f34913c02d30c551b202ed99892d72a"
+    "revision": "577bbb5b35b67e7ee5003c5d20d1dfa3"
   },
   {
     "url": "component---src-pages-blog-tsx-cdbb5d748b259cade433.js"
