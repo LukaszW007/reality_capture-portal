@@ -73,6 +73,7 @@
 .slideWithArrows {
   display: flex;
   flex-direction: row;
+  flex: 8;
 }
 
 .SlidesWithDots {
@@ -131,6 +132,7 @@
 @media (min-width: 769px) and (max-width: 1182px) {
   .CarouselSlideGroup {
     margin: 15px 1%;
+    flex-direction: column;
   }
 
   .CarouselTextIndicatorsExtraSpace {
