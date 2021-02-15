@@ -1,13 +1,14 @@
 // global dependencies
 import React, { useState, useEffect } from 'react';
+import { isMobile, isIOS } from 'react-device-detect';
 
 // local dependencies
 import styles from './Cursor.module.scss';
 
-const isMobile = () => {
-  const ua = navigator.userAgent;
-  return /Android|Mobi/i.test(ua);
-};
+// const isMobile = () => {
+//   const ua = navigator.userAgent;
+//   return /Android|Mobi/i.test(ua);
+// };
 
 interface PropsCursor {
   desktopScreenVersion: boolean;
@@ -15,7 +16,7 @@ interface PropsCursor {
 
 const Cursor: React.FC<PropsCursor> = props => {
   const { desktopScreenVersion } = props;
-  if (desktopScreenVersion === false) return null;
+  if (desktopScreenVersion === false || isMobile === true) return null;
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [clicked, setClicked] = useState(false);
