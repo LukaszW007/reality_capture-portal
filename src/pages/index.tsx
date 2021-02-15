@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import { isChrome} from "react-device-detect";
 
 // local dependencies
 import SEO from '../components/seo';
@@ -93,9 +94,9 @@ class IndexPage extends React.Component<any, IndexPageState> {
               </div>
               <div className={styles.section4_youtubeMovie}>
                 <ReactPlayer
-                  className={styles.reactPlayer}
+                  className={isChrome ? styles.reactPlayerChrome : styles.reactPlayer}
                   url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-                  width={windowWidth >= 1183 ? '50%' : '100%'}
+                  width={windowWidth >= 768 ? '50%' : '100%'}
                   controls="true"
                 />
               </div>

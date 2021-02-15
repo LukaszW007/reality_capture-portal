@@ -8,7 +8,6 @@ import styles from './Jumbotron.module.scss';
 import YoutubeSideLink from './YoutubeSideLink';
 
 const Jumbotron = () => {
-  const isIos = isIOS ? 'styles.Jumbotron-ios' : 'styles.Jumbotron';
   return (
     <div className={isIOS ? styles.JumbotronIos : styles.Jumbotron}>
       <div className={styles.Headers}>

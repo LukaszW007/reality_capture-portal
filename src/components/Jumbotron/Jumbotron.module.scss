@@ -3,18 +3,18 @@
 
 $background-picture: '../../assets/images/top-view-desk-wood-and-coffee.webp';
 $background-pictureJpg: '../../assets/images/top-view-desk-wood-and-coffee.jpg';
-
-@supports not (background-image: url($background-picture)) {
-  .Jumbotron {
-    background-image: url($background-pictureJpg);
-  }
-}
-
-@supports (background-image: url($background-picture)) {
-  .Jumbotron {
-    background-image: url($background-picture);
-  }
-}
+//
+//@supports not (background-image: url($background-picture)) {
+//  .Jumbotron {
+//    background-image: url($background-pictureJpg);
+//  }
+//}
+//
+//@supports (background-image: url($background-picture)) {
+//  .Jumbotron {
+//    background-image: url($background-picture);
+//  }
+//}
 
 .Jumbotron {
   box-sizing: border-box;
@@ -42,7 +42,7 @@ $background-pictureJpg: '../../assets/images/top-view-desk-wood-and-coffee.jpg';
   background-size: cover;
   overflow: hidden;
   background-image: url($background-pictureJpg);
-  }
+}
 
 .Headers {
   flex: 20;

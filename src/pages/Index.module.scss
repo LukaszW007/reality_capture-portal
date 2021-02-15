@@ -59,17 +59,52 @@ $topoMap: "../assets/images/Black_Canyon_Topographic_Arts_2048x2048.webp";
   }
 }
 
+.reactPlayerChrome {
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  height: 25vw !important;
+
+  &::after {
+    background: $redish;
+    display: block;
+    content: '';
+    height: 3px;
+    width: 26%;
+    margin: 0 auto;
+    position: absolute;
+    top: 26vw;
+    left: 37%;
+  }
+}
+
 @media (max-width: 1182px) {
   .section4_youtubeMovie {
     margin-bottom: calc(260px + 4vw);
   }
 
   .reactPlayer {
-    left: 0;
     height: 360px !important;
 
     &::after {
       top: calc(360px + 1vw);
+    }
+  }
+
+  .reactPlayerChrome {
+    height: 360px !important;
+    left: 25%;
+
+    &::after {
+      top: calc(360px + 1vw);
+      background: $redish;
+      display: block;
+      content: '';
+      height: 3px;
+      width: 26%;
+      margin: 0 auto;
+      position: absolute;
+      left: 37%;
     }
   }
 }
