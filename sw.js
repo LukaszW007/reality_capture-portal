@@ -27,10 +27,10 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-8e4881adaad38d0907cd.js"
+    "url": "webpack-runtime-af99d1b2e5a0c9772210.js"
   },
   {
-    "url": "styles.e29fdaa8076acfa5f3e7.css"
+    "url": "styles.af193831c5750bf5ba2f.css"
   },
   {
     "url": "styles-407fe62976dc5310c43e.js"
@@ -39,26 +39,29 @@ self.__precacheManifest = [
     "url": "framework-c8d3a5345e3f321d7da5.js"
   },
   {
-    "url": "app-df219c16e7c54d76646d.js"
+    "url": "app-4122408e2c48bf0a0b73.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "76048871fa86d586ce9594f7d052caa2"
+    "revision": "61c182a7b84e84ebdce3bfab9666f320"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ad6431e4664bcf916d19.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
   },
   {
-    "url": "polyfill-3359125123506d49375c.js"
+    "url": "polyfill-d329d4849346075be99c.js"
   },
   {
     "url": "1927ad572998c6502ac338a3e0808655a6f40640-1cf446f9cd4b21bcebdf.js"
   },
   {
-    "url": "component---src-pages-sections-tutorials-tutorials-tsx-f1c6e8634d568d22f4aa.js"
+    "url": "component---src-pages-sections-tutorials-tutorials-tsx-7e3ebf467838df945225.js"
   },
   {
-    "url": "component---src-pages-index-tsx-707054d459f5b210a451.js"
+    "url": "component---src-pages-sections-about-me-about-me-tsx-ba247e7672d3655658c6.js"
+  },
+  {
+    "url": "component---src-pages-index-tsx-df6d9ae230dc180fe656.js"
   },
   {
     "url": "page-data/index/page-data.json",
@@ -66,14 +69,14 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/sq/d/2052298874.json",
-    "revision": "5d23ed0dadd752b0044b631f6d6cfa82"
+    "revision": "a6bdd27cf150a9f21af336b6f0a74bf9"
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "8eccd35e6debfe8d6383eaf198442e9f"
+    "revision": "8bb7180b292828b1d75a23ae888382ab"
   },
   {
-    "url": "component---src-pages-blog-tsx-cdbb5d748b259cade433.js"
+    "url": "component---src-pages-blog-tsx-48b629ddcfb5e6bfae59.js"
   },
   {
     "url": "page-data/blog/page-data.json",
@@ -173,7 +176,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-df219c16e7c54d76646d.js`))) {
+  if (!resources || !(await caches.match(`/app-4122408e2c48bf0a0b73.js`))) {
     return await fetch(event.request)
   }
 

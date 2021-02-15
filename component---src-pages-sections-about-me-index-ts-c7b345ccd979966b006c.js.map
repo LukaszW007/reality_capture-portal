@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/sections/about-me/index.ts"],"names":["AboutMe"],"mappings":"8FAAA,uBAEeA,YAAf","file":"component---src-pages-sections-about-me-index-ts-c7b345ccd979966b006c.js","sourcesContent":["import AboutMe from './AboutMe';\n\nexport default AboutMe;\n"],"sourceRoot":""}
