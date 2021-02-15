@@ -1,3 +1,4 @@
+// when using github pages, add custom domain. Both deploy commands work!
 const path = require('path');
 
 require(`dotenv`).config({
@@ -26,6 +27,11 @@ module.exports = {
       `mobile scanning`,
       `mobile mapping`,
       `AEC`,
+      `GIS`,
+      `Building Information System`,
+      `Geographic Information System`,
+      `HDS`,
+      `High Definition Scanning`,
     ],
   },
   plugins: [

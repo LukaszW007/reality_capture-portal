@@ -13,6 +13,7 @@ interface CarouselSlideProps {
     id: string;
     title?: string;
     picture?: any;
+    pictureAlt?: any;
     content?: string;
     webAddress?: string;
   };
@@ -23,7 +24,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
   if (slide === undefined || index === undefined || activeIndex === undefined) {
     return null;
   }
-  const { picture, webAddress } = slide;
+  const { picture, pictureAlt, title, webAddress } = slide;
   console.log(`this is index ${index} activeindex= ${activeIndex}`);
 
   if (webAddress) {
@@ -54,9 +55,17 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
           : styles.CarouselSlide
       }
     >
-      <p>
-        <img src={picture} alt="HDS" className={styles.ImageInCarouselSlide} />
-      </p>
+      <picture>
+        <source srcSet={picture} type="image/webp" />
+        <source srcSet={pictureAlt} type="image/jpg" />
+        <img
+          src={picture}
+          alt={title}
+          className={styles.ImageInCarouselSlide}
+          title={title}
+          loading="lazy"
+        />
+      </picture>
     </li>
   );
 };

@@ -58,7 +58,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
 
     return (
       <>
-        <Cursor />
+        <Cursor desktopScreenVersion={isDesktop} />
         <SEO title="Homepage· 3d-points.com" />
         <div className={styles.App} onContextMenu={e => e.preventDefault()}>
           <ScrollableAnchor id="home">

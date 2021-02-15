@@ -9,8 +9,13 @@ const isMobile = () => {
   return /Android|Mobi/i.test(ua);
 };
 
-const Cursor: React.FC<any> = () => {
-  if (typeof navigator !== 'undefined' && isMobile()) return null;
+interface PropsCursor {
+  desktopScreenVersion: boolean;
+}
+
+const Cursor: React.FC<PropsCursor> = props => {
+  const { desktopScreenVersion } = props;
+  if (desktopScreenVersion === false) return null;
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [clicked, setClicked] = useState(false);

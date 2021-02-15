@@ -13,6 +13,7 @@ const YoutubeSideLink = () => {
           className={styles.YoutubeSideLink}
           href="https://www.youtube.com/channel/UCdggRvOCAmmarbeDny-bDRA"
           target="_blank"
+          rel="noreferrer"
         >
           Youtube
         </a>

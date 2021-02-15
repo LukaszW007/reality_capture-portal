@@ -15,10 +15,11 @@ $widthDesktop: 95%;
   align-items: center;
 }
 
-.sectionContainer2 {
-  padding-top: 0;
-
-  @extend .sectionContainer;
+.sectionContainer2 { //@extend is not supported in firefox
+  padding: 0 1% 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mainImage {

@@ -6,6 +6,8 @@ import GatsbyImage from 'gatsby-image';
 // local dependencies
 import styles from './AboutMe.module.scss';
 import authorPicture from '../../../assets/images/author-dots-opt.webp';
+import authorPicturePng from '../../../assets/images/author-dots-opt.png';
+import { isIOS } from "react-device-detect"
 
 const AboutMe: React.FC<any> = props => {
   return (
@@ -40,7 +42,13 @@ const AboutMe: React.FC<any> = props => {
           </Link>
         </div>
         <div className={styles.picture}>
-          <img src={authorPicture} alt="Author" />
+          <source srcSet={authorPicture} type="image/webp" />
+          <source srcSet={authorPicturePng} type="image/png" />
+          <img
+            src={isIOS ? authorPicturePng : authorPicture}
+            alt="Author"
+            title="Author"
+          />
         </div>
       </div>
     </div>

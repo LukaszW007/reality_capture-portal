@@ -11,16 +11,27 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 2%;
+  margin: 25vh 2%;
 }
 
 .graphic404 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  flex: 2;
+}
+
+.gif {
+  height: 20vh;
 }
 
 .textDescription {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   margin-left: 15%;
+  justify-content: left;
+}
+
+.link {
+  color: $redish;
 }

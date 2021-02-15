@@ -108,8 +108,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       desktopScreenVersion,
     } = this.props;
 
-    console.log(`active index-number ${activeIndex}`); // TODO check hight of the bottom margin in top carousel
-    console.log('Carousel isDesktop: '+ isDesktop);
     if (desktopScreenVersion) {
       return (
         <div className={styles.Carousel}>
@@ -152,52 +150,54 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
               ))}
             </ul>
 
-            <LeftArrow
-              onClick={(e: React.MouseEvent<HTMLElement>) =>
-                this.goToPrevSlide(e)
-              }
-            />
-
-            <div className={styles.SlidesWithDots}>
-              <ul className={styles.CarouselSlides}>
-                {items.map((slide, index) => (
-                  <CarouselSlide
-                    windowWidth={windowWidth}
-                    key={slide.id}
-                    index={index}
-                    activeIndex={activeIndex}
-                    slide={slide}
-                  />
-                ))}
-              </ul>
-
-              <div
-                className={
-                  enableDotIndicators
-                    ? styles.CarouselDotIndicators
-                    : styles.CarouselDotIndicators_off
+            <div className={styles.slideWithArrows}>
+              <LeftArrow
+                onClick={(e: React.MouseEvent<HTMLElement>) =>
+                  this.goToPrevSlide(e)
                 }
-              >
-                <ul className={styles.CarouselDotIndicators}>
+              />
+
+              <div className={styles.SlidesWithDots}>
+                <ul className={styles.CarouselSlides}>
                   {items.map((slide, index) => (
-                    <CarouselIndicator
+                    <CarouselSlide
+                      windowWidth={windowWidth}
                       key={slide.id}
                       index={index}
                       activeIndex={activeIndex}
-                      name=""
-                      isDotIndicator={enableDotIndicators}
-                      onClick={() => this.goToSlide(index)}
+                      slide={slide}
                     />
                   ))}
                 </ul>
-              </div>
-            </div>
 
-            <RightArrow
-              onClick={(e: React.MouseEvent<HTMLElement>) =>
-                this.goToNextSlide(e)
-              }
-            />
+                <div
+                  className={
+                    enableDotIndicators
+                      ? styles.CarouselDotIndicators
+                      : styles.CarouselDotIndicators_off
+                  }
+                >
+                  <ul className={styles.CarouselDotIndicators}>
+                    {items.map((slide, index) => (
+                      <CarouselIndicator
+                        key={slide.id}
+                        index={index}
+                        activeIndex={activeIndex}
+                        name=""
+                        isDotIndicator={enableDotIndicators}
+                        onClick={() => this.goToSlide(index)}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <RightArrow
+                onClick={(e: React.MouseEvent<HTMLElement>) =>
+                  this.goToNextSlide(e)
+                }
+              />
+            </div>
           </div>
         </div>
       );
@@ -208,7 +208,6 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
           <LeftArrow
             onClick={(e: React.MouseEvent<HTMLElement>) =>
               this.goToPrevSlide(e)
-
             }
           />
 

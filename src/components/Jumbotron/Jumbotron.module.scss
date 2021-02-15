@@ -2,19 +2,47 @@
 @import "../../utils/sass-core/fonts.scss";
 
 $background-picture: '../../assets/images/top-view-desk-wood-and-coffee.webp';
+$background-pictureJpg: '../../assets/images/top-view-desk-wood-and-coffee.jpg';
+
+@supports not (background-image: url($background-picture)) {
+  .Jumbotron {
+    background-image: url($background-pictureJpg);
+  }
+}
+
+@supports (background-image: url($background-picture)) {
+  .Jumbotron {
+    background-image: url($background-picture);
+  }
+}
 
 .Jumbotron {
   box-sizing: border-box;
   display: flex;
   height: 1080px;
   margin: 0 auto;
-  background: url($background-picture) no-repeat;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
+  background-image: url($background-picture);
 }
+
+.JumbotronIos {
+  box-sizing: border-box;
+  display: flex;
+  height: 1080px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  background-image: url($background-pictureJpg);
+  }
 
 .Headers {
   flex: 20;

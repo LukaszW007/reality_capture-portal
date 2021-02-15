@@ -64,9 +64,15 @@
 .CarouselSlideGroup {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
   justify-content: center;
   margin: 0 100px;
+}
+
+.slideWithArrows {
+  display: flex;
+  flex-direction: row;
 }
 
 .SlidesWithDots {
@@ -123,6 +129,14 @@
 }
 
 @media (min-width: 769px) and (max-width: 1182px) {
+  .CarouselSlideGroup {
+    margin: 15px 1%;
+  }
+
+  .CarouselTextIndicatorsExtraSpace {
+    flex: 0;
+  }
+
   .CarouselTextIndicators {
     li {
       &:last-child {
