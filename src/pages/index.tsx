@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
-import { isChrome} from "react-device-detect";
+import { isChrome, isIOS, isMobile } from "react-device-detect"
 
 // local dependencies
 import SEO from '../components/seo';
@@ -59,7 +59,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
 
     return (
       <>
-        <Cursor desktopScreenVersion={isDesktop} />
+        <Cursor desktopScreenVersion={isDesktop} isIOS={isIOS} isMobile={isMobile}/>
         <SEO title="Homepage· 3d-points.com" />
         <div className={styles.App} onContextMenu={e => e.preventDefault()}>
           <ScrollableAnchor id="home">
