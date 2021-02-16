@@ -16,8 +16,8 @@ interface PropsCursor {
 }
 
 const Cursor: React.FC<PropsCursor> = props => {
-  const { desktopScreenVersion, isIOS, isMobile } = props;
-  if (desktopScreenVersion === false || isIOS === true || isMobile === true) return null;
+  const { desktopScreenVersion, isIOS } = props;
+  if (desktopScreenVersion === false) return null;
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [clicked, setClicked] = useState(false);

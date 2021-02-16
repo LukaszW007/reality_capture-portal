@@ -1,15 +1,15 @@
 // global dependencies
 import React from 'react';
 import { Link } from 'gatsby';
-import GatsbyImage from 'gatsby-image';
 
 // local dependencies
-import { isIOS } from 'react-device-detect';
+import { isIOS, osName, osVersion,isIOS13 } from 'react-device-detect';
 import styles from './AboutMe.module.scss';
 import authorPicture from '../../../assets/images/author-dots-opt.webp';
 import authorPicturePng from '../../../assets/images/author-dots-opt.png';
 
 const AboutMe: React.FC<any> = props => {
+
   return (
     <div className={styles.aboutMeContainer}>
       <div className={styles.sectionHeaderAboutMe}>about author</div>
