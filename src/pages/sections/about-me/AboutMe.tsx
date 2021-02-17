@@ -3,13 +3,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // local dependencies
-import { isIOS, osName, osVersion,isIOS13 } from 'react-device-detect';
 import styles from './AboutMe.module.scss';
 import authorPicture from '../../../assets/images/author-dots-opt.webp';
 import authorPicturePng from '../../../assets/images/author-dots-opt.png';
 
-const AboutMe: React.FC<any> = props => {
-
+const AboutMe: React.FC<any> = isApple => {
+  const { isMac, isIos } = isApple;
   return (
     <div className={styles.aboutMeContainer}>
       <div className={styles.sectionHeaderAboutMe}>about author</div>
@@ -36,14 +35,23 @@ const AboutMe: React.FC<any> = props => {
             Professionally I work with the point clouds, 3D modeling, and
             web-development.
           </p>
-          <p>Would you like know more about me and my projects...</p>
-          <Link to="/page-2">
-            <div>...continue to read here.</div>
-          </Link>
+          <p>Would you like know more about me and my projects?</p>
+          <p>
+            Contact me by e-mail{' '}
+            <a
+              className={styles.contactLink}
+              href="mailto:3d-points.contact@gmail.com"
+            >
+              3d-points.contact@gmail.com
+            </a>
+          </p>
+          {/* <Link to="/page-2"> */}
+          {/*  <div>...continue to read here.</div> */}
+          {/* </Link> */}
         </div>
         <div className={styles.picture}>
           <img
-            src={isIOS ? authorPicturePng : authorPicture}
+            src={isIos || isMac ? authorPicturePng : authorPicture}
             alt="Author"
             title="Author"
           />

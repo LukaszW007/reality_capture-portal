@@ -129,7 +129,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
           </ScrollableAnchor>
           <ScrollableAnchor id="about_me">
             <div className={styles.section7_aboutMe}>
-              <AboutMe />
+              <AboutMe isApple={{ isMac, isIos }} />
             </div>
           </ScrollableAnchor>
         </div>

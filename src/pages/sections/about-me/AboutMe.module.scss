@@ -59,6 +59,11 @@ $topoMap2: "../../../assets/images/background_contour_map_1920x2500_north.png";
   border-radius: 50px;
 }
 
+.contactLink {
+  color: $redish;
+  text-decoration: none;
+}
+
 @media (min-width: 769px) {
   .sectionHeaderAboutMe {
     &::after {
