@@ -1,15 +1,20 @@
 // global dependencies
 import React from 'react';
-import { isIOS } from 'react-device-detect';
 
 // local dependencies
-// import heroImage from 'assets/images/top-view-desk-wood-and-coffee.png';
 import styles from './Jumbotron.module.scss';
 import YoutubeSideLink from './YoutubeSideLink';
 
-const Jumbotron = () => {
+interface PropsJumbotron {
+  isApple: any;
+}
+
+const Jumbotron: React.FC<PropsJumbotron> = ({ isApple }) => {
+  const { isMac, isIos } = isApple;
+
+  console.log(`MAcoOs ${isIos} ${isMac}`);
   return (
-    <div className={isIOS ? styles.JumbotronIos : styles.Jumbotron}>
+    <div className={isIos || isMac ? styles.JumbotronIos : styles.Jumbotron}>
       <div className={styles.Headers}>
         <h1 className={styles.header1}>reality capture</h1>
         <div className={styles.header3}>

@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
-import { isChrome, isIOS, isMobile } from "react-device-detect"
+import { isChrome, isIOS, isMobile, isMacOs } from 'react-device-detect';
 
 // local dependencies
 import SEO from '../components/seo';
@@ -22,6 +22,8 @@ import Jumbotron from '../components/Jumbotron';
 interface IndexPageState {
   isDesktop: boolean;
   windowWidth: number;
+  isMac: boolean;
+  isIos: boolean;
 }
 
 class IndexPage extends React.Component<any, IndexPageState> {
@@ -31,11 +33,15 @@ class IndexPage extends React.Component<any, IndexPageState> {
     this.state = {
       windowWidth: 0,
       isDesktop: true,
+      isMac: false,
+      isIos: false,
     };
   }
 
   componentDidMount = () => {
     this.setState({ windowWidth: window.innerWidth });
+    this.setState({ isMac: isMacOs });
+    this.setState({ isIos: isIOS });
     this.onResize();
     window.addEventListener('resize', this.onResize);
     configureAnchors({ offset: -100, scrollDuration: 400 });
@@ -55,17 +61,21 @@ class IndexPage extends React.Component<any, IndexPageState> {
   };
 
   render() {
-    const { isDesktop, windowWidth } = this.state;
+    const { isDesktop, windowWidth, isIos, isMac } = this.state;
 
     return (
       <>
-        <Cursor desktopScreenVersion={isDesktop} isIOS={isIOS} isMobile={isMobile}/>
+        <Cursor
+          desktopScreenVersion={isDesktop}
+          isIOS={isIOS}
+          isMobile={isMobile}
+        />
         <SEO title="Homepage· 3d-points.com" />
         <div className={styles.App} onContextMenu={e => e.preventDefault()}>
           <ScrollableAnchor id="home">
             <div className={styles.section1}>
               <Navbar.Navbar desktopScreenVersion={isDesktop} />
-              <Jumbotron />
+              <Jumbotron isApple={{ isMac, isIos }} />
             </div>
           </ScrollableAnchor>
           <ScrollableAnchor id="reality_capture">
@@ -94,7 +104,9 @@ class IndexPage extends React.Component<any, IndexPageState> {
               </div>
               <div className={styles.section4_youtubeMovie}>
                 <ReactPlayer
-                  className={isChrome ? styles.reactPlayerChrome : styles.reactPlayer}
+                  className={
+                    isChrome ? styles.reactPlayerChrome : styles.reactPlayer
+                  }
                   url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
                   width={windowWidth >= 768 ? '50%' : '100%'}
                   controls="true"

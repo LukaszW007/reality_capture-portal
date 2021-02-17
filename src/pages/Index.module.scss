@@ -85,6 +85,7 @@ $topoMap: "../assets/images/Black_Canyon_Topographic_Arts_2048x2048.webp";
 
   .reactPlayer {
     height: 360px !important;
+    left: 0;
 
     &::after {
       top: calc(360px + 1vw);
@@ -119,5 +120,13 @@ $topoMap: "../assets/images/Black_Canyon_Topographic_Arts_2048x2048.webp";
   .section3Mobile {
     padding: 2vw 0;
     flex-direction: column;
+  }
+
+  .reactPlayer {
+    left: 0;
+  }
+
+  .reactPlayerChrome {
+    left: 0;
   }
 }
