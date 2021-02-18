@@ -5,19 +5,24 @@ import React from 'react';
 // import heroImage from 'assets/images/top-view-desk-wood-and-coffee.png';
 import styles from './YoutubeSideLink.module.scss';
 
-const YoutubeSideLink = () => {
+const YoutubeSideLink = (props: { url: string; name: string }) => {
+  const { url, name } = props;
   return (
     <>
-      <span className={styles.SideLink}>
+      <div
+        className={
+          name === 'Facebook' ? styles.SideLinkFacebook : styles.SideLinkYoutube
+        }
+      >
         <a
           className={styles.YoutubeSideLink}
-          href="https://www.youtube.com/channel/UCdggRvOCAmmarbeDny-bDRA"
+          href={url}
           target="_blank"
           rel="noreferrer"
         >
-          Youtube
+          {name}
         </a>
-      </span>
+      </div>
     </>
   );
 };

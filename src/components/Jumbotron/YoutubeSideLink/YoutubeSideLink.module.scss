@@ -1,7 +1,20 @@
 @import "../../../utils/sass-core/colors.scss";
 @import "../../../utils/sass-core/fonts.scss";
 
-.SideLink {
+.SideLinkFacebook {
+  position: absolute;
+  left: calc(100vw - 80px);
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.SideLinkYoutube {
+  position: absolute;
+  left: calc(100vw - 100px);
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -15,7 +28,6 @@
   text-decoration: none;
   font-size: $font-size-md;
   font-weight: $font-weight-semibold;
-  position: relative;
   text-transform: uppercase;
 }
 

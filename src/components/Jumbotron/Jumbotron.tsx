@@ -11,6 +11,8 @@ interface PropsJumbotron {
 
 const Jumbotron: React.FC<PropsJumbotron> = ({ isApple }) => {
   const { isMac, isIos } = isApple;
+  const urlFB = 'https://www.facebook.com/3d-pointscom-115265793599938';
+  const urlYT = 'https://www.youtube.com/channel/UCdggRvOCAmmarbeDny-bDRA';
 
   console.log(`MAcoOs ${isIos} ${isMac}`);
   return (
@@ -22,7 +24,10 @@ const Jumbotron: React.FC<PropsJumbotron> = ({ isApple }) => {
         </div>
       </div>
       <div className={styles.YoutubeSide}>
-        <YoutubeSideLink />
+        <div className={styles.linksGroup}>
+          <YoutubeSideLink url={urlFB} name="Facebook" />
+          <YoutubeSideLink url={urlYT} name="Youtube" />
+        </div>
       </div>
     </div>
   );
