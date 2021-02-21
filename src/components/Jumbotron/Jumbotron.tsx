@@ -7,9 +7,13 @@ import YoutubeSideLink from './YoutubeSideLink';
 
 interface PropsJumbotron {
   isApple: any;
+  desktopScreenVersion: boolean;
 }
 
-const Jumbotron: React.FC<PropsJumbotron> = ({ isApple }) => {
+const Jumbotron: React.FC<PropsJumbotron> = ({
+  isApple,
+  desktopScreenVersion,
+}) => {
   const { isMac, isIos } = isApple;
   const urlFB = 'https://www.facebook.com/3d-pointscom-115265793599938';
   const urlYT = 'https://www.youtube.com/channel/UCdggRvOCAmmarbeDny-bDRA';
@@ -23,7 +27,11 @@ const Jumbotron: React.FC<PropsJumbotron> = ({ isApple }) => {
           Transform reality into virtual 3D world
         </div>
       </div>
-      <div className={styles.YoutubeSide}>
+      <div
+        className={
+          desktopScreenVersion ? styles.YoutubeSide : styles.YoutubeSideNone
+        }
+      >
         <div className={styles.linksGroup}>
           <YoutubeSideLink url={urlFB} name="Facebook" />
           <YoutubeSideLink url={urlYT} name="Youtube" />

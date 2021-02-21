@@ -1,5 +1,6 @@
 // global dependencies
 import React from 'react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 // local dependencies
 import styles from './NavbarListElement.module.scss';
@@ -14,7 +15,7 @@ const NavbarListElement = (props: Props) => {
   return (
     <>
       <li className={styles.NavbarListElement}>
-        <a href={reference}>{listElementName}</a>
+        <OutboundLink href={reference}>{listElementName}</OutboundLink>
       </li>
     </>
   );

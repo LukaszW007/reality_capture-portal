@@ -17,9 +17,15 @@ const SinglePostOnPostsList: React.FC<PropsSinglePost> = props => {
       <li className={styles.oneOfPosts} key={singlePostData.url}>
         <div className={styles.descriptionOfPost}>
           <p className={styles.titleName}>{singlePostData.postTitle}</p>
-          <span className={styles.postFirstPublicationDate}>{singlePostData.date}</span>
+          <span className={styles.postFirstPublicationDate}>
+            {singlePostData.date}
+          </span>
         </div>
-        <img className={styles.postThumbnail} src={singlePostData.imageURL} alt={singlePostData.imageAlt} />
+        <img
+          className={styles.postThumbnail}
+          src={singlePostData.imageURL}
+          alt={singlePostData.imageAlt}
+        />
       </li>
     </Link>
   );

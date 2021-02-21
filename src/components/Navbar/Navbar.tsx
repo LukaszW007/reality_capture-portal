@@ -1,11 +1,13 @@
 // global dependencies
 import React from 'react';
 import { Link } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 // local dependencies
 import Logo from '../Logo';
 import NavbarListElement from './NavbarListElement';
 import styles from './Navbar.module.scss';
+import SocialMediaMenu from '../SocialMediaMenu';
 
 interface NavbarProps {
   desktopScreenVersion: boolean;
@@ -38,9 +40,9 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
         // desktop
         <div className={styles.Navbar}>
           <div className={styles.Logo}>
-            <a href="#home">
+            <OutboundLink href="#home">
               <Logo />
-            </a>
+            </OutboundLink>
           </div>
           <ul className={styles.NavList}>
             <NavbarListElement listElementName="Home" reference="#home" />
@@ -65,6 +67,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
             />
             <NavbarListElement listElementName="Blog" reference="/blog" />
           </ul>
+          <SocialMediaMenu />
         </div>
       );
     }
@@ -115,6 +118,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
               <NavbarListElement listElementName="Blog" />
             </Link>
           </ul>
+          <SocialMediaMenu />
         </div>
       </div>
     );

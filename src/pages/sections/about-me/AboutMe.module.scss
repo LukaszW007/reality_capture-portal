@@ -64,6 +64,11 @@ $topoMap2: "../../../assets/images/background_contour_map_1920x2500_north.png";
   text-decoration: none;
 }
 
+.linkYT {
+  color: $redish;
+  text-decoration: none;
+}
+
 @media (min-width: 769px) {
   .sectionHeaderAboutMe {
     &::after {

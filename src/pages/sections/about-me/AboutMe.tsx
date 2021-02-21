@@ -1,5 +1,6 @@
 // global dependencies
 import React from 'react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 // local dependencies
 import styles from './AboutMe.module.scss';
@@ -29,7 +30,13 @@ const AboutMe: React.FC<PropsAboutMe> = ({ isApple }) => {
               information and you will use them in your daily workflow.
             </p>
             <p>
-              I am recording short videos and longer tutorials on my Youtube
+              I am recording short videos and longer tutorials on my{' '}
+              <OutboundLink
+                className={styles.linkYT}
+                href="https://www.youtube.com/channel/UCdggRvOCAmmarbeDny-bDRA"
+              >
+                Youtube{' '}
+              </OutboundLink>
               channel. You are very welcome to watch them and share.
             </p>
             <p>
@@ -46,12 +53,12 @@ const AboutMe: React.FC<PropsAboutMe> = ({ isApple }) => {
               Contact me by e-mail <br />
             </p>
             <p>
-              <a
+              <OutboundLink
                 className={styles.contactLink}
                 href="mailto:3d-points.contact@gmail.com"
               >
                 3d-points.contact@gmail.com
-              </a>
+              </OutboundLink>
             </p>
             {/* <Link to="/page-2"> */}
             {/*  <div>...continue to read here.</div> */}

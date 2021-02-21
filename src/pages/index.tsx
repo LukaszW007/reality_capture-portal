@@ -71,12 +71,15 @@ class IndexPage extends React.Component<any, IndexPageState> {
           isMobile={isMobile}
         />
         <SEO title="Homepage· 3d-points.com" />
-        {/*onContextMenu={e => e.preventDefault()}*/}
+        {/* onContextMenu={e => e.preventDefault()} */}
         <div className={styles.App} onContextMenu={e => e.preventDefault()}>
           <ScrollableAnchor id="home">
             <div className={styles.section1}>
               <Navbar.Navbar desktopScreenVersion={isDesktop} />
-              <Jumbotron isApple={{ isMac, isIos }} />
+              <Jumbotron
+                isApple={{ isMac, isIos }}
+                desktopScreenVersion={isDesktop}
+              />
             </div>
           </ScrollableAnchor>
           <ScrollableAnchor id="reality_capture">

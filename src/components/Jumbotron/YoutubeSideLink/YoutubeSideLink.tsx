@@ -1,5 +1,6 @@
 // global dependencies
 import React from 'react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 // local dependencies
 // import heroImage from 'assets/images/top-view-desk-wood-and-coffee.png';
@@ -14,14 +15,14 @@ const YoutubeSideLink = (props: { url: string; name: string }) => {
           name === 'Facebook' ? styles.SideLinkFacebook : styles.SideLinkYoutube
         }
       >
-        <a
+        <OutboundLink
           className={styles.YoutubeSideLink}
           href={url}
           target="_blank"
           rel="noreferrer"
         >
           {name}
-        </a>
+        </OutboundLink>
       </div>
     </>
   );
