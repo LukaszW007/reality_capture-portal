@@ -1,0 +1,33 @@
+@import "../../utils/sass-core/colors.scss";
+@import "../../utils/sass-core/fonts.scss";
+
+.container {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: $greyish;
+  display: flex;
+  flex-direction: row;
+  z-index: 100;
+  opacity: 0.85;
+}
+
+.containerClosed {
+  visibility: hidden;
+}
+
+.contentGroup {
+  margin: 5px 25px;
+}
+
+.link {
+  color: $redish;
+}
+
+.closeButton {
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  flex-basis: auto;
+  background-color: $greyish;
+}

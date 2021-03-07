@@ -18,6 +18,7 @@ import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselIt
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 import Cursor from '../components/Cursor';
 import Jumbotron from '../components/Jumbotron';
+import CookiesPopup from "../components/CookiesPopup";
 
 interface IndexPageState {
   isDesktop: boolean;
@@ -137,6 +138,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
             </div>
           </ScrollableAnchor>
         </div>
+        <CookiesPopup />
         <Footer />
       </>
     );

@@ -7,16 +7,22 @@
   flex-direction: row;
   background: $almostBlack;
   align-items: flex-end;
+  color: $white;
+  font-size: $font-size-sm;
 }
 
 .Logo {
-  flex: 3;
+  flex: 2;
+}
+
+.policy {
+  flex: 1;
+  margin: 0 20px 10px 0;
+  text-align: left;
 }
 
 .Sign {
-  flex: 7;
+  flex: 9;
   margin: 0 20px 10px 0;
-  color: $white;
-  font-size: $font-size-sm;
   text-align: right;
 }

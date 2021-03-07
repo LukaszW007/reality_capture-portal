@@ -1,0 +1,12 @@
+@import "../utils/sass-core/colors.scss";
+@import "../utils/sass-core/fonts.scss";
+
+$widthDesktop: 55%;
+$widthMobile: 95%;
+
+.articleBody {
+  padding: 100px 1% 50px;
+  width: $widthDesktop;
+  margin: 0 auto;
+  text-align: left;
+}
