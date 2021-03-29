@@ -7,10 +7,11 @@ $widthMobile: 95%;
 .bannerContainer {
   display: flex;
   flex-direction: column;
-  width: $widthDesktop;
+  max-width: $widthDesktop;
 }
 
 .bannerImage {
+  width: 100%;
   margin-bottom: 0.5rem;
 }
 

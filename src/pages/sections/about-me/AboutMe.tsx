@@ -42,7 +42,14 @@ const AboutMe: React.FC<PropsAboutMe> = ({ isApple }) => {
             <p>
               I also write articles and reviews of laser scanning equipment and
               software. It would be wonderful if you would find there some
-              decent information.
+              decent information. You will find them{' '}
+              <OutboundLink
+                className={styles.linkYT}
+                href="https://3d-points.com/blog/"
+              >
+                here
+              </OutboundLink>
+              .
             </p>
             <p>
               Professionally I work with the point clouds, 3D modeling, and

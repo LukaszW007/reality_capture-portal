@@ -7,9 +7,9 @@ import styles from './blogPost.module.scss';
 import BannerWithCaption from '../components/blog_post_elements/BannerWithCaption';
 import Embed from '../components/blog_post_elements/Embed';
 import RichText from '../components/blog_post_elements/RichText';
-import SimpleQuote from '../components/blog_post_elements/SimpleQuote';
-import PictRightColumn from '../components/blog_post_elements/PictRightColumn';
-import PictLeftColumn from '../components/blog_post_elements/PictLeftColumn';
+// import SimpleQuote from '../components/blog_post_elements/SimpleQuote';
+// import PictRightColumn from '../components/blog_post_elements/PictRightColumn';
+// import PictLeftColumn from '../components/blog_post_elements/PictLeftColumn';
 import ListOfArticles from '../components/blog_post_elements/ListOfArticles';
 import ScrollIndicator from '../components/ScrollIndicator/ScrollIndicator';
 
@@ -20,12 +20,12 @@ const PostsPage: React.FC<any> = ({ data }) => {
       data: postData,
       first_publication_date: firstPublicationDate,
       url,
-    } = data.prismicBlogPosts;
-    const { body } = data.prismicBlogPosts.data;
-    const articlesData = data.allPrismicBlogPosts.edges;
-    console.log(`data.allPrismicBlogPosts  : ${JSON.stringify(articlesData)}`);
+    } = data.prismicPosts;
+    const { body } = data.prismicPosts.data;
+    const articlesData = data.allPrismicPosts.edges;
+    console.log(`data.allPrismicPosts  : ${JSON.stringify(articlesData)}`);
 
-    // variables from prismicBlogPosts
+    // variables from prismicPosts
     const title = postData.title[0].text;
     // if (postData.subtitle[0].text !== undefined)
     const subtitle =
@@ -36,8 +36,9 @@ const PostsPage: React.FC<any> = ({ data }) => {
         ? ''
         : postData.text_of_the_post[0].text;
     const image = postData.main_image;
+    const readTime = postData.read_time[0].text;
 
-    // variables from data.prismicBlogPosts.data.body
+    // variables from data.prismicPosts.data.body
     const sliceTypes = body.map((sliceType: any, index: string) => {
       switch (sliceType.slice_type) {
         case 'banner_with_caption':
@@ -48,12 +49,12 @@ const PostsPage: React.FC<any> = ({ data }) => {
           return <Embed detailsData={sliceType.primary.link_to_iframe} />;
         case 'text':
           return <RichText detailsData={sliceType.primary.rich_text_in_post} />;
-        case 'quote':
-          return <SimpleQuote detailsData={sliceType.primary.quote} />;
-        case 'pictright_text_columns':
-          return <PictRightColumn detailsData={sliceType} />;
-        case 'pictleft_text_columns':
-          return <PictLeftColumn detailsData={sliceType} />;
+        // case 'quote':
+        //   return <SimpleQuote detailsData={sliceType.primary.quote} />;
+        // case 'pictright_text_columns':
+        //   return <PictRightColumn detailsData={sliceType} />;
+        // case 'pictleft_text_columns':
+        //   return <PictLeftColumn detailsData={sliceType} />;
         case 'list_of_articles':
           return (
             <ListOfArticles
@@ -82,6 +83,7 @@ const PostsPage: React.FC<any> = ({ data }) => {
           <div className={styles.postContentContainer}>
             <h1>{title}</h1>
             <h3>{subtitle}</h3>
+            <div>{readTime}</div>
             <div className={styles.firstPublicationDate}>
               {firstPublicationDate}
             </div>
@@ -109,7 +111,7 @@ export default PostsPage;
 export const blogPostQuery = graphql`
   query PostBySlug($uid: String!) {
     # Query the post with the uid passed in from gatsby-node.js
-    prismicBlogPosts(uid: { eq: $uid }) {
+    prismicPosts(uid: { eq: $uid }) {
       url
       uid
       first_publication_date(formatString: "DD MMMM YYYY")
@@ -118,6 +120,9 @@ export const blogPostQuery = graphql`
           text
         }
         text_of_the_post {
+          text
+        }
+        read_time {
           text
         }
         main_image {
@@ -142,9 +147,6 @@ export const blogPostQuery = graphql`
             list_of_articles {
               text
             }
-            quote {
-              text
-            }
             image_banner {
               alt
               url
@@ -152,29 +154,14 @@ export const blogPostQuery = graphql`
             }
           }
           items {
-            left_side_text {
-              text
-            }
-            right_side_pict {
-              url
-              alt
-            }
-            left_side_pict {
-              url
-              alt
-            }
-            right_side_text {
-              text
-            }
             articles_to_link {
-              slug
               uid
             }
           }
         }
       }
     }
-    allPrismicBlogPosts {
+    allPrismicPosts {
       edges {
         node {
           uid

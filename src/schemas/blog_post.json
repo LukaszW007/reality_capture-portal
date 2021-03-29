@@ -30,6 +30,14 @@
         "placeholder" : "date"
       }
     },
+    "read_time" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, em",
+        "allowTargetBlank" : true,
+        "label" : "read time"
+      }
+    },
     "hashtags" : {
       "type" : "Text",
       "config" : {

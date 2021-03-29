@@ -24,7 +24,9 @@ const PictRightColumn: React.FC<PropsPRC> = props => {
         className={styles.paragraph}
         dangerouslySetInnerHTML={{ __html: items[0].left_side_text[0].text }}
       />
-      <BannerWithCaption detailsData={pictDetails} />
+      <div className={styles.picture}>
+        <BannerWithCaption detailsData={pictDetails} />
+      </div>
     </div>
   );
 };

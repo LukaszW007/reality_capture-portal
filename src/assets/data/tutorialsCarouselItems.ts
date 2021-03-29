@@ -8,19 +8,19 @@ const realityCaptureCarouselItems = {
   items: [
     {
       id: uuidv4(),
-      webAddress: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      webAddress: "https://www.youtube.com/watch?v=0cWUirJAero",
     },
     {
       id: uuidv4(),
-      webAddress: "https://www.youtube.com/watch?v=l2pABP023i4",
+      webAddress: "https://www.youtube.com/watch?v=0cWUirJAero",
     },
     {
       id: uuidv4(),
-      webAddress: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+      webAddress: "https://www.youtube.com/watch?v=0cWUirJAero",
     },
     {
       id: uuidv4(),
-      webAddress: "https://www.youtube.com/watch?v=l2pABP023i4",
+      webAddress: "https://www.youtube.com/watch?v=0cWUirJAero",
     },
   ],
 };

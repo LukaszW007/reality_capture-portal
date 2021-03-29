@@ -18,7 +18,7 @@ import realityCaptureCarouselItems from '../assets/data/realityCaptureCarouselIt
 import tutorialsCarouselItems from '../assets/data/tutorialsCarouselItems';
 import Cursor from '../components/Cursor';
 import Jumbotron from '../components/Jumbotron';
-import CookiesPopup from "../components/CookiesPopup";
+import CookiesPopup from '../components/CookiesPopup';
 
 interface IndexPageState {
   isDesktop: boolean;
@@ -46,6 +46,14 @@ class IndexPage extends React.Component<any, IndexPageState> {
     this.onResize();
     window.addEventListener('resize', this.onResize);
     configureAnchors({ offset: -100, scrollDuration: 400 });
+
+    const script = document.createElement('script');
+
+    script.src =
+      'https://my.hellobar.com/eb2a818f4ad9a44a7e16781498ea8b79a6e29bf8.js';
+    script.async = true;
+
+    document.body.appendChild(script);
   };
 
   componentWillUnmount = () => {
@@ -112,7 +120,7 @@ class IndexPage extends React.Component<any, IndexPageState> {
                   className={
                     isChrome ? styles.reactPlayerChrome : styles.reactPlayer
                   }
-                  url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+                  url="https://www.youtube.com/watch?v=nw1n1ghoeC8"
                   width={windowWidth >= 768 ? '50%' : '100%'}
                   controls="true"
                 />

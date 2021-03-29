@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://3d-points.com/sitemap.xml
+Host: https://3d-points.com

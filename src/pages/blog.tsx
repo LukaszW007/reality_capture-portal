@@ -9,7 +9,7 @@ import styles from './blog.module.scss';
 import SinglePostOnPostsList from '../components/SinglePostOnPostsList';
 
 const BlogPostsList: React.FC<any> = ({ data: queryData }) => {
-  const posts = queryData.allPrismicBlogPosts.edges;
+  const posts = queryData.allPrismicPosts.edges;
   const pageData = queryData.prismicListofblogs.data;
   const image = pageData.main_image.url;
   const imageAltText = pageData.main_image.alt;
@@ -78,9 +78,7 @@ export const listOfBlogsQuery = graphql`
         }
       }
     }
-    allPrismicBlogPosts(
-      sort: { fields: [last_publication_date], order: DESC }
-    ) {
+    allPrismicPosts(sort: { fields: [last_publication_date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -99,25 +97,5 @@ export const listOfBlogsQuery = graphql`
         }
       }
     }
-    #    allPrismicBlogPost(filter: { uid: { eq: "leicartc360" } }) {
-    #      edges {
-    #        node {
-    #          data {
-    #            body {
-    #              ... on PrismicBlogPostBodyText {
-    #                id
-    #                primary {
-    #                  rich_text_in_post {
-    #                    text
-    #                    raw
-    #                    html
-    #                  }
-    #                }
-    #              }
-    #            }
-    #          }
-    #        }
-    #      }
-    #    }
   }
 `;
