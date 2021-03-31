@@ -25,7 +25,8 @@ $widthMobile: 95%;
 
 @media (max-width: 768px) {
   .bannerContainer {
-    width: $widthMobile;
+    max-width: $widthMobile;
+    align-items: center;
   }
 
   .bannerImage {

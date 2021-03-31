@@ -113,6 +113,8 @@ $background-lines: '../assets/SVG/background_lines_greyish_.svg';
 
   .oneOfPosts {
     flex-direction: column;
+    margin-bottom: 10px;
+    min-height: 300px;
   }
 
   .titleName {

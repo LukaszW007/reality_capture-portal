@@ -76,14 +76,26 @@ $widthMobile: 95%;
 
 @media (max-width: 768px) {
   .mainImage {
-    width: $widthDesktop;
+    width: $widthMobile;
+  }
+
+  .figcaption {
+    width: $widthMobile;
+  }
+
+  .sectionContainer {
+    width: 100%;
   }
 
   .postContentContainer {
-    width: $widthDesktop;
+    width: $widthMobile;
   }
 
   .firstParagraph {
-    width: $widthDesktop;
+    width: $widthMobile;
+  }
+
+  .sectionContainer2 {
+    width: 100%;
   }
 }

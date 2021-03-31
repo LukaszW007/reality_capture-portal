@@ -74,7 +74,7 @@ const PostsPage: React.FC<any> = ({ data }) => {
         <ScrollIndicator />
         <section
           className={styles.sectionContainer}
-          onContextMenu={e => e.preventDefault()}
+
         >
           <img className={styles.mainImage} src={image.url} alt={image.alt} />
           <figcaption className={styles.figcaption}>
