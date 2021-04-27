@@ -3,7 +3,7 @@
 <url> <loc>https://3d-points.com/posts/001-deliver-your-point-cloud-directly-from-the-field</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/upcoming-does-mobile-mapping-displace-tls</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/002-how-to-deliver-a-point-cloud-directly-from-the-field</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/posts/upcoming-review-trimble-trimblex7</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/posts/003-rtc360-feature-you-probably-didnt-know-about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/upcoming-would-you-benefit-by-purchase-blk360</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/blogPost/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -11,10 +11,10 @@
 <url> <loc>https://3d-points.com/privacyPolicyPage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/about-me/AboutMe/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/about-me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/sections/footer/Footer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/sections/footer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/scan-to-BIM/ScanToBim/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/scan-to-BIM/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/sections/footer/Footer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/sections/footer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/tutorials/Tutorials/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/tutorials/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
