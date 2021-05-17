@@ -70,12 +70,14 @@ const PostsPage: React.FC<any> = ({ data }) => {
 
     return (
       <Layout>
-        <SEO title={title} description={subtitle} pathname={url} />
+        <SEO
+          title={title}
+          description={subtitle}
+          pathname={url}
+          image={image.url}
+        />
         <ScrollIndicator />
-        <section
-          className={styles.sectionContainer}
-
-        >
+        <section className={styles.sectionContainer}>
           <img className={styles.mainImage} src={image.url} alt={image.alt} />
           <figcaption className={styles.figcaption}>
             Fot. {image.copyright}

@@ -12,7 +12,7 @@ const realityCaptureCarouselItems = {
     },
     {
       id: uuidv4(),
-      webAddress: "https://www.youtube.com/watch?v=0cWUirJAero",
+      webAddress: "https://www.youtube.com/watch?v=-hccmVy0Ad4",
     },
     {
       id: uuidv4(),
@@ -20,7 +20,7 @@ const realityCaptureCarouselItems = {
     },
     {
       id: uuidv4(),
-      webAddress: "https://www.youtube.com/watch?v=0cWUirJAero",
+      webAddress: "https://www.youtube.com/watch?v=-hccmVy0Ad4",
     },
   ],
 };

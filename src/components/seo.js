@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import logoImage from '../assets/images/Reality Capture logo 110x460_transparent_background.png';
 
-function SEO({ description, lang, meta, title, pathname }) {
+function SEO({ description, lang, meta, title, pathname, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,7 +25,7 @@ function SEO({ description, lang, meta, title, pathname }) {
   const metaDescription = description || site.siteMetadata.description;
   const metaTitle = title || site.siteMetadata.title;
   const canonical = pathname
-    ? `${site.siteMetadata.siteUrl}${pathname}`
+    ? `https://3d-points.com/posts${pathname}`
     : `https://3d-points.com/`;
 
   return (
@@ -64,15 +64,15 @@ function SEO({ description, lang, meta, title, pathname }) {
         },
         {
           property: `og:url`,
-          content: `https://3d-points.com/`,
+          content: canonical,
         },
         {
           property: `og:image`,
-          content: { logoImage },
+          content: image,
         },
         {
           property: `og:imageAlt`,
-          content: `3D-points.com`,
+          content: { logoImage },
         },
         {
           property: 'og:image:width',
