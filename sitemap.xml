@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://3d-points.com/posts/001-deliver-your-point-cloud-directly-from-the-field</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/upcoming-does-mobile-mapping-displace-tls</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/posts/004-why-is-it-dangerous-to-use-pix4dcatch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/002-how-to-deliver-a-point-cloud-directly-from-the-field</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/003-rtc360-feature-you-probably-didnt-know-about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/posts/upcoming-would-you-benefit-by-purchase-blk360</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
