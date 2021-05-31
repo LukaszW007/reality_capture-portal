@@ -27,13 +27,14 @@ function SEO({ description, lang, meta, title, pathname, image }) {
   const canonical = pathname
     ? `https://3d-points.com/posts${pathname}`
     : `https://3d-points.com/`;
+  // console.log('Pathname ', canonical);
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={metaTitle}
+      title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       link={
         canonical
@@ -52,7 +53,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
         },
         {
           property: `og:title`,
-          content: metaTitle,
+          content: title,
         },
         {
           property: `og:description`,

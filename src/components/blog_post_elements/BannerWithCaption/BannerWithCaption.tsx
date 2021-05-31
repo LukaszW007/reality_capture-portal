@@ -11,10 +11,10 @@ interface BannerProps {
 const BannerWithCaption: React.FC<BannerProps> = props => {
   const { detailsData } = props;
   const { url, alt, copyright: caption } = detailsData;
-  console.log(`BannerWithCaption> ${JSON.stringify(detailsData)}`)
+  // console.log(`BannerWithCaption> ${JSON.stringify(detailsData)}`);
   if (url === undefined || alt === undefined || caption === undefined) {
-    console.error('Image details retrieved from CMS are undefined');
-    console.table(detailsData);
+    // console.error('Image details retrieved from CMS are undefined');
+    // console.table(detailsData);
     return null;
   }
   return (

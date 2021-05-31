@@ -16,8 +16,8 @@ const ListOfArticles: React.FC<PropsArticlesList> = props => {
 
   const singleLink = (uidPost: string) => {
     const articlesDataByUid = articlesData.map((edge: any) => {
-      console.log(`edge.node.uid ${edge.node.uid}`);
-      console.log(`uidPost ${uidPost}`);
+      // console.log(`edge.node.uid ${edge.node.uid}`);
+      // console.log(`uidPost ${uidPost}`);
       if (uidPost === edge.node.uid) {
         const { text } = edge.node.data.title[0];
         const mainImage = edge.node.data.main_image;
@@ -25,11 +25,9 @@ const ListOfArticles: React.FC<PropsArticlesList> = props => {
       }
       return null;
     });
-    console.log(`articlesDataByUid ${JSON.stringify(articlesDataByUid)}`);
+    // console.log(`articlesDataByUid ${JSON.stringify(articlesDataByUid)}`);
     const filteredArticlesDataByUid = articlesDataByUid.filter(Boolean);
-    console.log(
-      `filteredArticlesDataByUid ${JSON.stringify(filteredArticlesDataByUid)}`
-    );
+    // console.log(`filteredArticlesDataByUid ${JSON.stringify(filteredArticlesDataByUid)}`);
 
     if (
       filteredArticlesDataByUid[0] !== null &&

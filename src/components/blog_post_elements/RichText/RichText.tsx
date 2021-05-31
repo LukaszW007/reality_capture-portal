@@ -11,9 +11,7 @@ interface RichTextProps {
 const RichText: React.FC<RichTextProps> = props => {
   const { detailsData } = props;
   const richText = detailsData[0].text;
-  console.table(
-    `this is detailsData before RETURN: ${JSON.stringify(detailsData)}`
-  );
+  // console.table(`this is detailsData before RETURN: ${JSON.stringify(detailsData)}`);
 
   return (
     <>

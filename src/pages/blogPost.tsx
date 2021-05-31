@@ -14,7 +14,7 @@ import ListOfArticles from '../components/blog_post_elements/ListOfArticles';
 import ScrollIndicator from '../components/ScrollIndicator/ScrollIndicator';
 
 const PostsPage: React.FC<any> = ({ data }) => {
-  console.table(`DATA in PostPage: ${JSON.stringify(data)}`);
+  // console.table(`DATA in PostPage: ${JSON.stringify(data)}`);
   if (data !== undefined) {
     const {
       data: postData,
@@ -23,7 +23,7 @@ const PostsPage: React.FC<any> = ({ data }) => {
     } = data.prismicPosts;
     const { body } = data.prismicPosts.data;
     const articlesData = data.allPrismicPosts.edges;
-    console.log(`data.allPrismicPosts  : ${JSON.stringify(articlesData)}`);
+    // console.log(`data.allPrismicPosts  : ${JSON.stringify(articlesData)}`);
 
     // variables from prismicPosts
     const title = postData.title[0].text;
@@ -63,10 +63,11 @@ const PostsPage: React.FC<any> = ({ data }) => {
             />
           );
         default:
-          console.table(`this is slicetype: ${JSON.stringify(sliceType)}`);
+          // console.table(`this is slicetype: ${JSON.stringify(sliceType)}`);
       }
       return null;
     });
+    console.log('URL for Pathname: ', url);
 
     return (
       <Layout>
