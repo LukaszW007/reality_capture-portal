@@ -1,7 +1,7 @@
 @import "../utils/sass-core/colors.scss";
 @import "../utils/sass-core/fonts.scss";
 
-$widthDesktop: 55%;
+$widthDesktop: 75%;
 $widthMobile: 95%;
 
 .scrollIndicator {
@@ -9,10 +9,39 @@ $widthMobile: 95%;
 }
 
 .sectionContainer {
-  padding: 100px 1% 50px;
+  padding: 100px 20% 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.sectionContainer p,
+h3,
+ul,
+li {
+  text-align: justify;
+}
+
+.sectionContainer a {
+  color: darkblue;
+  margin-bottom: 20px;
+}
+
+.sectionContainer h3 {
+  text-align: left;
+}
+
+.sectionContainer figcaption {
+  font-size: $font-size-sm;
+  margin-bottom: 20px;
+}
+
+.sectionContainer img {
+  margin-bottom: 10px;
+}
+
+.sectionContainer figure {
+  margin-bottom: 10px;
 }
 
 .sectionContainer2 { //@extend is not supported in firefox
@@ -38,7 +67,7 @@ $widthMobile: 95%;
 .postContentContainer {
   display: flex;
   flex-direction: column;
-  width: $widthDesktop;
+  //width: $widthDesktop;
   color: $almostBlack;
   text-align: justify;
 }
@@ -83,12 +112,18 @@ $widthMobile: 95%;
     width: $widthMobile;
   }
 
+  h1 {
+    text-align: left;
+  }
+
   .sectionContainer {
     width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .postContentContainer {
-    width: $widthMobile;
+    //width: $widthMobile;
   }
 
   .firstParagraph {

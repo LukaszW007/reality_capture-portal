@@ -5,7 +5,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
+
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -28,7 +28,9 @@
 }
 
 .grid {
-  margin-bottom: 4.5rem!important;
+  margin: 0 2rem 4.5rem;
+  width: 25vw;
+  min-width: 350px;
 }
 
 .grid:nth-child(3n+1) {
@@ -58,12 +60,10 @@
   margin: 0 1rem 1rem;
 }
 
-.grid h5 {
-  margin-top: 2rem;
-}
-
 .cardTitle {
   display: block;
+  margin-top: 2rem;
+  text-align: left;
 }
 
 .titleName {
@@ -107,12 +107,6 @@
   vertical-align: -0.125em;
   width: 0.875em;
   margin-right: 10px;
-}
-
-.grid span {
-  font-weight: 500;
-  font-size: 15px;
-  display: inline;
 }
 
 @media (max-width: 768px) {

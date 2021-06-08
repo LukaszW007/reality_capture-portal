@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
 import { graphql, Link } from 'gatsby';
 
+import moment from 'moment';
 import SEO from '../components/seo';
 import Layout from '../components/gatsby_elements/layout';
 import styles from './blogPost.module.scss';
@@ -14,6 +16,105 @@ import ListOfArticles from '../components/blog_post_elements/ListOfArticles';
 import ScrollIndicator from '../components/ScrollIndicator/ScrollIndicator';
 
 const PostsPage: React.FC<any> = ({ data }) => {
+  const [rssData, setRssData] = useState([]);
+
+  if (data !== undefined) {
+    const {
+      categories,
+      content,
+      guid,
+      id,
+      link,
+      pubDate,
+      title,
+    } = data.feedMediumBlog;
+
+    console.log('typeof categories: ', typeof categories);
+
+    const mediumURL =
+      'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@3d-points';
+
+    const fetchRssData = () => {
+      Axios.get(mediumURL)
+        .then(axiosData => {
+          const imageUrl = axiosData.data.items.thumbnail;
+          const axiosTitle = axiosData.data.items.title;
+          setRssData([imageUrl, axiosTitle]);
+        })
+        .catch(e => {
+          console.error(e);
+        });
+    };
+
+    useEffect(() => {
+      fetchRssData();
+    }, []);
+
+    const imageUrl = rssData[1] === title ? rssData[0] : null;
+
+    return (
+      <Layout>
+        <SEO
+          title={title}
+          description={content.encodedSnippet.substring(0, 150)}
+          pathname={title}
+          image={imageUrl}
+        />
+        <ScrollIndicator />
+        <section className={styles.sectionContainer}>
+          <div className={styles.postContentContainer}>
+            <h1>{title}</h1>
+            <div className={styles.firstPublicationDate}>
+              {moment(pubDate).format('MMM DD, YYYY')}
+            </div>
+            <ul className={styles.hashtags}>
+              {categories.map((hashtag, index) => {
+                return (
+                  <li key={index} className={styles.singleHashtag}>
+                    #{hashtag}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: content.encoded }}
+          />
+          {/* </section> */}
+          {/* <section className={styles.sectionContainer2}> */}
+          {/*  <p className={styles.firstParagraph}>{firstParagraph}</p> */}
+          {/*  {sliceTypes} */}
+        </section>
+      </Layout>
+    );
+  }
+  return null;
+};
+
+export default PostsPage;
+
+export const blogPostQuery = graphql`
+  query PostById($id: String!) {
+    # Query the post with the id passed in from gatsby-node.js
+    feedMediumBlog(id: { eq: $id }) {
+      categories
+      content {
+        encoded
+        encodedSnippet
+      }
+      guid
+      id
+      link
+      pubDate
+      title
+    }
+  }
+`;
+
+// This is code for a data from Prismistyles.io
+
+/* const PostsPage: React.FC<any> = ({ data }) => {
   // console.table(`DATA in PostPage: ${JSON.stringify(data)}`);
   if (data !== undefined) {
     const {
@@ -183,3 +284,130 @@ export const blogPostQuery = graphql`
     }
   }
 `;
+
+// This is the code when uses RSS api RSS2JSON
+
+export class SingleBlog extends React.Component<any, any> {
+  constructor(props) {
+    super(props);
+    console.log('singleBlog data from RSS: ', { data});
+    this.state = {
+      mediumURL:
+        'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@3d-points',
+      singlePost: {},
+      titleId: props.location.state.item.guid,
+      avatar: '',
+      profileLink: '',
+      error: null,
+      isLoading: true,
+    };
+  }
+
+  componentDidMount() {
+    console.log('blogPost props', this.props);
+    console.log('blogPost props', this.props.location.state);
+    const { mediumURL } = this.state;
+    Axios.get(mediumURL)
+
+      .then(data => {
+        const avatar = data.data.feed.image;
+        const profileLink = data.data.feed.link;
+        const res = data.data.items;
+        const posts = res.filter(item => item.categories.length > 0);
+        for (const i in posts) {
+          const title = `${posts[i].guid}`;
+          if (title === this.state.titleId) {
+            const post = posts[i];
+
+            this.setState(p => ({
+              singlePost: post,
+              avatar,
+              profileLink,
+              isLoading: false,
+            }));
+          }
+        }
+      })
+      .catch(e => {
+        this.setState({ error: e.toJSON() });
+        console.log(e);
+      });
+  }
+
+  render() {
+    console.log('RENDER in blogPost: ', this.state);
+    console.log('Cetegories in blogPost: ', this.state.singlePost.categories);
+    console.log(
+      'Cetegories type in blogPost: ',
+      typeof this.state.singlePost.categories
+    );
+    const { singlePost } = this.state;
+
+    const categories = () => {
+      const categoriesArray = [];
+      for (const i in singlePost.categories) {
+        categoriesArray.push(singlePost.categories[i]);
+      }
+      return categoriesArray;
+    };
+
+    let post;
+    if (singlePost) {
+      post = (
+        <>
+          { <img }
+{  className={styles.mainImage} }
+{  src={singlePost.thumbnail} }
+{  alt="main_image" }
+{ />}
+<div className={styles.postContentContainer}>
+            <h1>{singlePost.title}</h1>
+            <div className={styles.firstPublicationDate}>
+              {moment(singlePost.pubDate).format('MMM DD, YYYY')}
+            </div>
+            <ul className={styles.hashtags}>
+              {categories().map((post, index) => {
+                return <li className={styles.singleHashtag}>#{post}</li>;
+              })}
+            </ul>
+          </div>
+<div
+  className={styles.content}
+  dangerouslySetInnerHTML={{ __html: singlePost.content }}
+/>
+</>
+);
+}
+if (this.state.isLoading) {
+  post = <div> Loading... </div>;
+}
+if (this.state.error) {
+  const error = this.state.error.code
+    ? this.state.error.code
+    : this.state.error.name;
+  const errorMsg = this.state.error.message;
+  post = (
+    <>
+          <h2 className="red center1">{error}</h2>
+          <p className="errorMessage center1">{errorMsg}</p>
+        </>
+  );
+}
+
+return (
+  <Layout>
+        <SEO
+          title={singlePost.title}
+          description={singlePost.title}
+          pathname="url" // TODO
+          image={singlePost.thumbnail}
+        />
+        <ScrollIndicator />
+        <section className={styles.sectionContainer}>{post}</section>
+      </Layout>
+);
+}
+}
+
+export default SingleBlog;
+*/

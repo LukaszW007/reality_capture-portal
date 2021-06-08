@@ -25,7 +25,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
   const metaDescription = description || site.siteMetadata.description;
   const metaTitle = title || site.siteMetadata.title;
   const canonical = pathname
-    ? `https://3d-points.com/posts${pathname}`
+    ? `https://3d-points.com/posts/${pathname}`
     : `https://3d-points.com/`;
   // console.log('Pathname ', canonical);
 

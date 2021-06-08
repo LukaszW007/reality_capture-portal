@@ -75,13 +75,13 @@ class BlogPostsList extends React.Component<any, any> {
 
   render() {
     const { error, profile, item, isLoading, headerTitle, image } = this.state;
-    console.log('Profile.state in render: ', profile);
+    // console.log('Profile.state in render: ', profile);
 
     let post;
 
     if (item) {
       post = item.map((post, index) => {
-        console.log('INDEX ', index);
+        // console.log('INDEX ', index);
         return <PostCard key={index} profileInfo={profile} item={post} />;
       });
     }
@@ -120,9 +120,7 @@ class BlogPostsList extends React.Component<any, any> {
           </div>
           <div className={styles.postsCounter}>{item.length}</div>
           <div className={styles.underHeading}>
-            <ul className={styles.listOfPosts}>
-              {post}
-            </ul>
+            <ul className={styles.listOfPosts}>{post}</ul>
           </div>
         </section>
       </Layout>
