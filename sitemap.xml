@@ -9,12 +9,12 @@
 <url> <loc>https://3d-points.com/blogPost/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/privacyPolicyPage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/sections/about-me/AboutMe/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/sections/about-me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/footer/Footer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/footer/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/sections/tutorials/Tutorials/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://3d-points.com/sections/tutorials/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/sections/about-me/AboutMe/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/sections/about-me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/scan-to-BIM/ScanToBim/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://3d-points.com/sections/scan-to-BIM/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/sections/tutorials/Tutorials/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://3d-points.com/sections/tutorials/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
