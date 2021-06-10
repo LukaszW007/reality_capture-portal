@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-blog-post-tsx","path":"/blogPost/","result":{"errors":[{"message":"Variable \"$uid\" of required type \"String!\" was not provided.","locations":[{"line":1,"column":18}]}],"pageContext":{}},"staticQueryHashes":["2052298874"]}
+{"componentChunkName":"component---src-pages-blog-post-tsx","path":"/blogPost/","result":{"errors":[{"message":"Variable \"$id\" of required type \"String!\" was not provided.","locations":[{"line":1,"column":16}]}],"pageContext":{}},"staticQueryHashes":["2052298874"]}
