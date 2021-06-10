@@ -24,7 +24,7 @@ function ToText(node: string) {
 }
 
 const PostCard: React.FC<any> = props => {
-  // console.log('PostCard props: ', props);
+  console.log('PostCard props: ', props);
   const { item, profileInfo } = props;
   const { thumbnail, title, author, description, pubDate } = item;
 

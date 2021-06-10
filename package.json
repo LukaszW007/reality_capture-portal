@@ -38,6 +38,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-player": "^1.15.3",
+    "react-responsive-combo-box": "^1.2.4",
     "react-scrollable-anchor": "^0.6.1",
     "uuid": "^7.0.3"
   },

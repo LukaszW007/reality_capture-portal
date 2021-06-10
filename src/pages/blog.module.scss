@@ -88,6 +88,26 @@ $background-lines: '../assets/SVG/background_lines_greyish_.svg';
 //  border-radius: 15px;
 //}
 
+.postsCounter {
+  color: $white;
+}
+
+.comboBoxContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 3rem;
+}
+
+.comboBox {
+  background-color: $white;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.comboBoxLabel {
+  color: $white;
+}
+
 @media (max-width: 1182px) {
   .oneOfPosts {
     width: 80vw;

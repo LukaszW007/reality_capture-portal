@@ -28,7 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   const templatePost = path.resolve('src/pages/blogPost.tsx');
-  console.log('POSTS in gatsby.node ', posts);
+  // console.log('POSTS in gatsby.node ', posts);
   posts.data.allFeedMediumBlog.edges.forEach(edge => {
     let postUid = edge.node.title
       .replace(/[.,'"/!$%^&*;:{}=\-_`~()?\s+]/g, '-')
@@ -36,7 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (postUid.slice(-1) === '-') {
       postUid = postUid.slice(0, -1);
     }
-    console.log('postUID from gatsby.node ', postUid);
+    // console.log('postUID from gatsby.node ', postUid);
     // Create a page for every post
     createPage({
       path: `/posts/${postUid}`,

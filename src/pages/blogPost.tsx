@@ -29,7 +29,7 @@ const PostsPage: React.FC<any> = ({ data }) => {
       title,
     } = data.feedMediumBlog;
 
-    console.log('typeof categories: ', typeof categories);
+    console.log('data.feedMediumBlog: ', data.feedMediumBlog);
 
     const mediumURL =
       'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@3d-points';
