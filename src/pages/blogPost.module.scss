@@ -103,6 +103,14 @@ li {
   width: 45%;
 }
 
+.content {
+  width: 60vw;
+}
+
+.content iframe {
+  height: 456px;
+}
+
 @media (max-width: 768px) {
   .mainImage {
     width: $widthMobile;
@@ -133,4 +141,14 @@ li {
   .sectionContainer2 {
     width: 100%;
   }
+
+  .content {
+    width: 95vw;
+  }
+
+  .content iframe {
+    width: 95vw;
+    height: 250px;
+  }
+
 }
