@@ -29,7 +29,7 @@ const PostsPage: React.FC<any> = ({ data }) => {
       title,
     } = data.feedMediumBlog;
 
-    console.log('data.feedMediumBlog: ', data.feedMediumBlog);
+    // console.log('data.feedMediumBlog: ', data.feedMediumBlog);
 
     const mediumURL =
       'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@3d-points';
@@ -37,9 +37,16 @@ const PostsPage: React.FC<any> = ({ data }) => {
     const fetchRssData = () => {
       Axios.get(mediumURL)
         .then(axiosData => {
-          const imageUrl = axiosData.data.items.thumbnail;
-          const axiosTitle = axiosData.data.items.title;
-          setRssData([imageUrl, axiosTitle]);
+          let imageUrl;
+          let axiosTitle;
+          axiosData.data.items.map((singleItem, index) => {
+            if (singleItem.title === title) {
+              imageUrl = singleItem.thumbnail;
+              axiosTitle = singleItem.title;
+              console.log('thumbnail ',imageUrl)
+              setRssData([imageUrl, axiosTitle]);
+            }
+          });
         })
         .catch(e => {
           console.error(e);
@@ -50,7 +57,10 @@ const PostsPage: React.FC<any> = ({ data }) => {
       fetchRssData();
     }, []);
 
-    const imageUrl = rssData[1] === title ? rssData[0] : null;
+    // console.log('RssData from axios: ', rssData);
+    // console.log('ImageURL from axios: ', rssData[0]);
+
+    // const imageUrl = rssData[1] === title ? rssData[0] : null;
 
     return (
       <Layout>
@@ -58,7 +68,7 @@ const PostsPage: React.FC<any> = ({ data }) => {
           title={title}
           description={content.encodedSnippet.substring(0, 150)}
           pathname={title}
-          image={imageUrl}
+          image={rssData[0]}
         />
         <ScrollIndicator />
         <section className={styles.sectionContainer}>

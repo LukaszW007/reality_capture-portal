@@ -32,7 +32,7 @@ const PostCard: React.FC<any> = props => {
 
   let postUid = title
     .replace(/[.,'"/!$%^&*;:{}=\-_`~()?\s+]/g, '-')
-    .replace(/#/g, '');
+    .replace(/[#’]/g, '');
   if (postUid.slice(-1) === '-') {
     postUid = postUid.slice(0, -1);
   }
@@ -41,7 +41,6 @@ const PostCard: React.FC<any> = props => {
 
   // console.log('postUID from PostCard ', postUid);
   // console.log('singlePostUrl from PostCard ', singlePostUrl);
-
 
   return (
     <div className={styles.grid}>
@@ -64,7 +63,7 @@ const PostCard: React.FC<any> = props => {
 
         <div className={styles.cardDescription}>
           <h5 className={styles.cardTitle}>
-            <Link to={singlePostUrl} state={props} className={styles.titleName}>
+            <Link to={singlePostUrl} state={{ data: props }} className={styles.titleName}>
               {title}
             </Link>
           </h5>

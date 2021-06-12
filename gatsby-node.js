@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.data.allFeedMediumBlog.edges.forEach(edge => {
     let postUid = edge.node.title
       .replace(/[.,'"/!$%^&*;:{}=\-_`~()?\s+]/g, '-')
-      .replace(/#/g, '');
+      .replace(/[#’]/g, '');
     if (postUid.slice(-1) === '-') {
       postUid = postUid.slice(0, -1);
     }
