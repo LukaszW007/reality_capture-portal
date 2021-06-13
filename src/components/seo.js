@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
   const canonical = pathname
     ? `https://3d-points.com/posts/${pathname}`
     : `https://3d-points.com/`;
-  // console.log('Pathname ', canonical);
+  console.log('Pathname ', canonical);
 
   return (
     <Helmet

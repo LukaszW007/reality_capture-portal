@@ -71,9 +71,9 @@ const PostsPage: React.FC<any> = ({ data }) => {
     return (
       <Layout>
         <SEO
-          title={rssData[1]}
+          title={title}
           description={content.encodedSnippet.substring(0, 150)}
-          pathname={title}
+          pathname={rssData[1]}
           image={rssData[0]}
         />
         <ScrollIndicator />
