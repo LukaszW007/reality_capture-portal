@@ -53,7 +53,7 @@ function sortByDate(objectA: any, objectB: any) {
 }
 
 function dynamicSort(postsObject: any, sortBy: string, ascending: boolean) {
-  console.log('Input data to dynamicSort ', postsObject);
+  // console.log('Input data to dynamicSort ', postsObject);
   let tempArray = [];
   let sortedArray = [];
   const upcomingPostsArray = [];
@@ -75,7 +75,7 @@ function dynamicSort(postsObject: any, sortBy: string, ascending: boolean) {
       tempArray = unsortedPostsArray.sort(sortByTitle).reverse();
       sortedArray = tempArray.concat(upcomingPostsArray);
     }
-    console.log('SORTED by title: ', sortedArray);
+    // console.log('SORTED by title: ', sortedArray);
   } else if (sortBy === 'date') {
     for (const element of postsObject) {
       tempArray.push(element);
@@ -86,7 +86,7 @@ function dynamicSort(postsObject: any, sortBy: string, ascending: boolean) {
       sortedArray = tempArray.sort(sortByDate).reverse();
     }
     sortedArray = tempArray.sort(sortByDate);
-    console.log('SORTED by date: ', sortedArray);
+    // console.log('SORTED by date: ', sortedArray);
   }
 
   return sortedArray;
@@ -122,7 +122,7 @@ class BlogPostsList extends React.Component<any, any> {
     Axios.get(mediumURL)
 
       .then(data => {
-        console.log('Data w JSON z medium:', data);
+        // console.log('Data w JSON z medium:', data);
         const feedImage = data.data.feed.image;
         const profileLink = data.data.feed.link;
         const res = data.data.items; // This is an array with the content. No feed, no info about author etc..
@@ -143,7 +143,7 @@ class BlogPostsList extends React.Component<any, any> {
             isLoading: false,
           }),
           () => {
-            console.log('This is State2', this.state);
+            // console.log('This is State2', this.state);
           }
         );
       })
@@ -173,7 +173,7 @@ class BlogPostsList extends React.Component<any, any> {
         this.setState({ sortByState: { sortingBy: 'title', ascending: true } });
         break;
     }
-    console.log('SELECTION in switch: ', selection);
+    // console.log('SELECTION in switch: ', selection);
   }
 
   render() {
@@ -187,7 +187,7 @@ class BlogPostsList extends React.Component<any, any> {
       sortByState,
     } = this.state;
     // console.log('Profile.state in render: ', profile);
-    console.log('State in render: ', this.state);
+    // console.log('State in render: ', this.state);
 
     const comboBoxItems = [
       'A to Z',
@@ -199,15 +199,15 @@ class BlogPostsList extends React.Component<any, any> {
     let post;
 
     if (items) {
-      console.log('dynamic sort: ', sortByState.sortingBy, sortByState.ascending );
-      console.log('ITEMS: ', items );
+      // console.log('dynamic sort: ', sortByState.sortingBy, sortByState.ascending );
+      // console.log('ITEMS: ', items );
 
       const sortedPosts = dynamicSort(
         items,
         sortByState.sortingBy,
         sortByState.ascending
       );
-      console.log('posortowana tablica: ', sortedPosts)
+      // console.log('posortowana tablica: ', sortedPosts)
       post = sortedPosts.map((post, index) => {
         return <PostCard key={index} profileInfo={profile} item={post} />;
       });

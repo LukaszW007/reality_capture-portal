@@ -42,8 +42,13 @@ const PostsPage: React.FC<any> = ({ data }) => {
           axiosData.data.items.map((singleItem, index) => {
             if (singleItem.title === title) {
               imageUrl = singleItem.thumbnail;
-              axiosTitle = singleItem.title;
-              console.log('thumbnail ',imageUrl)
+              axiosTitle = singleItem.title
+                .replace(/[.,'"/!$%^&*;:{}=\-_`~()?\s+]/g, '-')
+                .replace(/[#’]/g, '');
+              if (axiosTitle.slice(-1) === '-') {
+                axiosTitle = axiosTitle.slice(0, -1);
+              }
+              // console.log('thumbnail ',imageUrl)
               setRssData([imageUrl, axiosTitle]);
             }
           });
@@ -58,14 +63,15 @@ const PostsPage: React.FC<any> = ({ data }) => {
     }, []);
 
     // console.log('RssData from axios: ', rssData);
-    // console.log('ImageURL from axios: ', rssData[0]);
+    // console.log('Pochodzi z PROPS: ', title);
+    // console.log('Pochodzi z rss: ', rssData[1]);
 
     // const imageUrl = rssData[1] === title ? rssData[0] : null;
 
     return (
       <Layout>
         <SEO
-          title={title}
+          title={rssData[1]}
           description={content.encodedSnippet.substring(0, 150)}
           pathname={title}
           image={rssData[0]}

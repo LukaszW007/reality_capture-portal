@@ -29,6 +29,7 @@
   &_active {
     background: $yellowish;
     width: 25px;
+
     &:hover {
       opacity: 0.75;
     }
@@ -58,11 +59,11 @@
 
   &_active {
     &::after {
-      -o-transition:0.5s;
-      -ms-transition:0.5s;
-      -moz-transition:0.5s;
-      -webkit-transition:0.5s;
-      transition:0.5s;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
       content: "";
       left: 25px;
       display: block;

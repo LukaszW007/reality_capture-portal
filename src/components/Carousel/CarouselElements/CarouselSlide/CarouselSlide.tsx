@@ -25,7 +25,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = props => {
     return null;
   }
   const { picture, pictureAlt, title, webAddress } = slide;
-  console.log(`this is index ${index} activeindex= ${activeIndex}`);
+  // console.log(`this is index ${index} activeindex= ${activeIndex}`);
 
   if (webAddress) {
     return (

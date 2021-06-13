@@ -15,7 +15,7 @@ interface IndicatorsProps {
 const CarouselIndicator: React.FC<IndicatorsProps> = props => {
   const { index, activeIndex, onClick, name, isDotIndicator } = props;
 
-  console.log(`This is info about dots: ${isDotIndicator}`);
+  // console.log(`This is info about dots: ${isDotIndicator}`);
 
   if (index === undefined || activeIndex === undefined || name === undefined) {
     return null;

@@ -1,6 +1,5 @@
 // global dependencies
 import React from 'react';
-import throttle from 'lodash.throttle';
 import { Link } from 'gatsby';
 
 // local dependencies

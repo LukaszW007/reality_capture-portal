@@ -24,7 +24,7 @@ function ToText(node: string) {
 }
 
 const PostCard: React.FC<any> = props => {
-  console.log('PostCard props: ', props);
+  // console.log('PostCard props: ', props);
   const { item, profileInfo } = props;
   const { thumbnail, title, author, description, pubDate } = item;
 
@@ -37,7 +37,7 @@ const PostCard: React.FC<any> = props => {
     postUid = postUid.slice(0, -1);
   }
 
-  const singlePostUrl = `/posts/${postUid}`; //TODO link nie dziala
+  const singlePostUrl = `/posts/${postUid}`;
 
   // console.log('postUID from PostCard ', postUid);
   // console.log('singlePostUrl from PostCard ', singlePostUrl);
