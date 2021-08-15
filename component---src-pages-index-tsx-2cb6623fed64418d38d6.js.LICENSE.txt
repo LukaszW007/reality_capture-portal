@@ -1,0 +1,14 @@
+/*!
+ * Jump.js 1.0.1 - A small, modern, dependency-free smooth scrolling library.
+ * Copyright (c) 2016 Michael Cavalea - https://github.com/callmecavs/jump.js
+ * License: MIT
+ */
+
+/*!
+ * UAParser.js v0.7.24
+ * Lightweight JavaScript-based User-Agent string parser
+ * https://github.com/faisalman/ua-parser-js
+ *
+ * Copyright © 2012-2021 Faisal Salman <f@faisalman.com>
+ * Licensed under MIT License
+ */
