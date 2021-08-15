@@ -79,7 +79,10 @@ class IndexPage extends React.Component<any, IndexPageState> {
           isIOS={isIOS}
           isMobile={isMobile}
         />
-        <SEO title="Homepage· 3d-points.com" />
+        <SEO
+          title="Homepage · 3d-points.com"
+          pathname="https://3d-points.com/"
+        />
         {/* onContextMenu={e => e.preventDefault()} */}
         <div className={styles.App} onContextMenu={e => e.preventDefault()}>
           <ScrollableAnchor id="home">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Axios from 'axios';
 import { graphql, Link } from 'gatsby';
 
@@ -6,17 +6,20 @@ import moment from 'moment';
 import SEO from '../components/seo';
 import Layout from '../components/gatsby_elements/layout';
 import styles from './blogPost.module.scss';
-import BannerWithCaption from '../components/blog_post_elements/BannerWithCaption';
-import Embed from '../components/blog_post_elements/Embed';
-import RichText from '../components/blog_post_elements/RichText';
+// import BannerWithCaption from '../components/blog_post_elements/BannerWithCaption';
+// import Embed from '../components/blog_post_elements/Embed';
+// import RichText from '../components/blog_post_elements/RichText';
 // import SimpleQuote from '../components/blog_post_elements/SimpleQuote';
 // import PictRightColumn from '../components/blog_post_elements/PictRightColumn';
 // import PictLeftColumn from '../components/blog_post_elements/PictLeftColumn';
-import ListOfArticles from '../components/blog_post_elements/ListOfArticles';
+// import ListOfArticles from '../components/blog_post_elements/ListOfArticles';
 import ScrollIndicator from '../components/ScrollIndicator/ScrollIndicator';
+import Spinner from '../components/Spinner/Spinner';
 
 const PostsPage: React.FC<any> = ({ data }) => {
   const [rssData, setRssData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const mounted = useRef(false);
 
   if (data !== undefined) {
     const {
@@ -31,9 +34,15 @@ const PostsPage: React.FC<any> = ({ data }) => {
 
     // console.log('data.feedMediumBlog: ', data.feedMediumBlog);
 
+    // fetchRssData().then(r => console.log('ASYNC')); // for async await in fetchRSSData
+
+    // console.log('RssData from axios: ', rssData);
+    // console.log('Pochodzi z PROPS: ', title);
+    // console.log('Pochodzi z rss: ', rssData[1]);
+
+    // const imageUrl = rssData[1] === title ? rssData[0] : null;
     const mediumURL =
       'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@3d-points';
-
     const fetchRssData = () => {
       Axios.get(mediumURL)
         .then(axiosData => {
@@ -52,58 +61,62 @@ const PostsPage: React.FC<any> = ({ data }) => {
               setRssData([imageUrl, axiosTitle]);
             }
           });
+          setLoading(false);
         })
         .catch(e => {
           console.error(e);
         });
     };
 
+    const renderPage = () => {
+      // console.log('RENDERING');
+      if (isLoading) {
+        return <Spinner />;
+      }
+      console.log('SEO: ', title, rssData[0], rssData[1]);
+      return (
+        <Layout>
+          <SEO
+            title={title}
+            description={content.encodedSnippet.substring(0, 150)}
+            pathname={rssData[1]}
+            image={rssData[0]}
+          />
+          <ScrollIndicator />
+          <section className={styles.sectionContainer}>
+            <div className={styles.postContentContainer}>
+              <h1>{title}</h1>
+              <div className={styles.firstPublicationDate}>
+                {moment(pubDate).format('MMM DD, YYYY')}
+              </div>
+              <ul className={styles.hashtags}>
+                {categories.map((hashtag, index) => {
+                  return (
+                    <li key={index} className={styles.singleHashtag}>
+                      #{hashtag}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div
+              className={styles.content}
+              dangerouslySetInnerHTML={{ __html: content.encoded }}
+            />
+            {/* </section> */}
+            {/* <section className={styles.sectionContainer2}> */}
+            {/*  <p className={styles.firstParagraph}>{firstParagraph}</p> */}
+            {/*  {sliceTypes} */}
+          </section>
+        </Layout>
+      );
+    };
+
     useEffect(() => {
       fetchRssData();
     }, []);
-
-    // console.log('RssData from axios: ', rssData);
-    // console.log('Pochodzi z PROPS: ', title);
-    // console.log('Pochodzi z rss: ', rssData[1]);
-
-    // const imageUrl = rssData[1] === title ? rssData[0] : null;
-
-    return (
-      <Layout>
-        <SEO
-          title={title}
-          description={content.encodedSnippet.substring(0, 150)}
-          pathname={rssData[1]}
-          image={rssData[0]}
-        />
-        <ScrollIndicator />
-        <section className={styles.sectionContainer}>
-          <div className={styles.postContentContainer}>
-            <h1>{title}</h1>
-            <div className={styles.firstPublicationDate}>
-              {moment(pubDate).format('MMM DD, YYYY')}
-            </div>
-            <ul className={styles.hashtags}>
-              {categories.map((hashtag, index) => {
-                return (
-                  <li key={index} className={styles.singleHashtag}>
-                    #{hashtag}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div
-            className={styles.content}
-            dangerouslySetInnerHTML={{ __html: content.encoded }}
-          />
-          {/* </section> */}
-          {/* <section className={styles.sectionContainer2}> */}
-          {/*  <p className={styles.firstParagraph}>{firstParagraph}</p> */}
-          {/*  {sliceTypes} */}
-        </section>
-      </Layout>
-    );
+    // console.log('RSS data: ', rssData);
+    return renderPage();
   }
   return null;
 };

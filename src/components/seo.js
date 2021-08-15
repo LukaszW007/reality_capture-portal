@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import logoImage from '../assets/images/Reality Capture logo 110x460_transparent_background.png';
+// import logoImage from '../assets/images/Reality Capture logo 110x460_transparent_background.png';
 
 function SEO({ description, lang, meta, title, pathname, image }) {
   const { site } = useStaticQuery(
@@ -24,28 +24,21 @@ function SEO({ description, lang, meta, title, pathname, image }) {
 
   const metaDescription = description || site.siteMetadata.description;
   const metaTitle = title || site.siteMetadata.title;
-  const canonical = pathname
-    ? `https://3d-points.com/posts/${pathname}`
-    : `https://3d-points.com/`;
-  console.log('Pathname ', canonical);
+  const canonical = pathname;
+  const logoImage =
+    'https://images.prismic.io/3d-points/163c9ef3-5eb9-4cb9-adaa-ac3d3451eb7f_Reality+Capture+logo+1549x1415_white_background+podluzny+Trueno+czcionka.jpg?auto=compress,format';
+  const ogImage =
+    image === undefined
+      ? 'https://images.prismic.io/3d-points/163c9ef3-5eb9-4cb9-adaa-ac3d3451eb7f_Reality+Capture+logo+1549x1415_white_background+podluzny+Trueno+czcionka.jpg?auto=compress,format'
+      : image;
+
+  console.log('Canonical ', canonical);
+  console.log('Pathname ', pathname);
+  console.log('Image ', ogImage);
+  console.log('logoImage ', logoImage);
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      link={
-        canonical
-          ? [
-              {
-                rel: 'canonical',
-                href: canonical,
-              },
-            ]
-          : []
-      }
       meta={[
         {
           name: `description`,
@@ -53,7 +46,7 @@ function SEO({ description, lang, meta, title, pathname, image }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -69,11 +62,11 @@ function SEO({ description, lang, meta, title, pathname, image }) {
         },
         {
           property: `og:image`,
-          content: image,
+          content: ogImage,
         },
         {
           property: `og:imageAlt`,
-          content: { logoImage },
+          content: logoImage,
         },
         {
           property: 'og:image:width',
@@ -88,6 +81,22 @@ function SEO({ description, lang, meta, title, pathname, image }) {
           content: site.siteMetadata.keywords.join(','),
         },
       ].concat(meta)}
+      htmlAttributes={{
+        lang,
+      }}
+      title={metaTitle}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: 'canonical',
+                href: canonical,
+              },
+            ]
+          : []
+      }
+
     />
   );
 }
@@ -98,11 +107,11 @@ SEO.defaultProps = {
   description: ``,
 };
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-};
+// SEO.propTypes = {
+//   description: PropTypes.string,
+//   lang: PropTypes.string,
+//   meta: PropTypes.arrayOf(PropTypes.object),
+//   title: PropTypes.string.isRequired,
+// };
 
 export default SEO;

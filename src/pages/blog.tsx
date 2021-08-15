@@ -14,6 +14,7 @@ import styles from './blog.module.scss';
 
 import PostCard from '../components/PostCard';
 import authorDotsPicturePNG from '../assets/images/author-dots-opt.png';
+import Spinner from "../components/Spinner"
 
 function sortByTitle(objectA: any, objectB: any) {
   const titleA = objectA.title;
@@ -187,7 +188,7 @@ class BlogPostsList extends React.Component<any, any> {
       sortByState,
     } = this.state;
     // console.log('Profile.state in render: ', profile);
-    // console.log('State in render: ', this.state);
+    console.log('State in render: ', isLoading);
 
     const comboBoxItems = [
       'A to Z',
@@ -213,7 +214,7 @@ class BlogPostsList extends React.Component<any, any> {
       });
     }
     if (isLoading) {
-      post = <div>Loading ...</div>;
+      post = <Spinner />;
     }
     if (error) {
       const errorCode = error.code ? error.code : error.name;
@@ -230,8 +231,8 @@ class BlogPostsList extends React.Component<any, any> {
         <SEO
           title="List of blog posts at 3d-points.com"
           description="Page contains a list of the posts of the blog about reality capturing"
-          pathname="/blog"
-          image={image}
+          pathname="https://3d-points.com/blog"
+          image={image.picture}
         />
         <section
           className={styles.sectionContainer}
