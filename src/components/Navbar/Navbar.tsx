@@ -26,7 +26,7 @@ class Navbar extends React.Component<NavbarProps, NavbarState> {
     };
   }
 
-  toggleOpen = e => {
+  toggleOpen = (e: any) => {
     e.preventDefault();
     this.setState({ openMenu: !this.state.openMenu });
   };

@@ -3,6 +3,8 @@ import Axios from 'axios';
 import { graphql, Link } from 'gatsby';
 
 import moment from 'moment';
+import { faArrowUp, faList } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SEO from '../components/seo';
 import Layout from '../components/gatsby_elements/layout';
 import styles from './blogPost.module.scss';
@@ -31,6 +33,10 @@ const PostsPage: React.FC<any> = ({ data }) => {
       pubDate,
       title,
     } = data.feedMediumBlog;
+
+    const toTheTop = () => {
+      window.scrollTo(0, 0);
+    };
 
     // console.log('data.feedMediumBlog: ', data.feedMediumBlog);
 
@@ -103,6 +109,24 @@ const PostsPage: React.FC<any> = ({ data }) => {
               className={styles.content}
               dangerouslySetInnerHTML={{ __html: content.encoded }}
             />
+            <div className={styles.buttonsSection}>
+              <Link to="/blog">
+                <div className={styles.backToBlogButton}>
+                  <FontAwesomeIcon
+                    className={styles.iconToTheTop}
+                    icon={faList}
+                  />
+                  <span className={styles.tooltipText}>Articles</span>
+                </div>
+              </Link>
+              <div className={styles.toTopButton} onClick={toTheTop}>
+                <FontAwesomeIcon
+                  className={styles.iconToTheTop}
+                  icon={faArrowUp}
+                />
+                <span className={styles.tooltipText}>To the top</span>
+              </div>
+            </div>
             {/* </section> */}
             {/* <section className={styles.sectionContainer2}> */}
             {/*  <p className={styles.firstParagraph}>{firstParagraph}</p> */}
